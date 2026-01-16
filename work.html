@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши работы - EarthDom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">EarthDom</a>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/project.html">Проекты</a></li>
+                <li><a href="/terrace.html">Террасные покрытия</a></li>
+                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="/services.html">Услуги</a></li>
+                <li><a href="/work.html" class="active">Наши работы</a></li>
+                <li><a href="/company.html">О компании</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="work-hero">
+        <div class="work-hero-content">
+            <h1>Наши работы</h1>
+            <p>Реализованные проекты и довольные клиенты за 13 лет работы</p>
+        </div>
+    </section>
+
+    <!-- Секция наших работ -->
+    <section class="work-section">
+        <div class="container">
+            <h2 class="section-title">Выполненные проекты</h2>
+            
+            <!-- Фильтры работ -->
+            <div class="work-filter">
+                <button class="filter-btn active" data-filter="all">Все работы</button>
+                <button class="filter-btn" data-filter="house">Дома</button>
+                <button class="filter-btn" data-filter="facade">Отделка фасадов</button>
+                <button class="filter-btn" data-filter="terrace">Террасы</button>
+            </div>
+
+            <!-- Сетка работ -->
+            <div class="work-grid">
+                <!-- Работа 1 -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Загородный дом в Подмосковье</h2>
+                        <p>Полный цикл строительства каркасного дома с внутренней отделкой</p>
+                        <div class="work-details">
+                            <span class="work-area">180 м²</span>
+                            <span class="work-time">5 месяцев</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Загородный дом в Подмосковье">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 2 -->
+                <div class="work-card" data-category="terrace">
+                    <div class="work-img" style="background-image: url('./image/facade1/5256075123540822993.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Терраса</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Терраса в классическом стиле</h2>
+                        <p>Устройство террасы с навесом и освещением</p>
+                        <div class="work-details">
+                            <span class="work-area">45 м²</span>
+                            <span class="work-time">2 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Террасное покрытие из ДПК">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 3 -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Дачный дом для семьи</h2>
+                        <p>Строительство каркасного дома под ключ</p>
+                        <div class="work-details">
+                            <span class="work-area">95 м²</span>
+                            <span class="work-time">3 месяца</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Дачный дом для семьи">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 4 -->
+                <div class="work-card" data-category="facade">
+                    <div class="work-img" style="background-image: url('./image/facade2/5256075123540823007.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Фасад</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Современная отделка фасада</h2>
+                        <p>Утепление и отделка фасада комбинированными материалами</p>
+                        <div class="work-details">
+                            <span class="work-area">95 м²</span>
+                            <span class="work-time">2.5 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Современная отделка фасада">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 5 -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/00/8f/20/008f20405aaea27836e9b66e6bdd5809.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2021</span>
+                        </div>
+                        <h2>Дом с мансардой</h2>
+                        <p>Строительство дома с эксплуатируемой мансардой</p>
+                        <div class="work-details">
+                            <span class="work-area">140 м²</span>
+                            <span class="work-time">4 месяца</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Дом с мансардой">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 6 -->
+                <div class="work-card" data-category="terrace">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Терраса</span>
+                            <span class="work-year">2021</span>
+                        </div>
+                        <h2>Терраса с барбекю зоной</h2>
+                        <p>Строительство открытой террасы с летней кухней</p>
+                        <div class="work-details">
+                            <span class="work-area">60 м²</span>
+                            <span class="work-time">3 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Терраса с барбекю зоной">Смотреть фото</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция отзывов -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <h3>Анна и Сергей</h3>
+                            <p>Заказчики дома "Северный"</p>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Очень довольны работой компании EarthDom. Дом построили в срок, качество на высшем уровне. Все этапы строительства контролировали лично, всегда были на связи. Рекомендуем!"</p>
+                    <div class="review-date">Август 2023</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <h3>Игорь Петров</h3>
+                            <p>Отделка фасада</p>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Делал отделку фасада своего дома. Ребята работали профессионально, аккуратно, без грязи и мусора. Результат превзошел ожидания. Буду обращаться еще за террасой."</p>
+                    <div class="review-date">Июнь 2023</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <h3>Мария Ковалева</h3>
+                            <p>Благоустройство участка</p>
+                        </div>
+                        <div class="review-rating">★★★★☆</div>
+                    </div>
+                    <p class="review-text">"Прекрасная работа по благоустройству участка. Учли все наши пожелания, предложили интересные решения. Единственное - немного затянули сроки из-за погоды."</p>
+                    <div class="review-date">Май 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция CTA -->
+    <section class="work-cta">
+        <div class="container">
+            <h2>Хотите такую же работу?</h2>
+            <p>Оставьте заявку на бесплатную консультацию и расчет стоимости</p>
+            <a href="contacts.html" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <p>Строим каркасные дома по современным технологиям с 2010 года. Более 200 реализованных проектов.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>г. Москва, ул. Строителей, 15</li>
+                    <li>+7 (495) 123-45-67</li>
+                    <li>info@earthdom.ru</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="project.html">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="work.html" class="active">Наши работы</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+        </div>
+    </footer>
+<!-- Модальное окно работы -->
+<div id="workModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+            <button class="slide-arrow prev-arrow">‹</button>
+            <img id="modalWorkImage" src="" alt="Работа">
+            <button class="slide-arrow next-arrow">›</button>
+            <div class="image-counter" id="imageCounter"></div>
+        </div>
+    </div>
+</div>
+    <script src="js/work.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

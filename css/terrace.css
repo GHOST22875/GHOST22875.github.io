@@ -1,0 +1,477 @@
+/* Стили для страницы террасных покрытий */
+.terrace-hero {
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/1200x/9e/47/cb/9e47cb699e37288fa745f2868f40a0e8.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.terrace-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.terrace-hero-content p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.terrace-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+.terrace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.terrace-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.terrace-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.terrace-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.terrace-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.terrace-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.advantages-section-terrace {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.advantages-grid-terrace {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.advantage-card-terrace {
+    text-align: center;
+    padding: 40px 25px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.advantage-card-terrace:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.advantage-icon-terrace {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.advantage-card-terrace h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.advantage-card-terrace p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.materials-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.material-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.material-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.material-content {
+    padding: 20px;
+}
+
+.material-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.material-properties {
+    margin: 15px 0;
+}
+
+.property {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.property-name {
+    font-weight: 600;
+    color: #555;
+}
+
+.property-value {
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.material-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.material-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.material-cta {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.projects-section {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.project-info p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.terrace-cta {
+    padding: 80px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+.terrace-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.terrace-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.terrace-cta .btn {
+    background-color: white;
+    color: #4CAF50;
+    font-size: 1.1rem;
+    padding: 15px 40px;
+}
+
+.terrace-cta .btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Темная тема для террас */
+.dark-theme .terrace-section {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .section-title {
+    color: #ffffff;
+}
+
+.dark-theme .terrace-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .terrace-card h3 {
+    color: #ffffff;
+}
+
+.dark-theme .terrace-card p {
+    color: #b0b0b0;
+}
+
+.dark-theme .advantages-section-terrace {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .advantage-card-terrace {
+    background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+    border: 1px solid #444;
+}
+
+.dark-theme .advantage-card-terrace:hover {
+    background: linear-gradient(135deg, #3d3d3d 0%, #4d4d4d 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .advantage-card-terrace h3 {
+    color: #4CAF50;
+}
+
+.dark-theme .advantage-card-terrace p {
+    color: #b0b0b0;
+}
+
+.dark-theme .materials-section {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .material-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .material-content h3 {
+    color: #ffffff;
+}
+
+.dark-theme .property-name {
+    color: #b0b0b0;
+}
+
+.dark-theme .material-description {
+    color: #b0b0b0;
+}
+
+.dark-theme .projects-section {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .project-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .project-info h3 {
+    color: #ffffff;
+}
+
+.dark-theme .project-info p {
+    color: #b0b0b0;
+}
+
+.dark-theme .terrace-cta {
+    background-color: #2d2d2d;
+}
+
+.dark-theme .terrace-cta .btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.dark-theme .terrace-cta .btn:hover {
+    background-color: #45a049;
+}
+
+/* Адаптивность для террас */
+@media (max-width: 768px) {
+    .terrace-hero {
+        height: 50vh;
+        margin-top: 60px;
+    }
+    
+    .terrace-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .terrace-hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .terrace-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantages-grid-terrace {
+        grid-template-columns: 1fr;
+    }
+    
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .terrace-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .terrace-hero-content p {
+        font-size: 1rem;
+    }
+    
+    .terrace-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .terrace-cta p {
+        font-size: 1rem;
+    }
+    
+    .advantage-card-terrace {
+        padding: 30px 20px;
+    }
+    
+    .advantage-icon-terrace {
+        font-size: 3rem;
+    }
+    
+    .material-content {
+        padding: 15px;
+    }
+    
+    .project-info {
+        padding: 15px;
+    }
+}
+
+/* Добавить эти стили в конец файла terrace.css */
+
+/* Стили для галереи в темной теме */
+.dark-theme .gallery-section {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .section-subtitle {
+    color: #b0b0b0;
+}

@@ -1,0 +1,233 @@
+/* Стили для галереи проектов */
+.gallery-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.gallery-section .section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 250px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-item-img {
+    transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    transform: translateY(0);
+}
+
+.gallery-item-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.gallery-item-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Модальное окно галереи */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gallery-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.gallery-modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.gallery-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.gallery-modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.gallery-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-modal-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.gallery-modal-prev {
+    left: 20px;
+}
+
+.gallery-modal-next {
+    right: 20px;
+}
+
+.gallery-modal-info {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+
+.gallery-modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.gallery-modal-counter {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Темная тема для галереи */
+.dark-theme .gallery-section {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .section-subtitle {
+    color: #b0b0b0;
+}
+
+/* Адаптивность для галереи */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+    
+    .gallery-modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .gallery-modal-prev {
+        left: 10px;
+    }
+    
+    .gallery-modal-next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-modal-content {
+        max-width: 95%;
+    }
+    
+    .gallery-modal-close {
+        top: -50px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

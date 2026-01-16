@@ -1,0 +1,322 @@
+/* Стили для страницы услуг */
+.services-hero {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/1200x/52/b9/be/52b9bed2e46f3ab66b64d54590a2b1b4.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.services-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.services-hero-content p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.services-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.service-content p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.service-features {
+    margin-bottom: 25px;
+}
+
+.service-features li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+}
+
+.service-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.service-cta {
+    margin-top: auto;
+}
+
+.process-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0;
+    counter-reset: step-counter;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    position: relative;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.step-number:before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.step-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.services-cta {
+    padding: 80px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+.services-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-cta .btn {
+    background-color: white;
+    color: #4CAF50;
+    font-size: 1.1rem;
+    padding: 15px 40px;
+}
+
+.services-cta .btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Темная тема для страницы услуг */
+.dark-theme .services-section {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .service-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .service-content h3 {
+    color: #ffffff;
+}
+
+.dark-theme .service-content p,
+.dark-theme .service-features li {
+    color: #b0b0b0;
+}
+
+.dark-theme .process-section {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .step-content h3 {
+    color: #ffffff;
+}
+
+.dark-theme .step-content p {
+    color: #b0b0b0;
+}
+
+/* Адаптивность для страницы услуг */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        height: 40vh;
+        margin-top: 60px;
+    }
+    
+    .services-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services-hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .service-image {
+        height: 200px;
+    }
+    
+    .services-cta h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .services-hero-content p {
+        font-size: 1rem;
+    }
+    
+    .service-content {
+        padding: 20px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .services-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .services-cta p {
+        font-size: 1rem;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}

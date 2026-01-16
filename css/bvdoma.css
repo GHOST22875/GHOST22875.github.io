@@ -1,0 +1,2262 @@
+/* Основной фон для всей страницы в темной теме */
+.dark-theme {
+    background-color: #0d1117;
+    color: #e6edf3;
+}
+
+.dark-theme body {
+    background-color: #0d1117;
+}
+
+/* Стили для модульных домов */
+.bv-hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://i.pinimg.com/1200x/e4/e2/3a/e4e23ad9bca135a2b337349d6d41f617.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bv-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+}
+
+.bv-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bv-hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ffffff, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ffd700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0 20px;
+}
+
+.hero-btn {
+    font-size: 1.1rem;
+    padding: 16px 40px;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.feature {
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.feature:hover::before {
+    left: 100%;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.assembly-section, .savings-section, .technology-section, 
+.warmth-section, .ready-houses, .production-section,
+.projects, .delivery-section, .guarantee-section,
+.advantages-section, .estimate-section, .faq-section, 
+.consultation-section {
+    padding: 100px 20px;
+    position: relative;
+}
+
+.assembly-section, .warmth-section, .projects,
+.guarantee-section, .consultation-section {
+    background-color: #f8fafc;
+}
+
+.savings-section, .technology-section, .ready-houses,
+.production-section, .estimate-section,
+.faq-section, .advantages-section {
+    background-color: #ffffff;
+}
+
+/* Центрирование и стилизация заголовков секций */
+.assembly-section h2,
+.savings-section h2,
+.technology-section h2,
+.warmth-section h2,
+.ready-houses h2,
+.production-section h2,
+.delivery-section h2,
+.guarantee-section h2,
+.advantages-section h2,
+.estimate-section h2,
+.faq-section h2,
+.consultation-section h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 800;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.assembly-section h2::after,
+.savings-section h2::after,
+.technology-section h2::after,
+.warmth-section h2::after,
+.ready-houses h2::after,
+.production-section h2::after,
+.delivery-section h2::after,
+.guarantee-section h2::after,
+.advantages-section h2::after,
+.estimate-section h2::after,
+.faq-section h2::after,
+.consultation-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #666;
+    line-height: 1.7;
+    padding: 0 20px;
+    font-weight: 400;
+}
+
+/* Секция сборки */
+.assembly-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.assembly-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #2c3e50;
+}
+
+.assembly-section .section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.assembly-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin: 50px 0;
+}
+
+.assembly-feature {
+    padding: 30px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #4CAF50;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.assembly-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+}
+
+.assembly-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.assembly-feature h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.assembly-feature p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Детали сборки - ИСПРАВЛЕНО СЛИВАНИЕ ТЕКСТА */
+.assembly-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.detail {
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+}
+
+.detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.detail h4 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #2c3e50;
+    font-weight: 700;
+    padding-left: 20px;
+    position: relative;
+}
+
+.detail h4::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.detail p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-top: 10px;
+}
+
+/* Секция экономии */
+.savings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.saving-item {
+    padding: 35px 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.saving-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    border-radius: 8px 8px 0 0;
+}
+
+.saving-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+}
+
+.saving-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.saving-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+.saving-amount {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 12px 30px;
+    border-radius: 50px;
+    margin-top: 10px;
+    border: 2px solid rgba(76, 175, 80, 0.2);
+    transition: all 0.3s ease;
+}
+
+.saving-item:hover .saving-amount {
+    background: rgba(76, 175, 80, 0.2);
+    border-color: #4CAF50;
+}
+
+/* Секция технологии */
+.technology-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.technology-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.3;
+}
+
+.technology-section h2 {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.technology-section h2::after {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+.section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.tech-specs {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.tech-specs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-specs li {
+    padding: 20px 0;
+    padding-left: 45px;
+    position: relative;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.tech-specs li:last-child {
+    border-bottom: none;
+}
+
+.tech-specs li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 215, 0, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.finishing-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    max-width: 1200px;
+    margin: 50px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.finishing-option h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: 700;
+}
+
+.finishing-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.finishing-type h4 {
+    margin-bottom: 15px;
+    color: #ffd700;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.finishing-type p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.advantages h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: 700;
+}
+
+.advantages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.advantages li {
+    padding: 15px 0;
+    padding-left: 35px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.advantages li:last-child {
+    border-bottom: none;
+}
+
+.advantages li:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-size: 1.3rem;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin-top: 20px;
+    display: block;
+}
+
+/* Секция тепла */
+.warmth-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.warmth-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.warmth-content h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.warmth-content h2::after {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+.warmth-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 20px;
+}
+
+.warmth-note {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255, 215, 0, 0.9);
+    padding: 20px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid #ffd700;
+    margin-top: 30px;
+}
+
+.warmth-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.warmth-feature {
+    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.warmth-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffd700, #ffed4e);
+}
+
+.warmth-feature:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.warmth-feature h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.warmth-feature p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Секция готовых домов */
+.houses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin: 60px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.house-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    position: relative;
+}
+
+.house-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.house-image {
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.house-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.house-card:hover .house-image img {
+    transform: scale(1.1);
+}
+
+.house-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.house-info {
+    padding: 30px;
+    position: relative;
+    background: white;
+}
+
+.house-info h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #4CAF50;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.area {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    display: block;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-outline:hover {
+    background: #4CAF50;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.price-note {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    color: #888;
+    font-size: 0.95rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Секция производства */
+.production-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+
+.production-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.production-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.6s ease;
+}
+
+.production-image:hover img {
+    transform: scale(1.05);
+}
+
+.production-features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.production-feature h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #4CAF50;
+    font-weight: 800;
+}
+
+.production-feature p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.precision {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    border: 2px dashed #4CAF50;
+}
+
+.precision-value {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #4CAF50;
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.precision p {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.production-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.production-details .detail {
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.production-details .detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #4CAF50;
+}
+
+.production-details .detail h4 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: #2c3e50;
+    font-weight: 700;
+    padding-left: 35px;
+    position: relative;
+}
+
+.production-details .detail h4::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.production-details .detail p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Стили для секции проектов */
+.projects {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e9ecef 100%);
+    transition: background-color 0.3s ease;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2c3e50;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    border-radius: 2px;
+}
+
+.terrace-section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2c3e50;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 35px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card-link:hover {
+    transform: translateY(-10px);
+}
+
+.project-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    height: 380px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: white;
+}
+
+.project-img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, transparent);
+    color: white;
+    padding: 30px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.project-card:hover .project-info {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 60%, transparent);
+}
+
+.project-info h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.project-info p {
+    margin-bottom: 10px;
+    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Секция доставки - ИСПРАВЛЕНЫ ФОНЫ */
+.delivery-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.delivery-section h2 {
+    color: #2c3e50;
+}
+
+.delivery-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto 50px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.delivery-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.delivery-feature {
+    padding: 35px 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+    position: relative;
+    overflow: hidden;
+}
+
+.delivery-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #2196F3, #1976D2);
+}
+
+.delivery-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(33, 150, 243, 0.15);
+    border-color: #2196F3;
+}
+
+.delivery-feature h4 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.delivery-feature p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Секция гарантии */
+.payment-stages {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.payment-stage {
+    text-align: center;
+    min-width: 140px;
+    position: relative;
+}
+
+.payment-stage::after {
+    content: '→';
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4CAF50;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.payment-stage:last-child::after {
+    display: none;
+}
+
+.stage-percent {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #4CAF50;
+    display: block;
+    text-shadow: 2px 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.payment-stage p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.guarantee-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+}
+
+.guarantee-item {
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.guarantee-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    border-color: #4CAF50;
+}
+
+.guarantee-item::before {
+    content: '✓';
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #4CAF50;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.3;
+}
+
+.guarantee-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.guarantee-item p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Секция преимуществ */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.advantage-card {
+    text-align: center;
+    padding: 40px 30px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    border-radius: 20px 20px 0 0;
+}
+
+.advantage-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.advantage-icon {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+    transform: scale(1.2);
+}
+
+.advantage-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 800;
+}
+
+.advantage-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Секция сметы */
+.estimate-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 50px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.estimate-feature {
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    text-align: center;
+    border-left: 4px solid #4CAF50;
+    transition: all 0.3s ease;
+}
+
+.estimate-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.estimate-feature h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.estimate-feature p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.estimate-example {
+    max-width: 800px;
+    margin: 60px auto 0;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+}
+
+.estimate-example h3 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.estimate-items {
+    margin-bottom: 30px;
+}
+
+.estimate-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.estimate-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: #555;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.item-price {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 150px;
+    text-align: right;
+}
+
+.estimate-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-top: 2px solid #4CAF50;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+.total-name {
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.total-price {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.estimate-note {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 25px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Секция FAQ */
+.faq-content {
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.faq-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.faq-item {
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-item::before {
+    content: '?';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #4CAF50;
+    font-size: 4rem;
+    font-weight: 900;
+    opacity: 0.1;
+    line-height: 1;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #4CAF50;
+}
+
+.faq-item h3 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-right: 60px;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Секция консультации - ИСПРАВЛЕН МАРКИРОВАННЫЙ СПИСОК */
+.consultation-section {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.consultation-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+}
+
+.consultation-section h2 {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-section h2::after {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+.consultation-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-process {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-process h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.consultation-process ol {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: consultation-counter;
+}
+
+.consultation-process li {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    padding-left: 50px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: left;
+}
+
+.consultation-process li::before {
+    counter-increment: consultation-counter;
+    content: counter(consultation-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: #ffd700;
+    color: #1a237e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.consultation-process li:last-child {
+    margin-bottom: 0;
+}
+
+/* Убираем вложенный список и делаем одной строкой */
+.consultation-process li:last-child::after {
+    content: " смету и PDF-инструкцию «7 способов сэкономить до 1 млн. Р при строительстве дома»";
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.center-btn .btn {
+    font-size: 1.1rem;
+    padding: 18px 50px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #1a237e;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.center-btn .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #ffed4e, #ffd700);
+}
+
+.btn {
+    font-size: 1rem;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+}
+
+/* ТЕМНАЯ ТЕМА - ИСПРАВЛЕНА КОНТРАСТНОСТЬ И ЧЕРНЫЕ КВАДРАТЫ */
+
+/* Основные фоны темной темы */
+.dark-theme .bv-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
+                url('https://i.pinimg.com/1200x/e4/e2/3a/e4e23ad9bca135a2b337349d6d41f617.jpg');
+}
+
+.dark-theme .bv-hero-content h1 {
+    background: linear-gradient(90deg, #ffd700, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark-theme .hero-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Фоны секций в темной теме - исправленная контрастность */
+.dark-theme .assembly-section,
+.dark-theme .warmth-section,
+.dark-theme .guarantee-section,
+.dark-theme .consultation-section {
+    background-color: #161b22;
+}
+
+.dark-theme .projects {
+    background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+}
+
+.dark-theme .savings-section,
+.dark-theme .technology-section,
+.dark-theme .ready-houses,
+.dark-theme .production-section,
+.dark-theme .estimate-section,
+.dark-theme .faq-section,
+.dark-theme .advantages-section {
+    background-color: #1a1f29;
+}
+
+/* Секция доставки в темной теме - ИСПРАВЛЕНЫ ФОНЫ */
+.dark-theme .delivery-section {
+    background: linear-gradient(135deg, #21262d 0%, #1a1f29 100%);
+    border-top: 1px solid #30363d;
+    border-bottom: 1px solid #30363d;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Заголовки и текст в темной теме */
+.dark-theme .assembly-section h2,
+.dark-theme .savings-section h2,
+.dark-theme .technology-section h2,
+.dark-theme .warmth-section h2,
+.dark-theme .ready-houses h2,
+.dark-theme .production-section h2,
+.dark-theme .projects h2,
+.dark-theme .delivery-section h2,
+.dark-theme .guarantee-section h2,
+.dark-theme .advantages-section h2,
+.dark-theme .estimate-section h2,
+.dark-theme .faq-section h2,
+.dark-theme .consultation-section h2 {
+    color: #f0f6fc;
+}
+
+.dark-theme .section-subtitle {
+    color: #8b949e;
+}
+
+.dark-theme .hero-description,
+.dark-theme .feature p,
+.dark-theme .assembly-feature p,
+.dark-theme .saving-item p,
+.dark-theme .warmth-content p,
+.dark-theme .warmth-feature p,
+.dark-theme .delivery-section p,
+.dark-theme .delivery-feature p,
+.dark-theme .guarantee-item p,
+.dark-theme .estimate-feature p,
+.dark-theme .faq-item p,
+.dark-theme .consultation-process p {
+    color: #c9d1d9;
+}
+
+/* Карточки и блоки в темной теме */
+.dark-theme .feature {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-theme .feature:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.dark-theme .feature p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.dark-theme .feature h3 {
+    color: #ffd700;
+}
+
+/* Детали сборки в темной теме - ИСПРАВЛЕНО СЛИВАНИЕ */
+.dark-theme .assembly-details {
+    background: linear-gradient(135deg, #21262d 0%, #242c38 100%);
+    border: 1px solid #30363d;
+}
+
+.dark-theme .detail {
+    background-color: #2a313c;
+    border: 1px solid #3c444d;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .detail:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .detail h4 {
+    color: #f0f6fc;
+}
+
+.dark-theme .detail p {
+    color: #c9d1d9;
+}
+
+.dark-theme .detail h4::before {
+    color: #7ee787;
+}
+
+.dark-theme .detail::before {
+    background: linear-gradient(to bottom, #7ee787, #4CAF50);
+}
+
+.dark-theme .assembly-feature,
+.dark-theme .saving-item,
+.dark-theme .warmth-feature,
+.dark-theme .estimate-feature,
+.dark-theme .advantage-card,
+.dark-theme .guarantee-item,
+.dark-theme .faq-item {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+}
+
+.dark-theme .assembly-feature {
+    background: linear-gradient(135deg, #21262d 0%, #242c38 100%);
+}
+
+.dark-theme .saving-item {
+    background: linear-gradient(135deg, #21262d 0%, #262e3a 100%);
+}
+
+.dark-theme .advantage-card {
+    background: linear-gradient(135deg, #21262d 0%, #242c38 100%);
+}
+
+.dark-theme .estimate-feature {
+    background: linear-gradient(135deg, #21262d 0%, #242c38 100%);
+}
+
+.dark-theme .warmth-feature {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme .warmth-feature:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.dark-theme .warmth-feature p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.dark-theme .warmth-feature h4 {
+    color: #ffd700;
+}
+
+/* Карточки доставки в темной теме */
+.dark-theme .delivery-feature {
+    background: linear-gradient(135deg, #21262d 0%, #242c38 100%);
+    border: 1px solid #30363d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .delivery-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(33, 150, 243, 0.15);
+    border-color: #2196F3;
+}
+
+.dark-theme .delivery-feature h4 {
+    color: #f0f6fc;
+}
+
+.dark-theme .delivery-feature p {
+    color: #8b949e;
+}
+
+.dark-theme .guarantee-item h4,
+.dark-theme .advantage-card h3,
+.dark-theme .estimate-feature h4,
+.dark-theme .faq-item h3,
+.dark-theme .assembly-feature h3,
+.dark-theme .saving-item h3 {
+    color: #f0f6fc;
+}
+
+.dark-theme .guarantee-item p,
+.dark-theme .advantage-card p,
+.dark-theme .estimate-feature p,
+.dark-theme .faq-item p,
+.dark-theme .assembly-feature p,
+.dark-theme .saving-item p {
+    color: #8b949e;
+}
+
+/* Карточки домов в темной теме - ИСПРАВЛЕНО */
+.dark-theme .house-card {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .house-info {
+    background-color: #21262d;
+}
+
+.dark-theme .house-info h3 {
+    color: #f0f6fc;
+}
+
+.dark-theme .area {
+    color: #8b949e;
+}
+
+.dark-theme .price {
+    color: #7ee787;
+}
+
+/* СЕКЦИЯ ПРОЕКТОВ - ИСПРАВЛЕНЫ ЧЕРНЫЕ КВАДРАТЫ */
+.dark-theme .project-card {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .project-info {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 50%, transparent);
+}
+
+.dark-theme .project-card:hover .project-info {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 70%, transparent);
+}
+
+.dark-theme .project-info h3 {
+    color: #ffffff;
+}
+
+.dark-theme .project-info p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Секция сметы в темной теме */
+.dark-theme .estimate-example {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .estimate-example h3 {
+    color: #f0f6fc;
+}
+
+.dark-theme .estimate-item {
+    border-bottom-color: #30363d;
+}
+
+.dark-theme .item-name {
+    color: #c9d1d9;
+}
+
+.dark-theme .item-price {
+    color: #7ee787;
+}
+
+.dark-theme .estimate-total {
+    border-top-color: #7ee787;
+}
+
+.dark-theme .total-name {
+    color: #f0f6fc;
+}
+
+.dark-theme .total-price {
+    color: #7ee787;
+}
+
+.dark-theme .estimate-note {
+    color: #8b949e;
+}
+
+/* Секция технологии в темной теме */
+.dark-theme .technology-section {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+}
+
+.dark-theme .finishing-options {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-theme .finishing-type p,
+.dark-theme .advantages li {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.dark-theme .advantages li {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопки в темной теме */
+.dark-theme .btn-outline {
+    border-color: #7ee787;
+    color: #7ee787;
+}
+
+.dark-theme .btn-outline:hover {
+    background-color: #7ee787;
+    color: #0d1117;
+}
+
+.dark-theme .tech-specs li:before {
+    color: #7ee787;
+}
+
+.dark-theme .advantages li:before {
+    color: #7ee787;
+}
+
+.dark-theme .price,
+.dark-theme .saving-amount,
+.dark-theme .precision-value,
+.dark-theme .stage-percent {
+    color: #7ee787;
+}
+
+.dark-theme .hero-subtitle {
+    color: #FFD700;
+}
+
+/* Производственные детали */
+.dark-theme .production-details .detail {
+    background-color: #21262d;
+    border-color: #30363d;
+}
+
+.dark-theme .production-details .detail h4 {
+    color: #f0f6fc;
+}
+
+.dark-theme .production-details .detail p {
+    color: #8b949e;
+}
+
+/* Адаптивность для модульных домов */
+@media (max-width: 1200px) {
+    .hero-features,
+    .assembly-features,
+    .savings-grid,
+    .houses-grid,
+    .projects-grid,
+    .delivery-features,
+    .estimate-features,
+    .advantages-grid,
+    .production-content,
+    .finishing-options,
+    .guarantee-details,
+    .production-details {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .bv-hero-content h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    }
+    
+    .payment-stages {
+        gap: 30px;
+    }
+    
+    .payment-stage::after {
+        right: -25px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .bv-hero {
+        min-height: 80vh;
+        padding: 40px 20px;
+    }
+    
+    .assembly-section, .savings-section, .technology-section, 
+    .warmth-section, .ready-houses, .production-section,
+    .projects, .delivery-section, .guarantee-section,
+    .advantages-section, .estimate-section, .faq-section, 
+    .consultation-section {
+        padding: 80px 20px;
+    }
+    
+    .hero-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .finishing-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .production-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .production-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature {
+        padding: 20px;
+    }
+    
+    .feature h3 {
+        font-size: 1.4rem;
+    }
+    
+    .assembly-details .detail h4,
+    .assembly-details .detail p {
+        text-align: center;
+    }
+    
+    .payment-stages {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .payment-stage::after {
+        display: none;
+    }
+    
+    .payment-stage {
+        min-width: 200px;
+    }
+    
+    .stage-percent {
+        font-size: 2.5rem;
+    }
+    
+    .houses-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .house-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .project-card {
+        height: 320px;
+    }
+    
+    .bv-hero {
+        min-height: 70vh;
+        margin-top: 0;
+    }
+    
+    .bv-hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-btn,
+    .center-btn .btn,
+    .btn {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.05rem;
+        padding: 0 15px;
+    }
+    
+    .assembly-section h2,
+    .savings-section h2,
+    .technology-section h2,
+    .warmth-section h2,
+    .ready-houses h2,
+    .production-section h2,
+    .projects h2,
+    .delivery-section h2,
+    .guarantee-section h2,
+    .advantages-section h2,
+    .estimate-section h2,
+    .faq-section h2,
+    .consultation-section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .feature {
+        padding: 18px;
+    }
+    
+    .feature h3 {
+        font-size: 1.3rem;
+    }
+    
+    .feature p {
+        font-size: 0.9rem;
+    }
+    
+    .bv-hero {
+        padding: 30px 15px;
+        min-height: 60vh;
+    }
+    
+    .assembly-section, .savings-section, .technology-section, 
+    .warmth-section, .ready-houses, .production-section,
+    .projects, .delivery-section, .guarantee-section,
+    .advantages-section, .estimate-section, .faq-section, 
+    .consultation-section {
+        padding: 60px 15px;
+    }
+    
+    .assembly-feature,
+    .saving-item,
+    .warmth-feature,
+    .delivery-feature,
+    .estimate-feature,
+    .advantage-card,
+    .guarantee-item,
+    .faq-item,
+    .detail {
+        padding: 20px;
+    }
+    
+    .house-info {
+        padding: 20px;
+    }
+    
+    .house-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .price {
+        font-size: 1.5rem;
+    }
+    
+    .project-card {
+        height: 280px;
+    }
+    
+    .project-info {
+        padding: 20px;
+    }
+    
+    .project-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .project-info p {
+        font-size: 0.9rem;
+    }
+    
+    .estimate-example {
+        padding: 25px;
+    }
+    
+    .item-name {
+        font-size: 1rem;
+    }
+    
+    .item-price {
+        font-size: 1.1rem;
+        min-width: 120px;
+    }
+    
+    .total-price {
+        font-size: 1.5rem;
+    }
+    
+    .consultation-process li {
+        font-size: 1rem;
+        padding-left: 40px;
+    }
+    
+    .consultation-process li::before {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature {
+        min-width: 100%;
+    }
+    
+    .bv-hero {
+        min-height: 55vh;
+    }
+    
+    .bv-hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-btn,
+    .center-btn .btn,
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}

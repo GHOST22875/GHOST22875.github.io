@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - EarthDom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- Навигационное мен. -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">EarthDom</a>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                  <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/project.html">Проекты</a></li>
+                 <li><a href="/terrace.html">Террасные покрытия</a></li>
+                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="/services.html">Услуги</a></li>
+                <li><a href="/work.html">Наши работы</a></li>
+                <li><a href="/company.html">О компании</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="projects-hero">
+        <div class="projects-hero-content">
+            <h1>Наши проекты</h1>
+            <p>Реализованные работы за 13 лет на рынке</p>
+        </div>
+    </section>  
+
+    <!-- Секция проектов -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Каталог проектов</h2>
+            
+            <!-- Фильтры проектов -->
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Все проекты</button>
+                <button class="filter-btn" data-filter="small">Малые дома</button>
+                <button class="filter-btn" data-filter="medium">Средние дома</button>
+                <button class="filter-btn" data-filter="large">Большие дома</button>
+                <button class="filter-btn" data-filter="completed">Завершенные</button>
+                <button class="filter-btn" data-filter="facade">Отделка фасадов</button>
+            </div>
+
+            <!-- Сетка проектов -->
+            <!-- Сетка проектов -->
+<div class="projects-grid">
+    <!-- Проект 1 -->
+    <div class="project-card" data-category="medium completed">
+        <div class="project-img" style="background-image: url('https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg');"></div>
+        <div class="project-info">
+            <h2>Дом "Северный"</h2>
+            <p>Площадь: 120 м²</p>
+            <p>Срок строительства: 3 месяца</p>
+            <div class="project-details">
+                <span class="project-price">от 1 800 000 ₽</span>
+                <button class="project-view-btn" data-project= "Дом 'Северный'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 2 -->
+    <div class="project-card" data-category="small completed">
+        <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/9f/8d/9f/9f8d9fabbacb8e6145caf82c13e89f47.jpg');"></div>
+        <div class="project-info">
+            <h2>Дом "Лесной"</h2>
+            <p>Площадь: 95 м²</p>
+            <p>Срок строительства: 2.5 месяца</p>
+            <div class="project-details">
+                <span class="project-price">от 1 425 000 ₽</span>
+                <button class="project-view-btn" data-project= "Дом 'Лесной'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 3 -->
+    <div class="project-card" data-category="large completed">
+        <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg');"></div>
+        <div class="project-info">
+            <h2>Дом "Солнечный"</h2>
+            <p>Площадь: 150 м²</p>
+            <p>Срок строительства: 4 месяца</p>
+            <div class="project-details">
+                <span class="project-price">от 2 250 000 ₽</span>
+                <button class="project-view-btn" data-project="Дом 'Солнечный'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 4 -->
+    <div class="project-card" data-category="small completed">
+        <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg');"></div>
+        <div class="project-info">
+            <h2>Дом "Уютный"</h2>
+            <p>Площадь: 80 м²</p>
+            <p>Срок строительства: 2 месяца</p>
+            <div class="project-details">
+                <span class="project-price">от 1 200 000 ₽</span>
+                <button class="project-view-btn" data-project="Дом 'Уютный'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 5 -->
+    <div class="project-card" data-category="large completed">
+        <div class="project-img" style="background-image: url('https://i.pinimg.com/736x/9b/70/39/9b7039f04b1fb1fe86f01627a8c8cb6d.jpg');"></div>
+        <div class="project-info">
+            <h2>Дом "Современный"</h2>
+            <p>Площадь: 180 м²</p>
+            <p>Срок строительства: 5 месяцев</p>
+            <div class="project-details">
+                <span class="project-price">от 2 700 000 ₽</span>
+                <button class="project-view-btn" data-project="Дом 'Современный'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 6 -->
+    <div class="project-card" data-category="medium completed">
+        <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/00/8f/20/008f20405aaea27836e9b66e6bdd5809.jpg');"></div>
+        <div class="project-info">
+            <h2>Дом "Классика"</h2>
+            <p>Площадь: 140 м²</p>
+            <p>Срок строительства: 3.5 месяца</p>
+            <div class="project-details">
+                <span class="project-price">от 2 100 000 ₽</span>
+                <button class="project-view-btn" data-project="Дом 'Классика'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 7 - Отделка фасада -->
+    <div class="project-card" data-category="facade completed">
+        <div class="project-img" style="background-image: url('./image/facade3/photo_2025-11-19_10-39-37.jpg');"></div>
+        <div class="project-info">
+            <h2>Фасад "Скандинавский"</h2>
+            <p>Площадь фасада: 85 м²</p>
+            <p>Срок выполнения: 3 недели</p>
+            <div class="project-details">
+                <span class="project-price">от 450 000 ₽</span>
+                <button class="project-view-btn" data-project="Фасад 'Скандинавский'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 8 - Отделка фасада -->
+    <div class="project-card" data-category="facade completed">
+        <div class="project-img" style="background-image: url('./image/facade1/5256075123540822993.jpg');"></div>
+        <div class="project-info">
+            <h2>Фасад "Классический"</h2>
+            <p>Площадь фасада: 120 м²</p>
+            <p>Срок выполнения: 4 недели</p>
+            <div class="project-details">
+                <span class="project-price">от 680 000 ₽</span>
+                <button class="project-view-btn" data-project="Фасад 'Классический'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Проект 9 - Отделка фасада -->
+    <div class="project-card" data-category="facade completed">
+        <div class="project-img" style="background-image: url('./image/facade2/5256075123540823007.jpg');"></div>
+        <div class="project-info">
+            <h2>Фасад "Современный"</h2>
+            <p>Площадь фасада: 95 м²</p>
+            <p>Срок выполнения: 2.5 недели</p>
+            <div class="project-details">
+                <span class="project-price">от 520 000 ₽</span>
+                <button class="project-view-btn" data-project="Фасад 'Современный'">Смотреть фото</button>
+            </div>
+        </div>
+    </div>
+</div>
+         
+    </section>
+
+    <!-- Секция CTA -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Заинтересовал один из проектов?</h2>
+            <p>Оставьте заявку, и мы свяжемся с вами для бесплатной консультации</p>
+            <a href="contacts.html" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <p>Строим каркасные дома по современным технологиям с 2010 года. Более 200 реализованных проектов.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>г. Москва, ул. Строителей, 15</li>
+                    <li>+7 (495) 123-45-67</li>
+                    <li>info@earthdom.ru</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="project.html" class="active">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
+                    <li><a href="material.html">Материалы</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+        </div>
+    </footer>
+
+ <!-- Модальное окно проекта -->
+<!-- Модальное окно проекта -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+            <div class="modal-image">
+                <img id="modalProjectImage" src="" alt="Проект дома">
+                <!-- Контейнер для миниатюр -->
+                <div class="thumbnails-container" id="modalProjectThumbnails"></div>
+            </div>
+            <div class="modal-info">
+                <h2 id="modalProjectTitle"></h2>
+                <div class="modal-details">
+                    <p><strong>Площадь:</strong> <span id="modalProjectArea"></span></p>
+                    <p><strong>Срок строительства:</strong> <span id="modalProjectTime"></span></p>
+                    <p><strong>Цена:</strong> <span id="modalProjectPrice"></span></p>
+                </div>
+                <div class="modal-description">
+                    <h3>Описание проекта</h3>
+                    <p id="modalProjectDescription"></p>
+                </div>
+                <div class="modal-features">
+                    <h3>Особенности</h3>
+                    <ul id="modalProjectFeatures"></ul>
+                </div>
+                <a href="contacts.html" class="btn modal-btn">Связаться с нами</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="js/projects.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
