@@ -38,7 +38,7 @@ body.menu-open {
     height: 100%;
 }
 
-/* НАВИГАЦИЯ */
+/* НАВИГАЦИЯ - ДЕСКТОПНАЯ ВЕРСИЯ */
 nav {
     position: fixed;
     top: 0;
@@ -80,8 +80,6 @@ nav.scrolled {
     height: 100%;
     padding: 0;
     transition: color 0.3s ease;
-    z-index: 1002;
-    position: relative;
 }
 
 .logo:hover {
@@ -216,7 +214,6 @@ nav.scrolled .logo {
     cursor: pointer;
     padding: 0;
     z-index: 1002;
-    position: relative;
 }
 
 .mobile-menu-toggle span {
@@ -225,7 +222,6 @@ nav.scrolled .logo {
     background-color: #2c3e50;
     transition: all 0.3s ease;
     display: block;
-    border-radius: 2px;
 }
 
 /* Активное состояние бургер-меню */
@@ -347,7 +343,7 @@ body.dark-theme footer {
 }
 
 /* =========================================== */
-/* ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ БЕЗ СКРОЛЛА */
+/* МОБИЛЬНАЯ ВЕРСИЯ МЕНЮ */
 /* =========================================== */
 @media (max-width: 768px) {
     body {
@@ -368,109 +364,56 @@ body.dark-theme footer {
     .logo {
         font-size: 24px;
         z-index: 1002;
-        position: relative;
     }
     
     .mobile-menu-toggle {
         display: flex;
         margin-left: auto;
-        z-index: 1003;
     }
     
-    /* Скрываем обычное меню на мобильных */
+    /* ПОЛНОЭКРАННОЕ МЕНЮ БЕЗ СКРОЛЛА */
     .nav-links {
         position: fixed;
         top: 0;
-        left: -100%;
-        width: 100vw;
+        right: -100%;
+        width: 100%;
         height: 100vh;
         background-color: #ffffff;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding: 0;
-        margin: 0;
-        transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding-top: 80px;
+        transition: right 0.3s ease;
         z-index: 1001;
         overflow: hidden; /* Убираем скролл */
     }
     
     .nav-links.active {
-        left: 0;
-    }
-    
-    /* Логотип в центре сверху меню */
-    .nav-links::before {
-        content: 'EarthDom';
-        font-size: 28px;
-        font-weight: bold;
-        color: #2c3e50;
-        width: 100%;
-        text-align: center;
-        padding: 30px 0 20px;
-        margin-bottom: 20px;
-        border-bottom: 2px solid rgba(44, 62, 80, 0.1);
-        background-color: #ffffff;
-    }
-    
-    body.dark-theme .nav-links::before {
-        color: #ffffff;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-        background-color: #121212;
+        right: 0;
     }
     
     .nav-links li {
-        margin: 0 !important;
+        margin: 12px 0 !important;
         width: 100%;
         height: auto;
         justify-content: center;
         text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.4s ease, transform 0.4s ease;
-        display: flex;
-        align-items: center;
     }
     
-    .nav-links.active li {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Задержка для анимации элементов */
-    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
-    .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
-    .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
-    .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
-    .nav-links.active li:nth-child(6) { transition-delay: 0.35s; }
-    .nav-links.active li:nth-child(7) { transition-delay: 0.4s; }
-    .nav-links.active li:nth-child(8) { transition-delay: 0.45s; }
-    
-    /* Специальные стили для переключателя темы */
-    .nav-links li:last-child {
-        margin-top: 20px !important;
-        padding-top: 20px;
-        border-top: 2px solid rgba(44, 62, 80, 0.1);
-        width: 100%;
-        justify-content: center;
-    }
-    
-    body.dark-theme .nav-links li:last-child {
-        border-top: 2px solid rgba(255, 255, 255, 0.1);
+    .nav-links li:first-child {
+        margin-left: 0 !important;
     }
     
     .nav-links a {
-        font-size: 1.3rem;
-        padding: 20px 0;
+        font-size: 1.2rem;
+        padding: 15px 0;
         display: block;
         width: 100%;
         height: auto;
         color: #2c3e50;
         font-weight: 600;
         text-align: center;
-        transition: all 0.3s ease;
-        border-bottom: 1px solid rgba(44, 62, 80, 0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
     
     .nav-links a:hover {
@@ -479,33 +422,30 @@ body.dark-theme footer {
     }
     
     .nav-links a:after {
-        display: none;
-    }
-    
-    /* Контейнер для меню с фиксированной высотой */
-    .menu-content {
-        width: 100%;
-        height: calc(100vh - 80px);
-        overflow-y: auto;
-        padding-top: 80px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: none; /* Убираем подчеркивание для мобильной версии */
     }
     
     /* Кнопка переключения темы в мобильном меню */
     .nav-links .theme-toggle {
-        margin: 0 auto !important;
-        width: 60px;
-        height: 60px;
-        font-size: 28px;
-        border-width: 3px;
+        margin: 20px auto !important;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: transparent;
-        border-color: #2c3e50;
-        color: #2c3e50;
+    }
+    
+    /* Затемнение фона при открытом меню */
+    .nav-links::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ffffff;
+        z-index: -1;
     }
     
     /* Мобильное меню в темной теме */
@@ -533,35 +473,6 @@ body.dark-theme footer {
         color: #ffffff;
     }
     
-    /* Убираем скроллбар внутри меню */
-    .nav-links::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .nav-links {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    
-    /* Затемнение фона при открытом меню */
-    .menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -572,7 +483,6 @@ body.dark-theme footer {
     }
 }
 
-/* Мобильные телефоны */
 @media (max-width: 480px) {
     body {
         padding-top: 55px;
@@ -580,7 +490,6 @@ body.dark-theme footer {
     
     nav {
         height: 55px;
-        padding: 0 12px;
     }
     
     .logo {
@@ -592,20 +501,13 @@ body.dark-theme footer {
         height: 20px;
     }
     
-    .nav-links::before {
-        font-size: 24px;
-        padding: 25px 0 15px;
+    .nav-links {
+        padding-top: 70px;
     }
     
     .nav-links a {
-        font-size: 1.2rem;
-        padding: 18px 0;
-    }
-    
-    .nav-links .theme-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
+        font-size: 1.1rem;
+        padding: 12px 0;
     }
     
     .footer-content {
@@ -617,16 +519,9 @@ body.dark-theme footer {
     }
 }
 
-/* Очень маленькие экраны */
 @media (max-width: 320px) {
-    .nav-links::before {
-        font-size: 22px;
-        padding: 20px 0 15px;
-    }
-    
     .nav-links a {
-        font-size: 1.1rem;
-        padding: 16px 0;
+        font-size: 1rem;
     }
     
     .logo {
@@ -636,12 +531,6 @@ body.dark-theme footer {
     .mobile-menu-toggle {
         width: 22px;
         height: 18px;
-    }
-    
-    .nav-links .theme-toggle {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
     }
 }
 
