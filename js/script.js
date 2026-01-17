@@ -1,12 +1,144 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     // Навигационное меню
     const navbar = document.getElementById('navbar');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    const logo = document.querySelector('.logo');
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.querySelector('.theme-icon');
     
-    if (navbar) {
+    // ===========================================
+    // ФУНКЦИЯ ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ МЕНЮ
+    // ===========================================
+    function toggleMobileMenu() {
+        if (!navLinks || !mobileMenuToggle) return;
+        
+        const isOpening = !navLinks.classList.contains('active');
+        
+        if (isOpening) {
+            // Открываем меню
+            navLinks.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            body.classList.add('menu-open');
+            
+            // Анимация бургер-иконки
+            const spans = mobileMenuToggle.querySelectorAll('span');
+            spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            
+            // Меняем цвет иконок при открытом меню
+            if (body.classList.contains('dark-theme')) {
+                spans.forEach(span => span.style.backgroundColor = '#ffffff');
+            } else {
+                spans.forEach(span => span.style.backgroundColor = '#2c3e50');
+            }
+            
+            // Анимация появления элементов меню с задержкой
+            const menuItems = navLinks.querySelectorAll('li');
+            menuItems.forEach((item, index) => {
+                item.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            });
+            
+            // Блокируем скролл на основном контенте
+            document.documentElement.style.overflow = 'hidden';
+            
+        } else {
+            // Закрываем меню с анимацией
+            const menuItems = navLinks.querySelectorAll('li');
+            menuItems.forEach((item) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transitionDelay = '0s';
+            });
+            
+            // Небольшая задержка перед скрытием меню
+            setTimeout(() => {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+                
+                // Возвращаем иконку в исходное состояние
+                const spans = mobileMenuToggle.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+                
+                // Возвращаем цвет иконок
+                if (body.classList.contains('dark-theme')) {
+                    spans.forEach(span => span.style.backgroundColor = '#ffffff');
+                } else {
+                    spans.forEach(span => span.style.backgroundColor = '#2c3e50');
+                }
+                
+                // Возвращаем скролл
+                document.documentElement.style.overflow = '';
+                
+                // Возвращаем нормальное состояние элементов
+                setTimeout(() => {
+                    menuItems.forEach((item) => {
+                        item.style.opacity = '';
+                        item.style.transform = '';
+                    });
+                }, 300);
+            }, 300);
+        }
+    }
+    
+    // ===========================================
+    // ФУНКЦИЯ ДЛЯ ЗАКРЫТИЯ МЕНЮ
+    // ===========================================
+    function closeMobileMenu() {
+        if (!navLinks || !navLinks.classList.contains('active')) return;
+        
+        toggleMobileMenu();
+    }
+    
+    // ===========================================
+    // ИНИЦИАЛИЗАЦИЯ ТЕМЫ
+    // ===========================================
+    function initTheme() {
+        // Проверяем сохраненную тему в localStorage
+        const currentTheme = localStorage.getItem('theme');
+        
+        // Проверяем предпочтения системы
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Устанавливаем тему
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            body.classList.add('dark-theme');
+            if (themeIcon) themeIcon.textContent = '🌕';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-theme');
+            if (themeIcon) themeIcon.textContent = '🌑';
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    
+    // ===========================================
+    // ПЕРЕКЛЮЧЕНИЕ ТЕМЫ
+    // ===========================================
+    function toggleTheme() {
+        body.classList.toggle('dark-theme');
+        
+        if (body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+            if (themeIcon) themeIcon.textContent = '🌕';
+        } else {
+            localStorage.setItem('theme', 'light');
+            if (themeIcon) themeIcon.textContent = '🌑';
+        }
+    }
+    
+    // ===========================================
+    // СКРОЛЛ НАВИГАЦИИ
+    // ===========================================
+    function initNavbarScroll() {
+        if (!navbar) return;
+        
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
             
@@ -18,10 +150,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Слайдер - только для главной страницы
-    const slides = document.querySelectorAll('.slide');
-    if (slides.length > 0) {
+    // ===========================================
+    // СЛАЙДЕР НА ГЛАВНОЙ
+    // ===========================================
+    function initSlider() {
+        const slides = document.querySelectorAll('.slide');
+        if (slides.length === 0) return;
+        
         let currentSlide = 0;
+        let slideInterval;
 
         function showSlide(n) {
             slides.forEach(slide => {
@@ -36,142 +173,133 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Автоматическое переключение слайдов
-        let slideInterval = setInterval(nextSlide, 5000);
-
-        // Инициализация первого слайда
-        showSlide(0);
-    }
-
-    // Переключение темы - ДОЛЖНО РАБОТАТЬ НА ВСЕХ СТРАНИЦАХ
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const themeIcon = document.querySelector('.theme-icon');
-    
-    function initTheme() {
-        // Проверяем сохраненную тему
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-theme');
-            if (themeIcon) themeIcon.textContent = '🌕';
-        } else {
-            if (themeIcon) themeIcon.textContent = '🌑';
+        function startSlider() {
+            if (slideInterval) clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
         }
+
+        // Останавливаем слайдер при наведении
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', () => {
+                if (slideInterval) clearInterval(slideInterval);
+            });
+            
+            heroSection.addEventListener('mouseleave', startSlider);
+        }
+
+        // Инициализация первого слайда и запуск слайдера
+        showSlide(0);
+        startSlider();
+        
+        // Возвращаем функцию для остановки при необходимости
+        return () => {
+            if (slideInterval) clearInterval(slideInterval);
+        };
     }
     
-    // Инициализируем тему сразу
+    // ===========================================
+    // АКТИВНАЯ СТРАНИЦА В НАВИГАЦИИ
+    // ===========================================
+    function setActiveNavLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinksAll = document.querySelectorAll('.nav-links a');
+        
+        navLinksAll.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            const linkPage = linkHref.startsWith('/') ? linkHref.substring(1) : linkHref;
+            
+            // Сравниваем текущую страницу с ссылкой
+            if (linkPage === currentPage || 
+                (currentPage === '' && linkPage === 'index.html') ||
+                (linkPage === '' && currentPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // ===========================================
+    // ИНИЦИАЛИЗАЦИЯ ВСЕХ ФУНКЦИЙ
+    // ===========================================
+    
+    // Инициализация темы
     initTheme();
     
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');
-            
-            if (body.classList.contains('dark-theme')) {
-                localStorage.setItem('theme', 'dark');
-                if (themeIcon) themeIcon.textContent = '🌕';
-            } else {
-                localStorage.setItem('theme', 'light');
-                if (themeIcon) themeIcon.textContent = '🌑';
-            }
-        });
-    }
+    // Инициализация навигации
+    initNavbarScroll();
     
-    // Мобильное меню
-    if (mobileMenuToggle && navLinks) {
+    // Инициализация слайдера (только на главной)
+    const stopSlider = initSlider();
+    
+    // Установка активной ссылки в навигации
+    setActiveNavLink();
+    
+    // ===========================================
+    // ОБРАБОТЧИКИ СОБЫТИЙ
+    // ===========================================
+    
+    // Переключение мобильного меню
+    if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            navLinks.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-            
-            // Блокируем скролл тела при открытом меню
-            if (navLinks.classList.contains('active')) {
-                document.body.classList.add('menu-open');
-            } else {
-                document.body.classList.remove('menu-open');
-            }
-            
-            // Анимация иконки бургер-меню
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            if (mobileMenuToggle.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
+            toggleMobileMenu();
         });
     }
     
-    // Закрываем меню при клике на ссылку
+    // Переключение темы
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Закрытие меню при клике на ссылку
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                
-                if (mobileMenuToggle) {
-                    const spans = mobileMenuToggle.querySelectorAll('span');
-                    spans[0].style.transform = '';
-                    spans[1].style.opacity = '';
-                    spans[2].style.transform = '';
-                }
-            }
+            closeMobileMenu();
         });
     });
     
-    // Закрываем меню при клике вне его
+    // Закрытие меню при клике вне его
     document.addEventListener('click', (e) => {
-        if (navLinks && navLinks.classList.contains('active') && 
+        if (navLinks && 
+            navLinks.classList.contains('active') && 
             !navLinks.contains(e.target) && 
-            (!mobileMenuToggle || !mobileMenuToggle.contains(e.target))) {
-            navLinks.classList.remove('active');
-            if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            
-            if (mobileMenuToggle) {
-                const spans = mobileMenuToggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
+            (!mobileMenuToggle || !mobileMenuToggle.contains(e.target)) &&
+            (!document.querySelector('.logo') || !document.querySelector('.logo').contains(e.target))) {
+            closeMobileMenu();
         }
     });
     
-    // Закрываем меню при изменении ориентации или размера
+    // Закрытие меню при изменении размера окна
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            
-            if (mobileMenuToggle) {
-                const spans = mobileMenuToggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Закрытие меню при нажатии Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMobileMenu();
         }
     });
     
     // Логотип для мобильного меню
+    const logo = document.querySelector('.logo');
     if (logo) {
         logo.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768 && navLinks && mobileMenuToggle) {
+            // Если меню открыто на мобильном, закрываем его
+            if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('active')) {
                 e.preventDefault();
-                navLinks.classList.toggle('active');
-                mobileMenuToggle.classList.toggle('active');
-                
-                if (navLinks.classList.contains('active')) {
-                    document.body.classList.add('menu-open');
-                } else {
-                    document.body.classList.remove('menu-open');
-                }
+                closeMobileMenu();
             }
         });
     }
-
+    
+    // ===========================================
+    // ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ
+    // ===========================================
+    
     // Фильтрация проектов (для страницы проектов)
     const projectFilterButtons = document.querySelectorAll('.projects-filter .filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -189,19 +317,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 projectCards.forEach(card => {
                     if (filterValue === 'all') {
                         card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
                     } else {
                         const cardCategories = card.getAttribute('data-category').split(' ');
                         if (cardCategories.includes(filterValue)) {
                             card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
                         } else {
-                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
                         }
                     }
                 });
             });
         });
     }
-
+    
     // Фильтрация материалов (для страницы материалов)
     const materialFilterButtons = document.querySelectorAll('.materials-filter .filter-btn');
     const materialCards = document.querySelectorAll('.material-card');
@@ -219,12 +359,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 materialCards.forEach(card => {
                     if (filterValue === 'all') {
                         card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
                     } else {
                         const cardCategory = card.getAttribute('data-category');
                         if (cardCategory === filterValue) {
                             card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
                         } else {
-                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
                         }
                     }
                 });
@@ -232,22 +384,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Добавляем класс active для текущей страницы в навигации
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinksAll = document.querySelectorAll('.nav-links a');
-    
-    navLinksAll.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        // Убираем слеш в начале если есть
-        const linkPage = linkHref.startsWith('/') ? linkHref.substring(1) : linkHref;
-        
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-            link.classList.add('active');
-        }
+    // Очистка при разгрузке страницы
+    window.addEventListener('beforeunload', () => {
+        if (stopSlider) stopSlider();
     });
 });
 
-// Функционал для FAQ (работает на всех страницах)
+// ===========================================
+// ФУНКЦИЯ ДЛЯ FAQ (работает на всех страницах)
+// ===========================================
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -307,15 +452,12 @@ function initFAQ() {
 
 // Инициализируем FAQ при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
-    // ... существующий код ...
-    
-    // Добавляем инициализацию FAQ
     initFAQ();
 });
 
-// В конец файла script.js добавить:
-
-// Инициализация галереи если она есть на странице
+// ===========================================
+// ГАЛЕРЕЯ (если есть на странице)
+// ===========================================
 function initGalleryIfExists() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     if (galleryItems.length > 0) {
@@ -323,7 +465,6 @@ function initGalleryIfExists() {
         if (typeof initGallery === 'function') {
             initGallery();
         } else {
-            // Если отдельный файл gallery.js не подключен, загружаем данные
             console.log('Галерея найдена, но скрипт не подключен');
         }
     }
@@ -331,8 +472,5 @@ function initGalleryIfExists() {
 
 // Инициализируем галерею при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
-    // ... существующий код ...
-    
-    // Добавляем инициализацию галереи
     initGalleryIfExists();
 });
