@@ -10,6 +10,7 @@ body, html {
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
+    height: 100%;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     position: relative;
     width: 100%;
-    padding-top: 70px; /* Отступ для фиксированной навигации */
+    padding-top: 70px;
     background-color: #ffffff;
     color: #333333;
 }
@@ -26,6 +27,7 @@ body {
 html {
     overflow-x: hidden;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 /* Предотвращаем скролл тела при открытом меню */
@@ -36,7 +38,7 @@ body.menu-open {
     height: 100%;
 }
 
-/* НАВИГАЦИЯ - СВЕТЛАЯ В СВЕТЛОЙ ТЕМЕ */
+/* НАВИГАЦИЯ */
 nav {
     position: fixed;
     top: 0;
@@ -78,6 +80,8 @@ nav.scrolled {
     height: 100%;
     padding: 0;
     transition: color 0.3s ease;
+    z-index: 1002;
+    position: relative;
 }
 
 .logo:hover {
@@ -200,7 +204,7 @@ nav.scrolled .logo {
     transform: rotate(15deg);
 }
 
-/* Мобильное меню */
+/* Мобильное меню - бургер иконка */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -212,6 +216,7 @@ nav.scrolled .logo {
     cursor: pointer;
     padding: 0;
     z-index: 1002;
+    position: relative;
 }
 
 .mobile-menu-toggle span {
@@ -220,6 +225,7 @@ nav.scrolled .logo {
     background-color: #2c3e50;
     transition: all 0.3s ease;
     display: block;
+    border-radius: 2px;
 }
 
 /* Активное состояние бургер-меню */
@@ -340,10 +346,13 @@ body.dark-theme footer {
     background-color: #000000;
 }
 
-/* Адаптивность */
+/* ================================ */
+/* ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ */
+/* ================================ */
 @media (max-width: 768px) {
     body {
         padding-top: 60px;
+        overflow-x: hidden;
     }
     
     nav {
@@ -359,83 +368,152 @@ body.dark-theme footer {
     .logo {
         font-size: 24px;
         z-index: 1002;
+        position: relative;
     }
     
     .mobile-menu-toggle {
         display: flex;
         margin-left: auto;
+        z-index: 1003;
     }
     
+    /* Скрываем обычное меню на мобильных */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 300px;
+        left: -100%;
+        width: 100vw;
         height: 100vh;
         background-color: #ffffff;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 80px 20px 20px 20px;
-        transition: right 0.3s ease;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px 40px;
+        margin: 0;
+        transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: 1001;
+        overflow-y: auto;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     }
     
     .nav-links.active {
-        right: 0;
+        left: 0;
     }
     
     .nav-links li {
-        margin: 12px 0 !important;
+        margin: 15px 0 !important;
         width: 100%;
         height: auto;
-        justify-content: flex-start;
+        justify-content: center;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
     }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Задержка для анимации элементов */
+    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+    .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+    .nav-links.active li:nth-child(6) { transition-delay: 0.35s; }
+    .nav-links.active li:nth-child(7) { transition-delay: 0.4s; }
+    .nav-links.active li:nth-child(8) { transition-delay: 0.45s; }
     
     .nav-links li:first-child {
         margin-left: 0 !important;
+        margin-top: 20px !important;
+    }
+    
+    .nav-links li:last-child {
+        margin-bottom: 40px !important;
     }
     
     .nav-links a {
-        font-size: 1.1rem;
-        padding: 10px 0;
+        font-size: 1.4rem;
+        padding: 18px 0;
         display: block;
         width: 100%;
         height: auto;
         color: #2c3e50;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 5px 0;
+    }
+    
+    .nav-links a:hover {
+        background-color: rgba(76, 175, 80, 0.1);
+        color: #2c3e50;
+        transform: scale(1.05);
     }
     
     .nav-links a:after {
-        bottom: 5px;
-        left: 0;
-        right: 0;
-        background-color: #4CAF50;
+        display: none;
     }
     
-    .theme-toggle {
-        margin: 15px 0 !important;
-        margin-left: 0 !important;
-        border-color: #2c3e50;
-        color: #2c3e50;
+    /* Кнопка переключения темы в мобильном меню */
+    .nav-links .theme-toggle {
+        margin: 30px auto 20px !important;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        border-width: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     /* Мобильное меню в темной теме */
     body.dark-theme .nav-links {
-        background-color: #000000;
+        background-color: #121212;
     }
     
     body.dark-theme .nav-links a {
         color: rgba(255, 255, 255, 0.9);
     }
     
-    body.dark-theme .nav-links a:after {
-        background-color: #e74c3c;
+    body.dark-theme .nav-links a:hover {
+        background-color: rgba(231, 76, 60, 0.1);
+        color: #ffffff;
     }
     
     body.dark-theme .theme-toggle {
         border-color: rgba(255, 255, 255, 0.7);
         color: rgba(255, 255, 255, 0.9);
+    }
+    
+    body.dark-theme .theme-toggle:hover {
+        border-color: #e74c3c;
+        color: #ffffff;
+    }
+    
+    /* Фон за меню */
+    .nav-links::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        z-index: -1;
+    }
+    
+    /* Логотип при открытом меню */
+    body.menu-open .logo {
+        color: #2c3e50;
+    }
+    
+    body.dark-theme.menu-open .logo {
+        color: #ffffff;
     }
     
     .footer-content {
@@ -448,6 +526,7 @@ body.dark-theme footer {
     }
 }
 
+/* Мобильные телефоны */
 @media (max-width: 480px) {
     body {
         padding-top: 55px;
@@ -455,6 +534,7 @@ body.dark-theme footer {
     
     nav {
         height: 55px;
+        padding: 0 12px;
     }
     
     .logo {
@@ -466,9 +546,15 @@ body.dark-theme footer {
         height: 20px;
     }
     
-    .nav-links {
-        width: 85%;
-        padding: 70px 15px 15px 15px;
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 15px 0;
+    }
+    
+    .nav-links .theme-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
     
     .footer-content {
@@ -480,15 +566,15 @@ body.dark-theme footer {
     }
 }
 
+/* Очень маленькие экраны */
 @media (max-width: 320px) {
     .nav-links {
-        width: 90%;
-        max-width: 280px;
-        padding: 60px 15px 15px 15px;
+        padding: 70px 15px 30px;
     }
     
     .nav-links a {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 14px 0;
     }
     
     .logo {
@@ -498,6 +584,12 @@ body.dark-theme footer {
     .mobile-menu-toggle {
         width: 22px;
         height: 18px;
+    }
+    
+    .nav-links .theme-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
     }
 }
 
