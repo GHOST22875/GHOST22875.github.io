@@ -79,9 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Анимация бургер-иконки
             const spans = mobileMenuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
             spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            
+            // Меняем цвет иконок при открытом меню в темной теме
+            if (body.classList.contains('dark-theme')) {
+                spans.forEach(span => span.style.backgroundColor = '#ffffff');
+            }
         }
         
         // Функция для закрытия меню
@@ -99,6 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
             spans[0].style.transform = '';
             spans[1].style.opacity = '';
             spans[2].style.transform = '';
+            
+            // Возвращаем цвет иконок
+            if (body.classList.contains('dark-theme')) {
+                spans.forEach(span => span.style.backgroundColor = '#ffffff');
+            } else {
+                spans.forEach(span => span.style.backgroundColor = '#2c3e50');
+            }
         }
         
         // Переключение меню
@@ -118,8 +130,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Закрытие меню при клике на ссылку
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
+            link.addEventListener('click', (e) => {
+                // Не закрываем меню при клике на кнопку темы
+                if (!link.closest('.theme-toggle') && window.innerWidth <= 768) {
                     closeMenu();
                 }
             });
