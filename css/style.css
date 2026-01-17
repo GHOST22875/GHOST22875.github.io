@@ -382,31 +382,66 @@ body.dark-theme footer {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding-top: 80px;
+        padding-top: 0;
         transition: right 0.3s ease;
         z-index: 1001;
-        overflow: hidden; /* Убираем скролл */
+        overflow: hidden;
     }
     
     .nav-links.active {
         right: 0;
     }
     
+    /* Заголовок меню для мобильной версии */
+    .nav-links::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 80px;
+        background-color: #ffffff;
+        border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+        position: relative;
+    }
+    
+    body.dark-theme .nav-links::before {
+        background-color: #121212;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
     .nav-links li {
-        margin: 12px 0 !important;
+        margin: 0 !important;
         width: 100%;
         height: auto;
         justify-content: center;
         text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Задержка для анимации элементов */
+    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+    .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+    .nav-links.active li:nth-child(6) { transition-delay: 0.35s; }
+    .nav-links.active li:nth-child(7) { transition-delay: 0.4s; }
+    .nav-links.active li:nth-child(8) { transition-delay: 0.45s; }
     
     .nav-links li:first-child {
         margin-left: 0 !important;
+        margin-top: 20px !important;
     }
     
     .nav-links a {
         font-size: 1.2rem;
-        padding: 15px 0;
+        padding: 18px 0;
         display: block;
         width: 100%;
         height: auto;
@@ -414,6 +449,7 @@ body.dark-theme footer {
         font-weight: 600;
         text-align: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
     }
     
     .nav-links a:hover {
@@ -422,35 +458,32 @@ body.dark-theme footer {
     }
     
     .nav-links a:after {
-        display: none; /* Убираем подчеркивание для мобильной версии */
+        display: none;
     }
     
     /* Кнопка переключения темы в мобильном меню */
     .nav-links .theme-toggle {
-        margin: 20px auto !important;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
+        margin: 30px auto 20px !important;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        border-width: 3px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    /* Затемнение фона при открытом меню */
-    .nav-links::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ffffff;
-        z-index: -1;
+        background-color: transparent;
+        border-color: #2c3e50;
+        color: #2c3e50;
     }
     
     /* Мобильное меню в темной теме */
     body.dark-theme .nav-links {
         background-color: #121212;
+    }
+    
+    body.dark-theme .nav-links::before {
+        background-color: #121212;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     }
     
     body.dark-theme .nav-links a {
@@ -463,12 +496,12 @@ body.dark-theme footer {
         color: #ffffff;
     }
     
-    body.dark-theme .theme-toggle {
+    body.dark-theme .nav-links .theme-toggle {
         border-color: rgba(255, 255, 255, 0.7);
         color: rgba(255, 255, 255, 0.9);
     }
     
-    body.dark-theme .theme-toggle:hover {
+    body.dark-theme .nav-links .theme-toggle:hover {
         border-color: #e74c3c;
         color: #ffffff;
     }
@@ -501,13 +534,15 @@ body.dark-theme footer {
         height: 20px;
     }
     
-    .nav-links {
-        padding-top: 70px;
-    }
-    
     .nav-links a {
         font-size: 1.1rem;
-        padding: 12px 0;
+        padding: 16px 0;
+    }
+    
+    .nav-links .theme-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
     
     .footer-content {
@@ -522,6 +557,7 @@ body.dark-theme footer {
 @media (max-width: 320px) {
     .nav-links a {
         font-size: 1rem;
+        padding: 14px 0;
     }
     
     .logo {
