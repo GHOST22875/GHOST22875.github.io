@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Навигационное меню
+    // Основные элементы
     const navbar = document.getElementById('navbar');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -7,84 +7,59 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
     
+    // Создаем оверлей для меню
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    document.body.appendChild(menuOverlay);
+    
+    // Создаем контейнер для меню контента
+    const menuContent = document.createElement('div');
+    menuContent.className = 'menu-content';
+    
+    // Перемещаем все элементы меню в контейнер
+    if (navLinks) {
+        while (navLinks.children.length > 0) {
+            menuContent.appendChild(navLinks.children[0]);
+        }
+        navLinks.appendChild(menuContent);
+    }
+    
     // ===========================================
-    // ФУНКЦИЯ ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ МЕНЮ
+    // ФУНКЦИЯ ДЛЯ ОТКРЫТИЯ МЕНЮ
     // ===========================================
-    function toggleMobileMenu() {
+    function openMobileMenu() {
         if (!navLinks || !mobileMenuToggle) return;
         
-        const isOpening = !navLinks.classList.contains('active');
+        // Открываем меню
+        navLinks.classList.add('active');
+        mobileMenuToggle.classList.add('active');
+        body.classList.add('menu-open');
+        menuOverlay.classList.add('active');
         
-        if (isOpening) {
-            // Открываем меню
-            navLinks.classList.add('active');
-            mobileMenuToggle.classList.add('active');
-            body.classList.add('menu-open');
-            
-            // Анимация бургер-иконки
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-            
-            // Меняем цвет иконок при открытом меню
-            if (body.classList.contains('dark-theme')) {
-                spans.forEach(span => span.style.backgroundColor = '#ffffff');
-            } else {
-                spans.forEach(span => span.style.backgroundColor = '#2c3e50');
-            }
-            
-            // Анимация появления элементов меню с задержкой
-            const menuItems = navLinks.querySelectorAll('li');
-            menuItems.forEach((item, index) => {
-                item.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            });
-            
-            // Блокируем скролл на основном контенте
-            document.documentElement.style.overflow = 'hidden';
-            
+        // Блокируем скролл на всем документе
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        
+        // Анимация бургер-иконки
+        const spans = mobileMenuToggle.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+        
+        // Меняем цвет иконок при открытом меню
+        if (body.classList.contains('dark-theme')) {
+            spans.forEach(span => span.style.backgroundColor = '#ffffff');
         } else {
-            // Закрываем меню с анимацией
-            const menuItems = navLinks.querySelectorAll('li');
-            menuItems.forEach((item) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transitionDelay = '0s';
-            });
-            
-            // Небольшая задержка перед скрытием меню
-            setTimeout(() => {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-                body.classList.remove('menu-open');
-                
-                // Возвращаем иконку в исходное состояние
-                const spans = mobileMenuToggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-                
-                // Возвращаем цвет иконок
-                if (body.classList.contains('dark-theme')) {
-                    spans.forEach(span => span.style.backgroundColor = '#ffffff');
-                } else {
-                    spans.forEach(span => span.style.backgroundColor = '#2c3e50');
-                }
-                
-                // Возвращаем скролл
-                document.documentElement.style.overflow = '';
-                
-                // Возвращаем нормальное состояние элементов
-                setTimeout(() => {
-                    menuItems.forEach((item) => {
-                        item.style.opacity = '';
-                        item.style.transform = '';
-                    });
-                }, 300);
-            }, 300);
+            spans.forEach(span => span.style.backgroundColor = '#2c3e50');
         }
+        
+        // Анимация появления элементов меню с задержкой
+        const menuItems = navLinks.querySelectorAll('li');
+        menuItems.forEach((item, index) => {
+            item.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        });
     }
     
     // ===========================================
@@ -93,7 +68,57 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeMobileMenu() {
         if (!navLinks || !navLinks.classList.contains('active')) return;
         
-        toggleMobileMenu();
+        // Анимация скрытия элементов меню
+        const menuItems = navLinks.querySelectorAll('li');
+        menuItems.forEach((item) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transitionDelay = '0s';
+        });
+        
+        // Небольшая задержка перед скрытием меню
+        setTimeout(() => {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuOverlay.classList.remove('active');
+            
+            // Возвращаем иконку в исходное состояние
+            const spans = mobileMenuToggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+            
+            // Возвращаем цвет иконок
+            if (body.classList.contains('dark-theme')) {
+                spans.forEach(span => span.style.backgroundColor = '#ffffff');
+            } else {
+                spans.forEach(span => span.style.backgroundColor = '#2c3e50');
+            }
+            
+            // Возвращаем скролл
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            
+            // Возвращаем нормальное состояние элементов
+            setTimeout(() => {
+                menuItems.forEach((item) => {
+                    item.style.opacity = '';
+                    item.style.transform = '';
+                });
+            }, 300);
+        }, 300);
+    }
+    
+    // ===========================================
+    // ФУНКЦИЯ ДЛЯ ПЕРЕКЛЮЧЕНИЯ МЕНЮ
+    // ===========================================
+    function toggleMobileMenu() {
+        if (navLinks.classList.contains('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     }
     
     // ===========================================
@@ -254,10 +279,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Закрытие меню при клике на ссылку
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMobileMenu();
+        link.addEventListener('click', (e) => {
+            // Проверяем, не является ли ссылка переключателем темы
+            if (!link.closest('.theme-toggle')) {
+                closeMobileMenu();
+            }
         });
     });
+    
+    // Закрытие меню при клике на оверлей
+    menuOverlay.addEventListener('click', closeMobileMenu);
     
     // Закрытие меню при клике вне его
     document.addEventListener('click', (e) => {
