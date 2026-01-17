@@ -346,9 +346,9 @@ body.dark-theme footer {
     background-color: #000000;
 }
 
-/* ================================ */
-/* ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ */
-/* ================================ */
+/* =========================================== */
+/* ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ БЕЗ СКРОЛЛА */
+/* =========================================== */
 @media (max-width: 768px) {
     body {
         padding-top: 60px;
@@ -387,21 +387,40 @@ body.dark-theme footer {
         background-color: #ffffff;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 80px 20px 40px;
+        justify-content: flex-start;
+        padding: 0;
         margin: 0;
-        transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: 1001;
-        overflow-y: auto;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Убираем скролл */
     }
     
     .nav-links.active {
         left: 0;
     }
     
+    /* Логотип в центре сверху меню */
+    .nav-links::before {
+        content: 'EarthDom';
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        width: 100%;
+        text-align: center;
+        padding: 30px 0 20px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+        background-color: #ffffff;
+    }
+    
+    body.dark-theme .nav-links::before {
+        color: #ffffff;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        background-color: #121212;
+    }
+    
     .nav-links li {
-        margin: 15px 0 !important;
+        margin: 0 !important;
         width: 100%;
         height: auto;
         justify-content: center;
@@ -409,6 +428,8 @@ body.dark-theme footer {
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.4s ease, transform 0.4s ease;
+        display: flex;
+        align-items: center;
     }
     
     .nav-links.active li {
@@ -426,18 +447,22 @@ body.dark-theme footer {
     .nav-links.active li:nth-child(7) { transition-delay: 0.4s; }
     .nav-links.active li:nth-child(8) { transition-delay: 0.45s; }
     
-    .nav-links li:first-child {
-        margin-left: 0 !important;
+    /* Специальные стили для переключателя темы */
+    .nav-links li:last-child {
         margin-top: 20px !important;
+        padding-top: 20px;
+        border-top: 2px solid rgba(44, 62, 80, 0.1);
+        width: 100%;
+        justify-content: center;
     }
     
-    .nav-links li:last-child {
-        margin-bottom: 40px !important;
+    body.dark-theme .nav-links li:last-child {
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
     }
     
     .nav-links a {
-        font-size: 1.4rem;
-        padding: 18px 0;
+        font-size: 1.3rem;
+        padding: 20px 0;
         display: block;
         width: 100%;
         height: auto;
@@ -445,23 +470,32 @@ body.dark-theme footer {
         font-weight: 600;
         text-align: center;
         transition: all 0.3s ease;
-        border-radius: 8px;
-        margin: 5px 0;
+        border-bottom: 1px solid rgba(44, 62, 80, 0.05);
     }
     
     .nav-links a:hover {
         background-color: rgba(76, 175, 80, 0.1);
         color: #2c3e50;
-        transform: scale(1.05);
     }
     
     .nav-links a:after {
         display: none;
     }
     
+    /* Контейнер для меню с фиксированной высотой */
+    .menu-content {
+        width: 100%;
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     /* Кнопка переключения темы в мобильном меню */
     .nav-links .theme-toggle {
-        margin: 30px auto 20px !important;
+        margin: 0 auto !important;
         width: 60px;
         height: 60px;
         font-size: 28px;
@@ -469,6 +503,9 @@ body.dark-theme footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: transparent;
+        border-color: #2c3e50;
+        color: #2c3e50;
     }
     
     /* Мобильное меню в темной теме */
@@ -478,6 +515,7 @@ body.dark-theme footer {
     
     body.dark-theme .nav-links a {
         color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     body.dark-theme .nav-links a:hover {
@@ -495,25 +533,33 @@ body.dark-theme footer {
         color: #ffffff;
     }
     
-    /* Фон за меню */
-    .nav-links::before {
-        content: '';
+    /* Убираем скроллбар внутри меню */
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .nav-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    /* Затемнение фона при открытом меню */
+    .menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: inherit;
-        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     
-    /* Логотип при открытом меню */
-    body.menu-open .logo {
-        color: #2c3e50;
-    }
-    
-    body.dark-theme.menu-open .logo {
-        color: #ffffff;
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
     
     .footer-content {
@@ -546,9 +592,14 @@ body.dark-theme footer {
         height: 20px;
     }
     
+    .nav-links::before {
+        font-size: 24px;
+        padding: 25px 0 15px;
+    }
+    
     .nav-links a {
-        font-size: 1.3rem;
-        padding: 15px 0;
+        font-size: 1.2rem;
+        padding: 18px 0;
     }
     
     .nav-links .theme-toggle {
@@ -568,13 +619,14 @@ body.dark-theme footer {
 
 /* Очень маленькие экраны */
 @media (max-width: 320px) {
-    .nav-links {
-        padding: 70px 15px 30px;
+    .nav-links::before {
+        font-size: 22px;
+        padding: 20px 0 15px;
     }
     
     .nav-links a {
-        font-size: 1.2rem;
-        padding: 14px 0;
+        font-size: 1.1rem;
+        padding: 16px 0;
     }
     
     .logo {
