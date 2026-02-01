@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Террасы - Наши работы - EarthDom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">EarthDom</a>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/project.html">Проекты</a></li>
+                <li><a href="/terrace.html">Террасные покрытия</a></li>
+                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="/services.html">Услуги</a></li>
+                <li><a href="/work.html">← Назад к категориям</a></li>
+                <li><a href="/company.html">О компании</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="work-hero">
+        <div class="work-hero-content">
+            <h1>Террасы</h1>
+            <p>Проекты по устройству террас, веранд и открытых площадок</p>
+        </div>
+    </section>
+
+    <!-- Секция работ -->
+    <section class="work-section">
+        <div class="container">
+            <h2 class="section-title">Террасы и веранды</h2>
+            
+            <!-- Фильтры работ -->
+            <div class="work-filter">
+                <button class="filter-btn active" data-filter="all">Все террасы</button>
+                <button class="filter-btn" data-filter="terrace">Террасы</button>
+                <button class="filter-btn" data-filter="veranda">Веранды</button>
+                <button class="filter-btn" data-filter="deck">Настилы</button>
+            </div>
+
+            <!-- Сетка работ -->
+            <div class="work-grid">
+                <!-- Работа 1: Терраса в классическом стиле -->
+                <div class="work-card" data-category="terrace">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/e8/64/93/e864930d8e572f041870293ba9e052c6.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Терраса</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Терраса в классическом стиле</h2>
+                        <p>Устройство террасы с навесом и освещением</p>
+                        <div class="work-details">
+                            <span class="work-area">45 м²</span>
+                            <span class="work-time">2 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Терраса в классическом стиле">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 2: Терраса с барбекю зоной -->
+                <div class="work-card" data-category="terrace">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Терраса</span>
+                            <span class="work-year">2021</span>
+                        </div>
+                        <h2>Терраса с барбекю зоной</h2>
+                        <p>Строительство открытой террасы с летней кухней</p>
+                        <div class="work-details">
+                            <span class="work-area">60 м²</span>
+                            <span class="work-time">3 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Терраса с барбекю зоной">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 3: Закрытая веранда -->
+                <div class="work-card" data-category="veranda">
+                    <div class="work-img" style="background-image: url('./image/facade3/photo_2025-11-19_10-39-37.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Веранда</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Закрытая веранда</h2>
+                        <p>Строительство утепленной веранды с панорамным остеклением</p>
+                        <div class="work-details">
+                            <span class="work-area">35 м²</span>
+                            <span class="work-time">3 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Закрытая веранда">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 4: Деревянный настил у бассейна -->
+                <div class="work-card" data-category="deck">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/4a/5d/7f/4a5d7f9c8d7e6f5a4b3c2d1e0f9a8b7c.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Настил</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Деревянный настил у бассейна</h2>
+                        <p>Устройство террасной доски из лиственницы вокруг бассейна</p>
+                        <div class="work-details">
+                            <span class="work-area">80 м²</span>
+                            <span class="work-time">2.5 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Деревянный настил у бассейна">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 5: Терраса с перголой -->
+                <div class="work-card" data-category="terrace">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/2b/9c/8e/2b9c8e7f6d5e4c3b2a1d0e9f8a7b6c5d.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Терраса</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Терраса с перголой</h2>
+                        <p>Строительство террасы с деревянной перголой и вьющимися растениями</p>
+                        <div class="work-details">
+                            <span class="work-area">50 м²</span>
+                            <span class="work-time">3 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Терраса с перголой">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 6: Открытая веранда с камином -->
+                <div class="work-card" data-category="veranda">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/6c/8d/9e/6c8d9e5f4e3d2c1b0a9f8e7d6c5b4a3d.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Веранда</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Открытая веранда с камином</h2>
+                        <p>Строительство веранды с уличным камином и зоной отдыха</p>
+                        <div class="work-details">
+                            <span class="work-area">40 м²</span>
+                            <span class="work-time">4 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Открытая веранда с камином">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 7: Террасное покрытие из ДПК -->
+                <div class="work-card" data-category="deck">
+                    <div class="work-img" style="background-image: url('./image/facade1/5256075123540822993.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Настил</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Террасное покрытие из ДПК</h2>
+                        <p>Монтаж террасной доски из древесно-полимерного композита</p>
+                        <div class="work-details">
+                            <span class="work-area">55 м²</span>
+                            <span class="work-time">2 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Террасное покрытие из ДПК">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 8: Крытая терраса с москитными сетками -->
+                <div class="work-card" data-category="terrace">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/9a/8b/7c/9a8b7c6d5e4f3d2c1b0a9f8e7d6c5b4a.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Терраса</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Крытая терраса с москитными сетками</h2>
+                        <p>Строительство террасы с раздвижными москитными сетками</p>
+                        <div class="work-details">
+                            <span class="work-area">65 м²</span>
+                            <span class="work-time">4 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Крытая терраса с москитными сетками">Смотреть фото</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <p>Строим каркасные дома по современным технологиям с 2010 года. Более 200 реализованных проектов.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>г. Москва, ул. Строителей, 15</li>
+                    <li>+7 (495) 123-45-67</li>
+                    <li>info@earthdom.ru</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="project.html">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="work.html">← Назад к категориям</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно работ -->
+    <div id="workModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <button class="slide-arrow prev-arrow">‹</button>
+                <img id="modalWorkImage" src="" alt="Работа">
+                <button class="slide-arrow next-arrow">›</button>
+                <div class="image-counter" id="imageCounter"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/work.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
