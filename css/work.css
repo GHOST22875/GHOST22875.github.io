@@ -96,8 +96,7 @@
     box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
 }
 
-.filter-btn-link:hover .filter-icon,
-.filter-btn-link.active .filter-icon {
+.filter-btn-link:hover .filter-icon {
     transform: scale(1.2);
 }
 
