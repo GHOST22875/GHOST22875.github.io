@@ -813,6 +813,7 @@
 }
 
 /* Кнопка возврата к категориям */
+/* Кнопка возврата к категориям */
 .back-to-categories {
     display: flex;
     justify-content: flex-end;
@@ -827,8 +828,8 @@
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: white;
+    color: #4CAF50;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
@@ -838,8 +839,8 @@
 }
 
 .back-btn:hover {
-    background-color: white;
-    color: #4CAF50;
+    background-color: #4CAF50;
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
 }
