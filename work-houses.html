@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дома - Наши работы - EarthDom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">EarthDom</a>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/project.html">Проекты</a></li>
+                <li><a href="/terrace.html">Террасные покрытия</a></li>
+                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="/services.html">Услуги</a></li>
+                <li><a href="/work.html">← Назад к категориям</a></li>
+                <li><a href="/company.html">О компании</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="work-hero">
+        <div class="work-hero-content">
+            <h1>Дома</h1>
+            <p>Реализованные проекты по строительству каркасных домов</p>
+        </div>
+    </section>
+
+    <!-- Секция работ -->
+    <section class="work-section">
+        <div class="container">
+            <h2 class="section-title">Проекты домов</h2>
+            
+            <!-- Фильтры работ -->
+            <div class="work-filter">
+                <button class="filter-btn active" data-filter="all" onclick="filterWorks('all')">Все дома</button>
+                <button class="filter-btn" data-filter="house" onclick="filterWorks('house')">Каркасные дома</button>
+                <button class="filter-btn" data-filter="cottage" onclick="filterWorks('cottage')">Коттеджи</button>
+                <button class="filter-btn" data-filter="dacha" onclick="filterWorks('dacha')">Дачные дома</button>
+            </div>
+
+            <!-- Сетка работ -->
+            <div class="work-grid">
+                <!-- Работа 1: Загородный дом в Подмосковье -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Загородный дом в Подмосковье</h2>
+                        <p>Полный цикл строительства каркасного дома с внутренней отделкой</p>
+                        <div class="work-details">
+                            <span class="work-area">180 м²</span>
+                            <span class="work-time">5 месяцев</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Загородный дом в Подмосковье">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 2: Дачный дом для семьи -->
+                <div class="work-card" data-category="dacha">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Дачный дом для семьи</h2>
+                        <p>Строительство каркасного дома под ключ</p>
+                        <div class="work-details">
+                            <span class="work-area">95 м²</span>
+                            <span class="work-time">3 месяца</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Дачный дом для семьи">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 3: Дом с мансардой -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/00/8f/20/008f20405aaea27836e9b66e6bdd5809.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2021</span>
+                        </div>
+                        <h2>Дом с мансардой</h2>
+                        <p>Строительство дома с эксплуатируемой мансардой</p>
+                        <div class="work-details">
+                            <span class="work-area">140 м²</span>
+                            <span class="work-time">4 месяца</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Дом с мансардой">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 4: Коттедж в современном стиле -->
+                <div class="work-card" data-category="cottage">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/9f/8d/9f/9f8d9fabbacb8e6145caf82c13e89f47.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Коттедж</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Коттедж в современном стиле</h2>
+                        <p>Строительство двухэтажного коттеджа с панорамными окнами</p>
+                        <div class="work-details">
+                            <span class="work-area">220 м²</span>
+                            <span class="work-time">6 месяцев</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Коттедж в современном стиле">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 5: Каркасный дом "Северный" -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/1a/2f/0c/1a2f0c6adbefd3c93ba19ab6e63aae8a.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Каркасный дом "Северный"</h2>
+                        <p>Энергоэффективный дом с усиленным утеплением</p>
+                        <div class="work-details">
+                            <span class="work-area">160 м²</span>
+                            <span class="work-time">4.5 месяцев</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Каркасный дом Северный">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 6: Дом для круглогодичного проживания -->
+                <div class="work-card" data-category="house">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/3d/8a/2d/3d8a2d9cd4ea0f68eac68b2d07500715.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дом</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Дом для круглогодичного проживания</h2>
+                        <p>Дом с автономными системами отопления и водоснабжения</p>
+                        <div class="work-details">
+                            <span class="work-area">190 м²</span>
+                            <span class="work-time">5 месяцев</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Дом для круглогодичного проживания">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 7: Дачный домик "Эконом" -->
+                <div class="work-card" data-category="dacha">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/736x/5a/3d/fe/5a3dfe8d4737ed1292b5a2514e4a287f.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Дача</span>
+                            <span class="work-year">2021</span>
+                        </div>
+                        <h2>Дачный домик "Эконом"</h2>
+                        <p>Компактный дачный дом для сезонного проживания</p>
+                        <div class="work-details">
+                            <span class="work-area">60 м²</span>
+                            <span class="work-time">2 месяца</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Дачный домик Эконом">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 8: Загородный коттедж с гаражом -->
+                <div class="work-card" data-category="cottage">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/6b/9d/01/6b9d015a5f4fcedd2d7f7d2dce78e4b7.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Коттедж</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Загородный коттедж с гаражом</h2>
+                        <p>Комплексное строительство коттеджа с пристроенным гаражом</p>
+                        <div class="work-details">
+                            <span class="work-area">250 м²</span>
+                            <span class="work-time">7 месяцев</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Загородный коттедж с гаражом">Смотреть фото</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <p>Строим каркасные дома по современным технологиям с 2010 года. Более 200 реализованных проектов.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>г. Москва, ул. Строителей, 15</li>
+                    <li>+7 (495) 123-45-67</li>
+                    <li>info@earthdom.ru</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="project.html">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="work.html">← Назад к категориям</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно работ -->
+    <div id="workModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <button class="slide-arrow prev-arrow">‹</button>
+                <img id="modalWorkImage" src="" alt="Работа">
+                <button class="slide-arrow next-arrow">›</button>
+                <div class="image-counter" id="imageCounter"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/work.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
