@@ -885,3 +885,28 @@
     background-color: #2d2d2d;
     color: #4CAF50;
 }
+
+/* Стили для изображений в фильтрах */
+.filter-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    border: 3px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.filter-btn-link:hover .filter-img {
+    border-color: white;
+    transform: scale(1.1);
+}
+
+/* Также обновим стиль для .filter-icon на случай если используется иконки */
+.filter-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+    transition: transform 0.3s ease;
+}
