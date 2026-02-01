@@ -917,3 +917,103 @@
     min-width: 100px;
     display: block;
 }
+
+/* Стили для фото-блоков категорий */
+.photo-category-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.photo-category-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.photo-category-link:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.photo-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.category-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-category-link:hover .category-photo {
+    transform: scale(1.05);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 25px;
+    padding-top: 40px;
+}
+
+.category-title {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.category-count {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    color: #e0e0e0;
+}
+
+/* Адаптивность для фото-блоков */
+@media (max-width: 768px) {
+    .photo-category-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .photo-wrapper {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .photo-category-links {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    
+    .photo-wrapper {
+        height: 220px;
+    }
+}
+
+/* Темная тема для фото-блоков */
+.dark-theme .photo-category-link {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .photo-category-link:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
