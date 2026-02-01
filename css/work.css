@@ -89,8 +89,7 @@
     box-sizing: border-box;
 }
 
-.filter-btn-link:hover, 
-.filter-btn-link.active {
+.filter-btn-link:hover {
     background-color: #4CAF50;
     color: white;
     transform: translateY(-5px);
