@@ -910,3 +910,10 @@
     display: block;
     transition: transform 0.3s ease;
 }
+
+/* Убедитесь, что изображения не скрыты */
+.filter-img:empty {
+    min-height: 100px;
+    min-width: 100px;
+    display: block;
+}
