@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фасады - Наши работы - EarthDom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">EarthDom</a>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/project.html">Проекты</a></li>
+                <li><a href="/terrace.html">Террасные покрытия</a></li>
+                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="/services.html">Услуги</a></li>
+                <li><a href="/work.html">← Назад к категориям</a></li>
+                <li><a href="/company.html">О компании</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="work-hero">
+        <div class="work-hero-content">
+            <h1>Фасады</h1>
+            <p>Проекты по отделке и утеплению фасадов</p>
+        </div>
+    </section>
+
+    <!-- Секция работ -->
+    <section class="work-section">
+        <div class="container">
+            <h2 class="section-title">Отделка фасадов</h2>
+            
+            <!-- Фильтры работ -->
+            <div class="work-filter">
+                <button class="filter-btn active" data-filter="all">Все фасады</button>
+                <button class="filter-btn" data-filter="facade">Фасадные работы</button>
+                <button class="filter-btn" data-filter="insulation">Утепление</button>
+                <button class="filter-btn" data-filter="cladding">Облицовка</button>
+            </div>
+
+            <!-- Сетка работ -->
+            <div class="work-grid">
+                <!-- Работа 1: Современная отделка фасада -->
+                <div class="work-card" data-category="facade">
+                    <div class="work-img" style="background-image: url('./image/facade2/5256075123540823007.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Фасад</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Современная отделка фасада</h2>
+                        <p>Утепление и отделка фасада комбинированными материалами</p>
+                        <div class="work-details">
+                            <span class="work-area">95 м²</span>
+                            <span class="work-time">2.5 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Современная отделка фасада">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 2: Отделка фасада деревянного дома -->
+                <div class="work-card" data-category="cladding">
+                    <div class="work-img" style="background-image: url('./image/facade2/5256075123540822998.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Фасад</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Отделка фасада деревянного дома</h2>
+                        <p>Обработка и покраска фасада из натурального дерева</p>
+                        <div class="work-details">
+                            <span class="work-area">120 м²</span>
+                            <span class="work-time">3 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Отделка фасада деревянного дома">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 3: Утепление фасада минеральной ватой -->
+                <div class="work-card" data-category="insulation">
+                    <div class="work-img" style="background-image: url('./image/facade2/5256075123540823009.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Утепление</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Утепление фасада минеральной ватой</h2>
+                        <p>Теплоизоляция фасада с последующей отделкой штукатуркой</p>
+                        <div class="work-details">
+                            <span class="work-area">150 м²</span>
+                            <span class="work-time">4 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Утепление фасада минеральной ватой">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 4: Облицовка фасада кирпичом -->
+                <div class="work-card" data-category="cladding">
+                    <div class="work-img" style="background-image: url('./image/facade1/5256075123540822993.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Облицовка</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Облицовка фасада кирпичом</h2>
+                        <p>Отделка фасада облицовочным кирпичом с утеплением</p>
+                        <div class="work-details">
+                            <span class="work-area">180 м²</span>
+                            <span class="work-time">5 недель</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Облицовка фасада кирпичом">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 5: Фасадная отделка сайдингом -->
+                <div class="work-card" data-category="facade">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/8a/3b/2c/8a3b2c7d4a71aef09f0f8f1c64718f3f.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Фасад</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Фасадная отделка сайдингом</h2>
+                        <p>Монтаж винилового сайдинга с системой вентиляции</p>
+                        <div class="work-details">
+                            <span class="work-area">130 м²</span>
+                            <span class="work-time">3 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Фасадная отделка сайдингом">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 6: Утепление пенопластом с отделкой -->
+                <div class="work-card" data-category="insulation">
+                    <div class="work-img" style="background-image: url('./image/facade3/photo_2025-11-19_10-39-37.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Утепление</span>
+                            <span class="work-year">2021</span>
+                        </div>
+                        <h2>Утепление пенопластом с отделкой</h2>
+                        <p>Теплоизоляция пенополистиролом и отделка декоративной штукатуркой</p>
+                        <div class="work-details">
+                            <span class="work-area">110 м²</span>
+                            <span class="work-time">3.5 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Утепление пенопластом с отделкой">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 7: Отделка фасада камнем -->
+                <div class="work-card" data-category="cladding">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/5c/9d/2c/5c9d2c12d73c3a172d3a3a78e53a4e4a.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Облицовка</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h2>Отделка фасада камнем</h2>
+                        <p>Облицовка натуральным камнем с подсветкой</p>
+                        <div class="work-details">
+                            <span class="work-area">85 м²</span>
+                            <span class="work-time">4 недели</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Отделка фасада камнем">Смотреть фото</button>
+                    </div>
+                </div>
+
+                <!-- Работа 8: Комплексное утепление фасада -->
+                <div class="work-card" data-category="insulation">
+                    <div class="work-img" style="background-image: url('https://i.pinimg.com/1200x/d4/8c/0f/d48c0f8c9f7c8b4e5b6c7d8e9f0a1b2c.jpg');"></div>
+                    <div class="work-info">
+                        <div class="work-meta">
+                            <span class="work-category">Утепление</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h2>Комплексное утепление фасада</h2>
+                        <p>Полный комплекс работ по теплоизоляции и гидроизоляции</p>
+                        <div class="work-details">
+                            <span class="work-area">200 м²</span>
+                            <span class="work-time">6 недель</span>
+                        </div>
+                        <button class="work-view-btn" data-work="Комплексное утепление фасада">Смотреть фото</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <p>Строим каркасные дома по современным технологиям с 2010 года. Более 200 реализованных проектов.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>г. Москва, ул. Строителей, 15</li>
+                    <li>+7 (495) 123-45-67</li>
+                    <li>info@earthdom.ru</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="project.html">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="work.html">← Назад к категориям</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно работ -->
+    <div id="workModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <button class="slide-arrow prev-arrow">‹</button>
+                <img id="modalWorkImage" src="" alt="Работа">
+                <button class="slide-arrow next-arrow">›</button>
+                <div class="image-counter" id="imageCounter"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/work.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
