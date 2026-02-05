@@ -20,8 +20,16 @@ const worksData = {
     },
     "Терраса в классическом стиле": {
         images: [
-            'https://i.pinimg.com/1200x/e8/64/93/e864930d8e572f041870293ba9e052c6.jpg',
-            'https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg'
+            './image/facade2/5256075123540823006.jpg',
+            './image/facade2/5256075123540823007.jpg',
+            './image/facade2/5256075123540823008.jpg',
+            './image/facade2/5256075123540823009.jpg',
+            './image/facade2/5256075123540823010.jpg',
+            './image/facade2/5256075123540823011.jpg',
+            './image/facade2/5256075123540823012.jpg',
+            './image/facade2/5256075123540823013.jpg',
+            './image/facade2/5256075123540823014.jpg',
+            './image/facade2/5256075123540823016.jpg'
         ],
         category: "terrace"
     },
@@ -34,9 +42,9 @@ const worksData = {
     },
     "Современная отделка фасада": {
         images: [
-            './image/facade2/5256075123540823007.jpg',
-            './image/facade2/5256075123540822998.jpg',
-            './image/facade2/5256075123540823009.jpg'
+
+
+            
         ],
         category: "facade"
     },
@@ -49,8 +57,11 @@ const worksData = {
     },
     "Терраса с барбекю зоной": {
         images: [
-            'https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg',
-            './image/facade3/photo_2025-11-19_10-39-37.jpg'
+             './image/facade3/photo_2025-11-19_10-39-37.jpg',
+            './image/facade3/photo_2025-11-19_10-39-57.jpg',
+            './image/facade3/photo_2025-11-19_10-39-58.jpg',
+            './image/facade3/photo_2025-11-19_10-39-59.jpg',
+            './image/facade3/photo_2025-11-19_10-40-03.jpg'
         ],
         category: "terrace"
     },
@@ -70,93 +81,46 @@ const worksData = {
     },
     "Утепление фасада минеральной ватой": {
         images: [
-            './image/facade2/5256075123540823009.jpg',
-            './image/facade1/5256075123540822993.jpg'
+
+
+            
         ],
         category: "insulation"
     },
     "Облицовка фасада кирпичом": {
         images: [
-            './image/facade1/5256075123540822993.jpg',
-            './image/facade2/5256075123540823009.jpg'
+
+
+            
         ],
         category: "cladding"
     },
-    "Каркасный дом Северный": {
-        images: [
-            'https://i.pinimg.com/1200x/1a/2f/0c/1a2f0c6adbefd3c93ba19ab6e63aae8a.jpg'
-        ],
-        category: "house"
-    },
-    "Дом для круглогодичного проживания": {
-        images: [
-            'https://i.pinimg.com/1200x/3d/8a/2d/3d8a2d9cd4ea0f68eac68b2d07500715.jpg'
-        ],
-        category: "house"
-    },
-    "Дачный домик Эконом": {
-        images: [
-            'https://i.pinimg.com/736x/5a/3d/fe/5a3dfe8d4737ed1292b5a2514e4a287f.jpg'
-        ],
-        category: "dacha"
-    },
-    "Загородный коттедж с гаражом": {
-        images: [
-            'https://i.pinimg.com/1200x/6b/9d/01/6b9d015a5f4fcedd2d7f7d2dce78e4b7.jpg'
-        ],
-        category: "cottage"
-    },
-    "Фасадная отделка сайдингом": {
-        images: [
-            'https://i.pinimg.com/1200x/8a/3b/2c/8a3b2c7d4a71aef09f0f8f1c64718f3f.jpg'
-        ],
-        category: "facade"
-    },
+
     "Утепление пенопластом с отделкой": {
         images: [
             './image/facade3/photo_2025-11-19_10-39-37.jpg'
         ],
         category: "insulation"
     },
-    "Отделка фасада камнем": {
-        images: [
-            'https://i.pinimg.com/1200x/5c/9d/2c/5c9d2c12d73c3a172d3a3a78e53a4e4a.jpg'
-        ],
-        category: "cladding"
-    },
-    "Комплексное утепление фасада": {
-        images: [
-            'https://i.pinimg.com/1200x/d4/8c/0f/d48c0f8c9f7c8b4e5b6c7d8e9f0a1b2c.jpg'
-        ],
-        category: "insulation"
-    },
     "Закрытая веранда": {
         images: [
-            './image/facade3/photo_2025-11-19_10-39-37.jpg'
-        ],
-        category: "veranda"
-    },
-    "Деревянный настил у бассейна": {
-        images: [
-            'https://i.pinimg.com/1200x/4a/5d/7f/4a5d7f9c8d7e6f5a4b3c2d1e0f9a8b7c.jpg'
-        ],
-        category: "deck"
-    },
-    "Терраса с перголой": {
-        images: [
-            'https://i.pinimg.com/1200x/2b/9c/8e/2b9c8e7f6d5e4c3b2a1d0e9f8a7b6c5d.jpg'
-        ],
-        category: "terrace"
-    },
-    "Открытая веранда с камином": {
-        images: [
-            'https://i.pinimg.com/1200x/6c/8d/9e/6c8d9e5f4e3d2c1b0a9f8e7d6c5b4a3d.jpg'
+            './image/facade4/photo_2025-11-19_10-40-21.jpg',
+            './image/facade4/photo_2025-11-19_10-40-23.jpg',
+            './image/facade4/photo_2025-11-19_10-40-24.jpg',
+            './image/facade4/photo_2025-11-19_10-40-26.jpg'
         ],
         category: "veranda"
     },
     "Террасное покрытие из ДПК": {
         images: [
-            './image/facade1/5256075123540822993.jpg'
+            './image/facade5/photo_2026-02-05_14-36-54.jpg',
+            './image/facade5/photo_2026-02-05_14-36-55.jpg',
+            './image/facade5/photo_2026-02-05_14-36-58.jpg',
+            './image/facade5/photo_2026-02-05_14-37-00.jpg',
+            './image/facade5/photo_2026-02-05_14-37-01.jpg',
+            './image/facade5/photo_2026-02-05_14-37-02.jpg',
+            './image/facade5/photo_2026-02-05_14-37-03.jpg',
+            './image/facade5/photo_2026-02-05_14-37-04.jpg'
         ],
         category: "deck"
     },
