@@ -2,9 +2,19 @@
 const worksData = {
     "Загородный дом в Подмосковье": {
         images: [
-            'https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg',
-            'https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg',
-            'https://i.pinimg.com/1200x/9f/8d/9f/9f8d9fabbacb8e6145caf82c13e89f47.jpg'
+             './image/house/photo_2026-02-05_14-46-56.jpg',
+             './image/house/photo_2026-02-05_14-46-57.jpgg',
+            './image/house/photo_2026-02-05_14-46-58.jpg',
+            './image/house/photo_2026-02-05_14-47-00.jpg',
+            './image/house/photo_2026-02-05_14-47-02.jpg',
+            './image/house/photo_2026-02-05_14-47-04.jpg',
+            './image/house/photo_2026-02-05_14-47-05.jpg',
+            './image/house/photo_2026-02-05_14-47-06.jpg',
+            './image/house/photo_2026-02-05_14-47-08.jpg',
+            './image/house/photo_2026-02-05_14-47-09.jpg',
+            './image/house/photo_2026-02-05_14-47-10.jpg',
+            './image/house/photo_2026-02-05_14-47-11.jpg',
+            './image/house/photo_2026-02-05_14-47-13.jpg',
         ],
         category: "house"
     },
