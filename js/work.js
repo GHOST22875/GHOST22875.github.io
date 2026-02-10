@@ -18,7 +18,7 @@ const worksData = {
         ],
         category: "house"
     },
-    "Терраса в классическом стиле": {
+    "Терраса 1": {
         images: [
             './image/facade2/5256075123540823006.jpg',
             './image/facade2/5256075123540823007.jpg',
@@ -55,7 +55,7 @@ const worksData = {
         ],
         category: "house"
     },
-    "Терраса с барбекю зоной": {
+    "Терраса 2": {
         images: [
              './image/facade3/photo_2025-11-19_10-39-37.jpg',
             './image/facade3/photo_2025-11-19_10-39-57.jpg',
@@ -111,7 +111,7 @@ const worksData = {
         ],
         category: "terrace"
     },
-    "Террасное покрытие из ДПК": {
+    "Терраса 4": {
         images: [
             './image/facade5/photo_2026-02-05_14-36-54.jpg',
             './image/facade5/photo_2026-02-05_14-36-55.jpg',
