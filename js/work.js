@@ -1,8 +1,8 @@
 // Данные выполненных работ (только фотографии)
 const worksData = {
-    "Загородный дом в Подмосковье": {
+    "Дом 1": {
         images: [
-             './image/house/photo_2026-02-05_14-46-56.jpg',
+            './image/house/photo_2026-02-05_14-46-56.jpg',
             './image/house/photo_2026-02-05_14-46-58.jpg',
             './image/house/photo_2026-02-05_14-47-00.jpg',
             './image/house/photo_2026-02-05_14-47-02.jpg',
@@ -63,7 +63,7 @@ const worksData = {
     },
     "Терраса 2": {
         images: [
-             './image/facade3/photo_2025-11-19_10-39-37.jpg',
+            './image/facade3/photo_2025-11-19_10-39-37.jpg',
             './image/facade3/photo_2025-11-19_10-39-57.jpg',
             './image/facade3/photo_2025-11-19_10-39-58.jpg',
             './image/facade3/photo_2025-11-19_10-39-59.jpg',
@@ -95,15 +95,6 @@ const worksData = {
         ],
         category: "insulation"
     },
-    "Облицовка фасада кирпичом": {
-        images: [
-
-
-            
-        ],
-        category: "cladding"
-    },
-
     "Утепление пенопластом с отделкой": {
         images: [
             './image/facade3/photo_2025-11-19_10-39-37.jpg'
@@ -134,7 +125,7 @@ const worksData = {
     },
     "Терраса 5": {
         images: [
-             './image/facade1/5256075123540822991.jpg',
+            './image/facade1/5256075123540822991.jpg',
             './image/facade1/5256075123540822992.jpg',
             './image/facade1/5256075123540822993.jpg',
             './image/facade1/5256075123540822994.jpg',
@@ -144,7 +135,7 @@ const worksData = {
     },
     "Терраса 6": {
         images: [
-             './image/facade6/photo_2026-02-05_14-44-07.jpg',
+            './image/facade6/photo_2026-02-05_14-44-07.jpg',
             './image/facade6/photo_2026-02-05_14-44-08.jpg',
             './image/facade6/photo_2026-02-05_14-44-10.jpg',
             './image/facade6/photo_2026-02-05_14-44-54.jpg'
@@ -153,20 +144,15 @@ const worksData = {
     },
     "Терраса 7": {
         images: [
-              './image/facade7/photo_2026-02-05_14-42-22.jpg',
+            './image/facade7/photo_2026-02-05_14-42-22.jpg',
             './image/facade7/photo_2026-02-05_14-42-24.jpg',
             './image/facade7/photo_2026-02-05_14-42-25.jpg',
             './image/facade7/photo_2026-02-05_14-42-26.jpg'
         ],
         category: "terrace"
-    },
-    "Крытая терраса с москитными сетками": {
-        images: [
-            'https://i.pinimg.com/1200x/9a/8b/7c/9a8b7c6d5e4f3d2c1b0a9f8e7d6c5b4a.jpg'
-        ],
-        category: "terrace"
     }
 };
+
 // Переменные для управления галереей
 let currentWorkImageIndex = 0;
 let currentWorkImages = [];
@@ -187,13 +173,45 @@ function openWorkModal(workName) {
     currentWorkImages = workData.images;
     currentWorkImageIndex = 0;
     
-    // Устанавливаем основное изображение
+    // Получаем элементы DOM
     const mainImage = document.getElementById('modalWorkImage');
-    if (mainImage) {
-        mainImage.src = currentWorkImages[currentWorkImageIndex];
-        mainImage.alt = workName;
-        mainImage.style.opacity = '1';
+    const modal = document.getElementById('workModal');
+    
+    if (!mainImage || !modal) {
+        console.error('Элементы модального окна не найдены');
+        return;
     }
+    
+    // Добавляем индикатор загрузки
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'image-loading';
+    mainImage.parentNode.appendChild(loadingDiv);
+    
+    // Устанавливаем основное изображение
+    mainImage.src = currentWorkImages[currentWorkImageIndex];
+    mainImage.alt = workName;
+    
+    // Когда изображение загрузится
+    mainImage.onload = function() {
+        // Удаляем индикатор загрузки
+        if (loadingDiv.parentNode) {
+            loadingDiv.parentNode.removeChild(loadingDiv);
+        }
+        
+        // Плавное появление
+        mainImage.style.opacity = '0';
+        setTimeout(() => {
+            mainImage.style.opacity = '1';
+        }, 10);
+    };
+    
+    // Обработчик ошибки загрузки изображения
+    mainImage.onerror = function() {
+        if (loadingDiv.parentNode) {
+            loadingDiv.parentNode.removeChild(loadingDiv);
+        }
+        mainImage.alt = 'Изображение не загружено';
+    };
     
     // Обновляем индикатор текущего фото
     updateImageCounter();
@@ -202,12 +220,20 @@ function openWorkModal(workName) {
     updateNavigationButtons(workData.images.length);
     
     // Показываем модальное окно
-    const modal = document.getElementById('workModal');
-    if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    
+    // Добавляем/удаляем класс для одиночного изображения
+    if (workData.images.length <= 1) {
+        modal.classList.add('single-image');
+    } else {
+        modal.classList.remove('single-image');
     }
+    
+    // Блокируем прокрутку страницы
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
 }
 
 // Функция для смены основного изображения
@@ -218,15 +244,39 @@ function changeWorkMainImage(index) {
     const mainImage = document.getElementById('modalWorkImage');
     
     if (mainImage) {
+        // Добавляем индикатор загрузки
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'image-loading';
+        mainImage.parentNode.appendChild(loadingDiv);
+        
         // Плавное исчезновение
         mainImage.style.opacity = '0';
         
         setTimeout(() => {
             mainImage.src = currentWorkImages[currentWorkImageIndex];
-            mainImage.style.opacity = '1';
             
-            // Обновляем индикатор текущего фото
-            updateImageCounter();
+            // Когда новое изображение загрузится
+            mainImage.onload = function() {
+                // Удаляем индикатор загрузки
+                if (loadingDiv.parentNode) {
+                    loadingDiv.parentNode.removeChild(loadingDiv);
+                }
+                
+                // Плавное появление
+                mainImage.style.opacity = '1';
+                
+                // Обновляем индикатор текущего фото
+                updateImageCounter();
+            };
+            
+            mainImage.onerror = function() {
+                if (loadingDiv.parentNode) {
+                    loadingDiv.parentNode.removeChild(loadingDiv);
+                }
+                mainImage.alt = 'Изображение не загружено';
+                mainImage.style.opacity = '1';
+                updateImageCounter();
+            };
         }, 200);
     }
 }
@@ -260,8 +310,8 @@ function updateImageCounter() {
 
 // Функция для обновления состояния кнопок навигации
 function updateNavigationButtons(imageCount) {
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
+    const prevArrow = document.querySelector('#workModal .prev-arrow');
+    const nextArrow = document.querySelector('#workModal .next-arrow');
     const counter = document.getElementById('imageCounter');
     
     // Показываем кнопки только если есть более одного изображения
@@ -283,6 +333,10 @@ function closeWorkModal() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
         document.documentElement.style.overflow = 'auto';
+        
+        // Возвращаем возможность прокрутки страницы
+        document.body.style.position = '';
+        document.body.style.width = '';
     }
     
     // Сбрасываем состояние галереи
@@ -344,8 +398,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Добавляем обработчики для кнопок навигации
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
+    const prevArrow = document.querySelector('#workModal .prev-arrow');
+    const nextArrow = document.querySelector('#workModal .next-arrow');
     
     if (prevArrow) {
         prevArrow.addEventListener('click', (e) => {
@@ -377,6 +431,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, false);
     }
     
+    // Также добавляем свайпы на всё модальное окно
+    if (modal) {
+        modal.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        modal.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+    }
+    
     function handleSwipe() {
         const swipeThreshold = 50;
         const difference = touchStartX - touchEndX;
@@ -390,6 +456,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevWorkImage();
             }
         }
+    }
+    
+    // Запрещаем контекстное меню на изображениях
+    if (modalImage) {
+        modalImage.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
     }
     
     // Фильтрация работ (если есть фильтры на странице)
@@ -449,3 +523,34 @@ window.addEventListener('load', function() {
         preloadWorkImages(work.images);
     });
 });
+
+// Функция для фильтрации работ на странице work-houses.html
+function filterWorks(category) {
+    const workCards = document.querySelectorAll('.work-card');
+    const filterButtons = document.querySelectorAll('.work-filter .filter-btn');
+    
+    // Обновляем активную кнопку
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-filter') === category) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Фильтруем карточки
+    workCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 50);
+        } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 300);
+        }
+    });
+}
