@@ -124,6 +124,34 @@ const worksData = {
         ],
         category: "deck"
     },
+    "Терраса 5": {
+        images: [
+             './image/facade1/5256075123540822991.jpg',
+            './image/facade1/5256075123540822992.jpg',
+            './image/facade1/5256075123540822993.jpg',
+            './image/facade1/5256075123540822994.jpg',
+            './image/facade1/5256075123540822995.jpg'
+        ],
+        category: "terrace"
+    },
+    "Терраса 6": {
+        images: [
+             './image/facade6/photo_2026-02-05_14-44-07.jpg',
+            './image/facade6/photo_2026-02-05_14-44-08.jpg',
+            './image/facade6/photo_2026-02-05_14-44-10.jpg',
+            './image/facade6/photo_2026-02-05_14-44-54.jpg'
+        ],
+        category: "terrace"
+    },
+    "Терраса 7": {
+        images: [
+              './image/facade7/photo_2026-02-05_14-42-22.jpg',
+            './image/facade7/photo_2026-02-05_14-42-24.jpg',
+            './image/facade7/photo_2026-02-05_14-42-25.jpg',
+            './image/facade7/photo_2026-02-05_14-42-26.jpg'
+        ],
+        category: "terrace"
+    },
     "Крытая терраса с москитными сетками": {
         images: [
             'https://i.pinimg.com/1200x/9a/8b/7c/9a8b7c6d5e4f3d2c1b0a9f8e7d6c5b4a.jpg'
