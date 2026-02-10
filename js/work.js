@@ -150,12 +150,29 @@ const worksData = {
             './image/facade7/photo_2026-02-05_14-42-26.jpg'
         ],
         category: "terrace"
+    },
+    "Крытая терраса с москитными сетками": {
+        images: [
+            'https://i.pinimg.com/1200x/9a/8b/7c/9a8b7c6d5e4f3d2c1b0a9f8e7d6c5b4a.jpg'
+        ],
+        category: "terrace"
     }
 };
 
 // Переменные для управления галереей
 let currentWorkImageIndex = 0;
 let currentWorkImages = [];
+let imageLoading = false;
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Функция для определения ориентации изображения
+function getImageOrientation(img) {
+    if (!img.complete || img.naturalWidth === 0) {
+        return 'landscape'; // По умолчанию
+    }
+    return img.naturalWidth > img.naturalHeight ? 'landscape' : 'portrait';
+}
 
 // Функция для открытия модального окна работы
 function openWorkModal(workName) {
@@ -172,45 +189,77 @@ function openWorkModal(workName) {
     // Сохраняем текущие изображения работы
     currentWorkImages = workData.images;
     currentWorkImageIndex = 0;
+    imageLoading = true;
     
     // Получаем элементы DOM
     const mainImage = document.getElementById('modalWorkImage');
     const modal = document.getElementById('workModal');
+    const modalBody = document.querySelector('#workModal .modal-body');
     
-    if (!mainImage || !modal) {
+    if (!mainImage || !modal || !modalBody) {
         console.error('Элементы модального окна не найдены');
         return;
     }
     
-    // Добавляем индикатор загрузки
-    const loadingDiv = document.createElement('div');
-    loadingDiv.className = 'image-loading';
-    mainImage.parentNode.appendChild(loadingDiv);
+    // Очищаем предыдущие классы ориентации
+    modalBody.classList.remove('portrait', 'landscape');
+    
+    // Создаем индикатор загрузки
+    let loadingDiv = document.querySelector('#workModal .image-loading');
+    if (!loadingDiv) {
+        loadingDiv = document.createElement('div');
+        loadingDiv.className = 'image-loading';
+        modalBody.appendChild(loadingDiv);
+    } else {
+        loadingDiv.style.display = 'block';
+    }
     
     // Устанавливаем основное изображение
     mainImage.src = currentWorkImages[currentWorkImageIndex];
     mainImage.alt = workName;
+    mainImage.style.opacity = '0';
     
-    // Когда изображение загрузится
-    mainImage.onload = function() {
-        // Удаляем индикатор загрузки
-        if (loadingDiv.parentNode) {
-            loadingDiv.parentNode.removeChild(loadingDiv);
+    // Функция для обработки загрузки изображения
+    const handleImageLoad = function() {
+        // Определяем ориентацию изображения
+        const orientation = getImageOrientation(this);
+        modalBody.classList.add(orientation);
+        
+        // Убираем индикатор загрузки
+        if (loadingDiv && loadingDiv.parentNode) {
+            loadingDiv.style.display = 'none';
         }
         
         // Плавное появление
-        mainImage.style.opacity = '0';
         setTimeout(() => {
             mainImage.style.opacity = '1';
-        }, 10);
+            mainImage.classList.add('image-slide-right');
+            imageLoading = false;
+            
+            // Убираем класс анимации после завершения
+            setTimeout(() => {
+                mainImage.classList.remove('image-slide-right');
+            }, 300);
+        }, 100);
     };
+    
+    // Если изображение уже загружено
+    if (mainImage.complete) {
+        handleImageLoad.call(mainImage);
+    } else {
+        mainImage.onload = handleImageLoad;
+    }
     
     // Обработчик ошибки загрузки изображения
     mainImage.onerror = function() {
-        if (loadingDiv.parentNode) {
-            loadingDiv.parentNode.removeChild(loadingDiv);
+        console.error('Ошибка загрузки изображения:', this.src);
+        if (loadingDiv && loadingDiv.parentNode) {
+            loadingDiv.style.display = 'none';
         }
-        mainImage.alt = 'Изображение не загружено';
+        this.alt = 'Изображение не загружено';
+        this.style.opacity = '1';
+        modalBody.classList.add('landscape'); // По умолчанию
+        imageLoading = false;
     };
     
     // Обновляем индикатор текущего фото
@@ -221,6 +270,8 @@ function openWorkModal(workName) {
     
     // Показываем модальное окно
     modal.style.display = 'flex';
+    
+    // Блокируем прокрутку страницы
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     
@@ -230,51 +281,85 @@ function openWorkModal(workName) {
     } else {
         modal.classList.remove('single-image');
     }
-    
-    // Блокируем прокрутку страницы
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
 }
 
 // Функция для смены основного изображения
-function changeWorkMainImage(index) {
-    if (index < 0 || index >= currentWorkImages.length) return;
+function changeWorkMainImage(index, direction = 'right') {
+    if (index < 0 || index >= currentWorkImages.length || imageLoading) return;
     
+    imageLoading = true;
     currentWorkImageIndex = index;
     const mainImage = document.getElementById('modalWorkImage');
+    const modalBody = document.querySelector('#workModal .modal-body');
     
-    if (mainImage) {
-        // Добавляем индикатор загрузки
-        const loadingDiv = document.createElement('div');
-        loadingDiv.className = 'image-loading';
-        mainImage.parentNode.appendChild(loadingDiv);
+    if (mainImage && modalBody) {
+        // Создаем индикатор загрузки
+        let loadingDiv = document.querySelector('#workModal .image-loading');
+        if (!loadingDiv) {
+            loadingDiv = document.createElement('div');
+            loadingDiv.className = 'image-loading';
+            modalBody.appendChild(loadingDiv);
+        }
+        loadingDiv.style.display = 'block';
+        
+        // Убираем предыдущие классы анимации
+        mainImage.classList.remove('image-slide-left', 'image-slide-right');
         
         // Плавное исчезновение
         mainImage.style.opacity = '0';
         
         setTimeout(() => {
+            // Устанавливаем новый источник
             mainImage.src = currentWorkImages[currentWorkImageIndex];
             
-            // Когда новое изображение загрузится
-            mainImage.onload = function() {
-                // Удаляем индикатор загрузки
-                if (loadingDiv.parentNode) {
-                    loadingDiv.parentNode.removeChild(loadingDiv);
+            // Функция для обработки загрузки нового изображения
+            const handleNewImageLoad = function() {
+                // Определяем ориентацию
+                const orientation = getImageOrientation(this);
+                modalBody.classList.remove('portrait', 'landscape');
+                modalBody.classList.add(orientation);
+                
+                // Убираем индикатор загрузки
+                if (loadingDiv && loadingDiv.parentNode) {
+                    loadingDiv.style.display = 'none';
+                }
+                
+                // Добавляем анимацию в нужном направлении
+                if (direction === 'left') {
+                    mainImage.classList.add('image-slide-left');
+                } else {
+                    mainImage.classList.add('image-slide-right');
                 }
                 
                 // Плавное появление
                 mainImage.style.opacity = '1';
+                imageLoading = false;
                 
                 // Обновляем индикатор текущего фото
                 updateImageCounter();
+                
+                // Убираем классы анимации после завершения
+                setTimeout(() => {
+                    mainImage.classList.remove('image-slide-left', 'image-slide-right');
+                }, 300);
             };
             
+            // Если изображение уже загружено
+            if (mainImage.complete) {
+                handleNewImageLoad.call(mainImage);
+            } else {
+                mainImage.onload = handleNewImageLoad;
+            }
+            
             mainImage.onerror = function() {
-                if (loadingDiv.parentNode) {
-                    loadingDiv.parentNode.removeChild(loadingDiv);
+                console.error('Ошибка загрузки изображения:', this.src);
+                if (loadingDiv && loadingDiv.parentNode) {
+                    loadingDiv.style.display = 'none';
                 }
-                mainImage.alt = 'Изображение не загружено';
-                mainImage.style.opacity = '1';
+                this.alt = 'Изображение не загружено';
+                this.style.opacity = '1';
+                modalBody.classList.add('landscape');
+                imageLoading = false;
                 updateImageCounter();
             };
         }, 200);
@@ -284,18 +369,18 @@ function changeWorkMainImage(index) {
 // Функция для перехода к следующему изображению
 function nextWorkImage() {
     if (currentWorkImageIndex < currentWorkImages.length - 1) {
-        changeWorkMainImage(currentWorkImageIndex + 1);
+        changeWorkMainImage(currentWorkImageIndex + 1, 'right');
     } else {
-        changeWorkMainImage(0); // Циклическая навигация
+        changeWorkMainImage(0, 'right'); // Циклическая навигация
     }
 }
 
 // Функция для перехода к предыдущему изображению
 function prevWorkImage() {
     if (currentWorkImageIndex > 0) {
-        changeWorkMainImage(currentWorkImageIndex - 1);
+        changeWorkMainImage(currentWorkImageIndex - 1, 'left');
     } else {
-        changeWorkMainImage(currentWorkImages.length - 1); // Циклическая навигация
+        changeWorkMainImage(currentWorkImages.length - 1, 'left'); // Циклическая навигация
     }
 }
 
@@ -312,17 +397,14 @@ function updateImageCounter() {
 function updateNavigationButtons(imageCount) {
     const prevArrow = document.querySelector('#workModal .prev-arrow');
     const nextArrow = document.querySelector('#workModal .next-arrow');
-    const counter = document.getElementById('imageCounter');
     
     // Показываем кнопки только если есть более одного изображения
     if (imageCount <= 1) {
         if (prevArrow) prevArrow.style.display = 'none';
         if (nextArrow) nextArrow.style.display = 'none';
-        if (counter) counter.style.display = 'none';
     } else {
         if (prevArrow) prevArrow.style.display = 'flex';
-        if (nextArrow) nextArrow.style.display = 'flex';
-        if (counter) counter.style.display = 'block';
+        if (nextArrow) nextArrow.display = 'flex';
     }
 }
 
@@ -331,17 +413,32 @@ function closeWorkModal() {
     const modal = document.getElementById('workModal');
     if (modal) {
         modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        document.documentElement.style.overflow = 'auto';
         
         // Возвращаем возможность прокрутки страницы
-        document.body.style.position = '';
-        document.body.style.width = '';
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
     }
     
     // Сбрасываем состояние галереи
     currentWorkImageIndex = 0;
     currentWorkImages = [];
+    imageLoading = false;
+}
+
+// Обработчик свайпов
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const difference = touchStartX - touchEndX;
+    
+    if (Math.abs(difference) > swipeThreshold) {
+        if (difference > 0) {
+            // Свайп влево - следующее фото
+            nextWorkImage();
+        } else {
+            // Свайп вправо - предыдущее фото
+            prevWorkImage();
+        }
+    }
 }
 
 // Инициализация после полной загрузки DOM
@@ -416,9 +513,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Свайпы для мобильных устройств
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
     const modalImage = document.getElementById('modalWorkImage');
     if (modalImage) {
         modalImage.addEventListener('touchstart', function(e) {
@@ -441,21 +535,6 @@ document.addEventListener('DOMContentLoaded', function() {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
         }, false);
-    }
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const difference = touchStartX - touchEndX;
-        
-        if (Math.abs(difference) > swipeThreshold) {
-            if (difference > 0) {
-                // Свайп влево - следующее фото
-                nextWorkImage();
-            } else {
-                // Свайп вправо - предыдущее фото
-                prevWorkImage();
-            }
-        }
     }
     
     // Запрещаем контекстное меню на изображениях
