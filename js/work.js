@@ -102,14 +102,14 @@ const worksData = {
         ],
         category: "insulation"
     },
-    "Закрытая веранда": {
+    "Терраса 3": {
         images: [
             './image/facade4/photo_2025-11-19_10-40-21.jpg',
             './image/facade4/photo_2025-11-19_10-40-23.jpg',
             './image/facade4/photo_2025-11-19_10-40-24.jpg',
             './image/facade4/photo_2025-11-19_10-40-26.jpg'
         ],
-        category: "veranda"
+        category: "terrace"
     },
     "Террасное покрытие из ДПК": {
         images: [
