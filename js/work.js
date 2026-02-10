@@ -41,16 +41,16 @@ const worksData = {
     },
     "Фасад 1": {
         images: [
-            './image/finishing1/photo_2026-02-05_14-40-00.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-02.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-04.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-07.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-08.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-10.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-12.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-14.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-16.jpg',
-            './image/finishing1/photo_2026-02-05_14-40-18.jpg'
+            './image/finishing/photo_2026-02-05_14-40-00.jpg',
+            './image/finishing/photo_2026-02-05_14-40-02.jpg',
+            './image/finishing/photo_2026-02-05_14-40-04.jpg',
+            './image/finishing/photo_2026-02-05_14-40-07.jpg',
+            './image/finishing/photo_2026-02-05_14-40-08.jpg',
+            './image/finishing/photo_2026-02-05_14-40-10.jpg',
+            './image/finishing/photo_2026-02-05_14-40-12.jpg',
+            './image/finishing/photo_2026-02-05_14-40-14.jpg',
+            './image/finishing/photo_2026-02-05_14-40-16.jpg',
+            './image/finishing/photo_2026-02-05_14-40-18.jpg'
         ],
         category: "facade"
     },
@@ -87,11 +87,11 @@ const worksData = {
     },
     "Фасад 2": {
         images: [
-            './image/finishing/photo_2026-02-05_14-45-22.jpg',
-            './image/finishing/photo_2026-02-05_14-45-24.jpg',
-            './image/finishing/photo_2026-02-05_14-45-25.jpg',
-            './image/finishing/photo_2026-02-05_14-45-26.jpg',
-            './image/finishing/photo_2026-02-05_14-45-28.jpg'
+            './image/finishing1/photo_2026-02-05_14-45-22.jpg',
+            './image/finishing1/photo_2026-02-05_14-45-24.jpg',
+            './image/finishing1/photo_2026-02-05_14-45-25.jpg',
+            './image/finishing1/photo_2026-02-05_14-45-26.jpg',
+            './image/finishing1/photo_2026-02-05_14-45-28.jpg'
         ],
         category: "insulation"
     },
