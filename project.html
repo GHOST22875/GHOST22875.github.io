@@ -279,9 +279,48 @@
     </footer>
 
     <!-- Модальное окно проекта (пока оставим, но не используем) -->
-    <div id="projectModal" class="modal" style="display: none;">
-        <!-- временно пустое модальное окно -->
+    <!-- Модальное окно проектов (в стиле work, но с описанием) -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+            <!-- Левая часть - галерея как в work -->
+            <div class="modal-gallery">
+                <div class="image-main-container">
+                    <img id="modalProjectImage" class="modal-image-main" src="" alt="Проект">
+                    <button class="slide-arrow prev-arrow">‹</button>
+                    <button class="slide-arrow next-arrow">›</button>
+                    <div class="image-loading" style="display: none;"></div>
+                </div>
+                <!-- Миниатюры -->
+                <div class="thumbnails-container" id="modalProjectThumbnails"></div>
+            </div>
+            
+            <!-- Правая часть - информация (уникально для проектов) -->
+            <div class="modal-info">
+                <h2 id="modalProjectTitle"></h2>
+                
+                <div class="modal-details">
+                    <p><strong>Площадь:</strong> <span id="modalProjectArea"></span></p>
+                    <p><strong>Срок строительства:</strong> <span id="modalProjectTime"></span></p>
+                    <p><strong>Цена:</strong> <span id="modalProjectPrice"></span></p>
+                </div>
+                
+                <div class="modal-description">
+                    <h3>Описание проекта</h3>
+                    <p id="modalProjectDescription"></p>
+                </div>
+                
+                <div class="modal-features">
+                    <h3>Особенности</h3>
+                    <ul id="modalProjectFeatures"></ul>
+                </div>
+                
+                <a href="contacts.html" class="modal-btn">Связаться с нами</a>
+            </div>
+        </div>
     </div>
+</div>
 
     <script src="js/projects.js"></script>
     <script src="js/script.js"></script>
