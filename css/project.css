@@ -58,7 +58,8 @@
     color: #2c3e50;
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover,
+.filter-btn.active {
     background-color: #4CAF50;
     color: white;
     transform: translateY(-2px);
@@ -75,7 +76,7 @@
     align-items: stretch;
 }
 
-/* Карточка проекта */
+/* Карточка проекта - в стиле work-card */
 .project-card {
     position: relative;
     border-radius: 12px;
@@ -146,6 +147,7 @@
     text-align: left;
 }
 
+/* Кнопка "Смотреть фото" - в стиле work-view-btn */
 .project-view-btn {
     padding: 14px 20px;
     background-color: #4CAF50;
@@ -238,23 +240,10 @@
     border-color: #4CAF50;
 }
 
-.dark-theme .filter-btn:hover, 
+.dark-theme .filter-btn:hover,
 .dark-theme .filter-btn.active {
     background-color: #4CAF50;
     color: white;
-}
-
-.dark-theme .about-cta {
-    background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
-}
-
-.dark-theme .about-cta .btn {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.dark-theme .about-cta .btn:hover {
-    background-color: #45a049;
 }
 
 /* Адаптивность */
@@ -263,44 +252,36 @@
         height: 40vh;
         margin-top: 60px;
     }
-    
+
     .projects-hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .projects-hero-content p {
         font-size: 1.2rem;
     }
-    
+
     .projects-filter {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .filter-btn {
         width: 200px;
     }
-    
+
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .project-card {
         min-height: 380px;
     }
-    
+
     .project-info h2 {
         min-height: auto;
         font-size: 1.2rem;
-    }
-    
-    .about-cta h2 {
-        font-size: 2rem;
-    }
-    
-    .about-cta p {
-        font-size: 1.1rem;
     }
 }
 
@@ -308,29 +289,17 @@
     .projects-hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .project-info {
         padding: 20px;
     }
-    
+
     .project-details {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .project-view-btn {
         width: 100%;
-    }
-    
-    .about-cta {
-        padding: 60px 20px;
-    }
-    
-    .about-cta h2 {
-        font-size: 1.8rem;
-    }
-    
-    .about-cta p {
-        font-size: 1rem;
     }
 }
