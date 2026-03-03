@@ -21,7 +21,7 @@ const projectsData = {
             'Система "умный дом"'
         ]
     },
-     "Дом 'Лесной'": {
+    "Дом 'Лесной'": {
         images: [
             'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
             'https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg',
@@ -42,7 +42,7 @@ const projectsData = {
             'Система "умный дом"'
         ]
     },
-     "Дом 'Солнечный'": {
+    "Дом 'Солнечный'": {
         images: [
             'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
             'https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg',
@@ -63,7 +63,7 @@ const projectsData = {
             'Система "умный дом"'
         ]
     },
-     "Дом 'Уютный'": {
+    "Дом 'Уютный'": {
         images: [
             'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
             'https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg',
@@ -84,7 +84,7 @@ const projectsData = {
             'Система "умный дом"'
         ]
     },
-     "Дом 'Современный'": {
+    "Дом 'Современный'": {
         images: [
             'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
             'https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg',
@@ -105,7 +105,7 @@ const projectsData = {
             'Система "умный дом"'
         ]
     },
-     "Дом 'Классика'": {
+    "Дом 'Классика'": {
         images: [
             'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
             'https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg',
@@ -126,7 +126,7 @@ const projectsData = {
             'Система "умный дом"'
         ]
     },
-     "Фасад 'Скандинавский'": {
+    "Фасад 'Скандинавский'": {
         images: [
             './image/facade3/photo_2025-11-19_10-39-37.jpg',
             './image/facade3/photo_2025-11-19_10-39-57.jpg',
@@ -134,69 +134,71 @@ const projectsData = {
             './image/facade3/photo_2025-11-19_10-39-59.jpg',
             './image/facade3/photo_2025-11-19_10-40-03.jpg'
         ],
-        area: '120 м²',
-        time: '3 месяца',
-        price: 'от 1 800 000 ₽',
-        description: 'Просторный двухэтажный дом в современном стиле с панорамными окнами. Идеальное решение для семьи из 4-5 человек. Дом построен с использованием энергоэффективных технологий и качественных материалов.',
+        area: '85 м²',
+        time: '3 недели',
+        price: 'от 450 000 ₽',
+        description: 'Современный скандинавский стиль в отделке фасада. Использование качественных материалов и современных технологий утепления.',
         features: [
-            '3 спальни, 2 санузла',
-            'Просторная гостиная с камином',
-            'Кухня-столовая',
-            'Терраса с выходом в сад',
-            'Гараж на 2 автомобиля',
-            'Энергоэффективные технологии',
-            'Панорамные окна',
-            'Система "умный дом"'
+            'Утепление минеральной ватой',
+            'Вентилируемый фасад',
+            'Деревянная обрешетка',
+            'Фиброцементные панели',
+            'Пароизоляция',
+            'Ветрозащита',
+            'Декоративные элементы',
+            'Окраска в 2 слоя'
         ]
     },
-     "Фасад 'Классический'": {
+    "Фасад 'Классический'": {
         images: [
             './image/facade1/5256075123540822993.jpg',
             './image/facade1/5256075123540822992.jpg',
             './image/facade1/5256075123540822991.jpg'
         ],
         area: '120 м²',
-        time: '3 месяца',
-        price: 'от 1 800 000 ₽',
-        description: 'Просторный двухэтажный дом в современном стиле с панорамными окнами. Идеальное решение для семьи из 4-5 человек. Дом построен с использованием энергоэффективных технологий и качественных материалов.',
+        time: '4 недели',
+        price: 'от 680 000 ₽',
+        description: 'Классический стиль отделки фасада с использованием штукатурки и декоративных элементов. Элегантное решение для загородного дома.',
         features: [
-            '3 спальни, 2 санузла',
-            'Просторная гостиная с камином',
-            'Кухня-столовая',
-            'Терраса с выходом в сад',
-            'Гараж на 2 автомобиля',
-            'Энергоэффективные технологии',
-            'Панорамные окна',
-            'Система "умный дом"'
+            'Утепление пенополистиролом',
+            'Армирующая сетка',
+            'Декоративная штукатурка',
+            'Лепнина',
+            'Русты',
+            'Карнизы',
+            'Цоколь из камня',
+            'Окраска фасадной краской'
         ]
     },
-     "Фасад 'Современный'": {
+    "Фасад 'Современный'": {
         images: [
             './image/facade2/5256075123540823007.jpg',
             './image/facade2/5256075123540822998.jpg',
             './image/facade2/5256075123540823009.jpg'
         ],
-        area: '120 м²',
-        time: '3 месяца',
-        price: 'от 1 800 000 ₽',
-        description: 'Просторный двухэтажный дом в современном стиле с панорамными окнами. Идеальное решение для семьи из 4-5 человек. Дом построен с использованием энергоэффективных технологий и качественных материалов.',
+        area: '95 м²',
+        time: '2.5 недели',
+        price: 'от 520 000 ₽',
+        description: 'Современный минималистичный фасад с использованием металлокассет и композитных материалов. Стильное решение для современного дома.',
         features: [
-            '3 спальни, 2 санузла',
-            'Просторная гостиная с камином',
-            'Кухня-столовая',
-            'Терраса с выходом в сад',
-            'Гараж на 2 автомобиля',
-            'Энергоэффективные технологии',
-            'Панорамные окна',
-            'Система "умный дом"'
+            'Металлокассеты',
+            'Утепление базальтовой ватой',
+            'Ветрозащитная мембрана',
+            'Алюминиевый композит',
+            'Скрытый крепеж',
+            'Светодиодная подсветка',
+            'Плоские линии',
+            'Контрастные цвета'
         ]
     }
-    
 };
 
 // Переменные для управления галереей
 let currentImageIndex = 0;
 let currentProjectImages = [];
+let imageLoading = false;
+let touchStartX = 0;
+let touchEndX = 0;
 
 // Функция для открытия модального окна проекта
 function openProjectModal(projectName) {
@@ -213,125 +215,164 @@ function openProjectModal(projectName) {
     // Сохраняем текущие изображения проекта
     currentProjectImages = projectData.images;
     currentImageIndex = 0;
+    imageLoading = true;
     
-    // Устанавливаем основное изображение
+    // Получаем элементы DOM
     const mainImage = document.getElementById('modalProjectImage');
-    if (mainImage) {
-        mainImage.src = currentProjectImages[currentImageIndex];
-        mainImage.alt = projectName;
+    const modal = document.getElementById('projectModal');
+    const modalBody = document.querySelector('#projectModal .modal-gallery');
+    const loadingDiv = document.querySelector('#projectModal .image-loading');
+    
+    if (!mainImage || !modal) {
+        console.error('Элементы модального окна не найдены');
+        return;
     }
     
+    // Показываем индикатор загрузки
+    if (loadingDiv) {
+        loadingDiv.style.display = 'block';
+    }
+    
+    // Устанавливаем основное изображение
+    mainImage.src = currentProjectImages[currentImageIndex];
+    mainImage.alt = projectName;
+    mainImage.style.opacity = '0';
+    
+    // Обработчик загрузки изображения
+    mainImage.onload = function() {
+        if (loadingDiv) {
+            loadingDiv.style.display = 'none';
+        }
+        this.style.opacity = '1';
+        this.classList.add('image-slide-right');
+        imageLoading = false;
+        
+        setTimeout(() => {
+            this.classList.remove('image-slide-right');
+        }, 300);
+    };
+    
+    mainImage.onerror = function() {
+        console.error('Ошибка загрузки изображения:', this.src);
+        if (loadingDiv) {
+            loadingDiv.style.display = 'none';
+        }
+        this.alt = 'Изображение не загружено';
+        this.style.opacity = '1';
+        imageLoading = false;
+    };
+    
     // Заполняем модальное окно данными
-    const titleElement = document.getElementById('modalProjectTitle');
-    if (titleElement) titleElement.textContent = projectName;
-    
-    const areaElement = document.getElementById('modalProjectArea');
-    if (areaElement) areaElement.textContent = projectData.area;
-    
-    const timeElement = document.getElementById('modalProjectTime');
-    if (timeElement) timeElement.textContent = projectData.time;
-    
-    const priceElement = document.getElementById('modalProjectPrice');
-    if (priceElement) priceElement.textContent = projectData.price;
-    
-    // Добавляем описание
-    const descriptionElement = document.getElementById('modalProjectDescription');
-    if (descriptionElement) descriptionElement.textContent = projectData.description;
+    document.getElementById('modalProjectTitle').textContent = projectName;
+    document.getElementById('modalProjectArea').textContent = projectData.area;
+    document.getElementById('modalProjectTime').textContent = projectData.time;
+    document.getElementById('modalProjectPrice').textContent = projectData.price;
+    document.getElementById('modalProjectDescription').textContent = projectData.description;
     
     // Очищаем и добавляем особенности
     const featuresList = document.getElementById('modalProjectFeatures');
-    if (featuresList) {
-        featuresList.innerHTML = '';
-        
-        projectData.features.forEach(feature => {
-            const li = document.createElement('li');
-            li.textContent = feature;
-            featuresList.appendChild(li);
-        });
-    }
+    featuresList.innerHTML = '';
+    projectData.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
     
     // Создаем миниатюры
     const thumbnailsContainer = document.getElementById('modalProjectThumbnails');
-    if (thumbnailsContainer) {
-        thumbnailsContainer.innerHTML = '';
-        
-        projectData.images.forEach((imageUrl, index) => {
-            const thumbnail = document.createElement('div');
-            thumbnail.className = 'thumbnail';
-            if (index === 0) thumbnail.classList.add('active');
-            
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            img.alt = `${projectName} - фото ${index + 1}`;
-            img.loading = 'lazy';
-            
-            thumbnail.appendChild(img);
-            thumbnail.addEventListener('click', () => {
-                changeMainImage(index);
-            });
-            
-            thumbnailsContainer.appendChild(thumbnail);
-        });
-    }
+    thumbnailsContainer.innerHTML = '';
     
-    // Обновляем состояние кнопок навигации
-    updateNavigationButtons();
+    projectData.images.forEach((imageUrl, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'thumbnail';
+        if (index === 0) thumbnail.classList.add('active');
+        
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = `${projectName} - фото ${index + 1}`;
+        img.loading = 'lazy';
+        
+        thumbnail.appendChild(img);
+        thumbnail.addEventListener('click', () => {
+            changeProjectImage(index);
+        });
+        
+        thumbnailsContainer.appendChild(thumbnail);
+    });
+    
+    // Показываем/скрываем стрелки
+    updateProjectNavigationButtons();
     
     // Показываем модальное окно
-    const modal = document.getElementById('projectModal');
-    if (modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
-// Функция для смены основного изображения
-function changeMainImage(index) {
-    if (index < 0 || index >= currentProjectImages.length) return;
+// Функция для смены изображения
+function changeProjectImage(index) {
+    if (index < 0 || index >= currentProjectImages.length || imageLoading) return;
     
+    imageLoading = true;
     currentImageIndex = index;
     const mainImage = document.getElementById('modalProjectImage');
+    const loadingDiv = document.querySelector('#projectModal .image-loading');
     
-    if (mainImage) {
-        // Плавное исчезновение
+    if (mainImage && loadingDiv) {
+        loadingDiv.style.display = 'block';
         mainImage.style.opacity = '0';
         
         setTimeout(() => {
             mainImage.src = currentProjectImages[currentImageIndex];
-            mainImage.style.opacity = '1';
             
-            // Обновляем активную миниатюру
-            document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
-                thumb.classList.toggle('active', i === currentImageIndex);
-            });
-            
-            // Обновляем состояние кнопок навигации
-            updateNavigationButtons();
+            mainImage.onload = function() {
+                loadingDiv.style.display = 'none';
+                this.style.opacity = '1';
+                this.classList.add('image-slide-right');
+                imageLoading = false;
+                
+                // Обновляем активную миниатюру
+                document.querySelectorAll('#projectModal .thumbnail').forEach((thumb, i) => {
+                    thumb.classList.toggle('active', i === currentImageIndex);
+                });
+                
+                setTimeout(() => {
+                    this.classList.remove('image-slide-right');
+                }, 300);
+            };
         }, 200);
     }
 }
 
 // Функция для перехода к следующему изображению
-function nextImage() {
+function nextProjectImage() {
     if (currentImageIndex < currentProjectImages.length - 1) {
-        changeMainImage(currentImageIndex + 1);
+        changeProjectImage(currentImageIndex + 1);
     } else {
-        changeMainImage(0); // Циклическая навигация
+        changeProjectImage(0);
     }
 }
 
 // Функция для перехода к предыдущему изображению
-function prevImage() {
+function prevProjectImage() {
     if (currentImageIndex > 0) {
-        changeMainImage(currentImageIndex - 1);
+        changeProjectImage(currentImageIndex - 1);
     } else {
-        changeMainImage(currentProjectImages.length - 1); // Циклическая навигация
+        changeProjectImage(currentProjectImages.length - 1);
     }
 }
 
-// Функция для обновления состояния кнопок навигации
-function updateNavigationButtons() {
-    // Можно добавить логику для скрытия/показа кнопок если нужно
+// Обновление кнопок навигации
+function updateProjectNavigationButtons() {
+    const prevArrow = document.querySelector('#projectModal .prev-arrow');
+    const nextArrow = document.querySelector('#projectModal .next-arrow');
+    
+    if (currentProjectImages.length <= 1) {
+        if (prevArrow) prevArrow.style.display = 'none';
+        if (nextArrow) nextArrow.style.display = 'none';
+    } else {
+        if (prevArrow) prevArrow.style.display = 'flex';
+        if (nextArrow) nextArrow.style.display = 'flex';
+    }
 }
 
 // Закрытие модального окна
@@ -342,38 +383,32 @@ function closeProjectModal() {
         document.body.style.overflow = 'auto';
     }
     
-    // Сбрасываем состояние галереи
+    // Сбрасываем состояние
     currentImageIndex = 0;
     currentProjectImages = [];
+    imageLoading = false;
 }
 
-// Инициализация после полной загрузки DOM
+// Инициализация
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM загружен, инициализация обработчиков проектов...');
+    console.log('Инициализация обработчиков проектов...');
     
-    // Добавляем обработчики для кнопок "Смотреть фото"
-    const viewButtons = document.querySelectorAll('.project-view-btn');
-    console.log('Найдено кнопок просмотра:', viewButtons.length);
-    
-    viewButtons.forEach(button => {
+    // Кнопки "Смотреть фото"
+    document.querySelectorAll('.project-view-btn').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            
             const projectName = this.getAttribute('data-project');
-            console.log('Клик по кнопке просмотра:', projectName);
-            
             openProjectModal(projectName);
         });
     });
     
-    // Закрытие модального окна при клике на крестик
-    const closeBtn = document.querySelector('.modal-close');
+    // Закрытие по крестику
+    const closeBtn = document.querySelector('#projectModal .modal-close');
     if (closeBtn) {
         closeBtn.addEventListener('click', closeProjectModal);
     }
     
-    // Закрытие модального окна при клике вне его области
+    // Закрытие по клику вне контента
     const modal = document.getElementById('projectModal');
     if (modal) {
         modal.addEventListener('click', function(e) {
@@ -383,101 +418,71 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Закрытие модального окна при нажатии Escape
+    // Навигация стрелками
+    document.querySelector('#projectModal .prev-arrow')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prevProjectImage();
+    });
+    
+    document.querySelector('#projectModal .next-arrow')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nextProjectImage();
+    });
+    
+    // Клавиши
     document.addEventListener('keydown', function(e) {
         const modal = document.getElementById('projectModal');
-        if (e.key === 'Escape' && modal && modal.style.display === 'block') {
-            closeProjectModal();
-        }
-        
-        // Навигация по галерее с помощью клавиш
-        if (modal && modal.style.display === 'block') {
-            if (e.key === 'ArrowLeft') {
-                prevImage();
+        if (modal && modal.style.display === 'flex') {
+            if (e.key === 'Escape') {
+                closeProjectModal();
+            } else if (e.key === 'ArrowLeft') {
+                prevProjectImage();
             } else if (e.key === 'ArrowRight') {
-                nextImage();
+                nextProjectImage();
             }
         }
     });
     
-    // Добавляем кнопки навигации для галереи
-    const modalImage = document.querySelector('.modal-image');
+    // Свайпы для мобильных
+    const modalImage = document.getElementById('modalProjectImage');
     if (modalImage) {
-        // Проверяем, не добавлены ли уже кнопки
-        if (!modalImage.querySelector('.slide-arrow')) {
-            const prevArrow = document.createElement('button');
-            prevArrow.className = 'slide-arrow prev-arrow';
-            prevArrow.innerHTML = '‹';
-            prevArrow.addEventListener('click', (e) => {
-                e.stopPropagation();
-                prevImage();
-            });
+        modalImage.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        modalImage.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
             
-            const nextArrow = document.createElement('button');
-            nextArrow.className = 'slide-arrow next-arrow';
-            nextArrow.innerHTML = '›';
-            nextArrow.addEventListener('click', (e) => {
-                e.stopPropagation();
-                nextImage();
-            });
-            
-            modalImage.appendChild(prevArrow);
-            modalImage.appendChild(nextArrow);
-        }
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextProjectImage();
+                } else {
+                    prevProjectImage();
+                }
+            }
+        });
     }
     
     // Фильтрация проектов
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.projects-filter .filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Убираем активный класс у всех кнопок
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Добавляем активный класс текущей кнопке
             button.classList.add('active');
             
             const filterValue = button.getAttribute('data-filter');
             
             projectCards.forEach(card => {
                 if (filterValue === 'all') {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 50);
+                    card.style.display = 'flex';
                 } else {
-                    const cardCategories = card.getAttribute('data-category').split(' ');
-                    if (cardCategories.includes(filterValue)) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
+                    const categories = card.getAttribute('data-category').split(' ');
+                    card.style.display = categories.includes(filterValue) ? 'flex' : 'none';
                 }
             });
         });
-    });
-});
-
-// Функция для предзагрузки изображений
-function preloadImages(images) {
-    images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-}
-
-// Предзагрузка изображений при загрузке страницы
-window.addEventListener('load', function() {
-    Object.values(projectsData).forEach(project => {
-        preloadImages(project.images);
     });
 });
