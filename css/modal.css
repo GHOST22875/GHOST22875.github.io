@@ -235,7 +235,7 @@
 /* СПЕЦИФИЧНЫЕ СТИЛИ ДЛЯ РАЗНЫХ ТИПОВ МОДАЛЬНЫХ ОКОН */
 /* =========================================== */
 
-/* ----- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА РАБОТ (ГАЛЕРЕЯ) ----- */
+/* ----- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА РАБОТ (ГАЛЕРЕЯ) - ПОЛНОСТЬЮ БЕЗ ИЗМЕНЕНИЙ ----- */
 #workModal .modal-body {
     background-color: #000;
 }
@@ -244,13 +244,15 @@
     background-color: transparent;
 }
 
-/* ----- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА ПРОЕКТОВ (С ОПИСАНИЕМ) ----- */
+/* ----- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА ПРОЕКТОВ (С ОПИСАНИЕМ) - ИСПРАВЛЕНО ----- */
 #projectModal .modal-content {
     max-width: 1400px;
     max-height: 90vh;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    height: 90vh;
 }
 
 #projectModal .modal-body {
@@ -262,24 +264,23 @@
     background-color: #fff;
 }
 
-/* Левая часть - галерея */
+/* Левая часть - галерея на всю высоту */
 #projectModal .modal-gallery {
     position: relative;
     background: #000;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
     height: 100%;
     overflow: hidden;
+    padding: 0;
 }
 
-/* Контейнер для основного изображения */
+/* Контейнер для изображения - занимает всё доступное пространство */
 #projectModal .image-main-container {
     position: relative;
     width: 100%;
-    height: calc(100% - 100px);
+    flex: 1 1 auto;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,19 +293,20 @@
     width: auto;
     height: auto;
     object-fit: contain;
+    display: block;
 }
 
-/* Миниатюры для проектов */
+/* Миниатюры - фиксированная высота */
 #projectModal .thumbnails-container {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    padding: 15px;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 80px;
-    overflow-y: auto;
-    padding: 5px;
-    width: 100%;
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    min-height: 80px;
 }
 
 #projectModal .thumbnail {
@@ -335,13 +337,15 @@
     object-fit: cover;
 }
 
-/* Правая часть - информация о проекте */
+/* Правая часть - информация на всю высоту */
 #projectModal .modal-info {
     padding: 40px;
+    background-color: #fff;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    background-color: #fff;
 }
 
 #projectModal .modal-info h2 {
@@ -349,6 +353,7 @@
     margin-bottom: 20px;
     color: #2c3e50;
     font-weight: 600;
+    flex-shrink: 0;
 }
 
 #projectModal .modal-details {
@@ -356,6 +361,7 @@
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
+    flex-shrink: 0;
 }
 
 #projectModal .modal-details p {
@@ -370,6 +376,7 @@
 
 #projectModal .modal-description {
     margin-bottom: 25px;
+    flex-shrink: 0;
 }
 
 #projectModal .modal-description h3 {
@@ -386,6 +393,9 @@
 
 #projectModal .modal-features {
     margin-bottom: 30px;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 #projectModal .modal-features h3 {
@@ -393,6 +403,7 @@
     margin-bottom: 15px;
     color: #2c3e50;
     font-weight: 600;
+    flex-shrink: 0;
 }
 
 #projectModal .modal-features ul {
@@ -433,6 +444,8 @@
     border: none;
     cursor: pointer;
     text-align: center;
+    flex-shrink: 0;
+    margin-top: auto;
 }
 
 #projectModal .modal-btn:hover {
@@ -444,18 +457,50 @@
 /* Стрелки внутри галереи проектов */
 #projectModal .slide-arrow {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    font-size: 30px;
+    border-radius: 50%;
     background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+#projectModal .slide-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 #projectModal .prev-arrow {
-    left: 10px;
+    left: 15px;
 }
 
 #projectModal .next-arrow {
-    right: 10px;
+    right: 15px;
+}
+
+/* Индикатор загрузки */
+#projectModal .image-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #4CAF50;
+    animation: spin 1s ease-in-out infinite;
+    z-index: 20;
 }
 
 /* =========================================== */
@@ -662,6 +707,7 @@
     
     #projectModal .modal-gallery {
         min-height: auto;
+        height: 100%;
     }
     
     #projectModal .image-main-container {
@@ -686,274 +732,4 @@
     .modal-close {
         top: calc(20px + env(safe-area-inset-top));
     }
-}
-
-/* Исправления для модального окна проектов - убираем белые полосы */
-#projectModal .modal-content {
-    max-width: 1400px;
-    max-height: 90vh;
-    border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-}
-
-#projectModal .modal-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    height: 100%;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-/* Левая часть - галерея на всю высоту без отступов */
-#projectModal .modal-gallery {
-    position: relative;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-    padding: 0; /* Убираем padding */
-}
-
-/* Контейнер для изображения занимает всё доступное пространство */
-#projectModal .image-main-container {
-    position: relative;
-    width: 100%;
-    flex: 1; /* Растягивается на всю высоту */
-    min-height: 0; /* Важно для flex-контейнера */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000;
-}
-
-#projectModal .modal-image-main {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-/* Миниатюры внизу с отступом только снизу */
-#projectModal .thumbnails-container {
-    display: flex;
-    gap: 10px;
-    padding: 15px; /* Увеличили отступ для удобства */
-    flex-wrap: wrap;
-    justify-content: center;
-    background: #000; /* Фон как у галереи */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#projectModal .thumbnail {
-    width: 70px;
-    height: 50px;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-    flex-shrink: 0;
-}
-
-#projectModal .thumbnail:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-#projectModal .thumbnail.active {
-    border-color: #4CAF50;
-    opacity: 1;
-}
-
-/* Правая часть - информация с прокруткой */
-#projectModal .modal-info {
-    padding: 40px;
-    overflow-y: auto;
-    background-color: #fff;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-/* Стрелки навигации внутри галереи */
-#projectModal .slide-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-#projectModal .slide-arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
-    border-color: rgba(255, 255, 255, 0.6);
-}
-
-#projectModal .prev-arrow {
-    left: 15px;
-}
-
-#projectModal .next-arrow {
-    right: 15px;
-}
-
-/* Индикатор загрузки */
-#projectModal .image-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    border-top-color: #4CAF50;
-    animation: spin 1s ease-in-out infinite;
-    z-index: 20;
-}
-
-/* Адаптивность */
-@media (max-width: 968px) {
-    #projectModal .modal-content {
-        max-width: 95%;
-        max-height: 95vh;
-    }
-    
-    #projectModal .modal-body {
-        grid-template-columns: 1fr;
-        overflow-y: auto;
-    }
-    
-    #projectModal .modal-gallery {
-        min-height: 400px;
-    }
-    
-    #projectModal .image-main-container {
-        height: 300px;
-    }
-    
-    #projectModal .modal-info {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    #projectModal .slide-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
-    
-    #projectModal .modal-gallery {
-        min-height: 350px;
-    }
-    
-    #projectModal .image-main-container {
-        height: 250px;
-    }
-    
-    #projectModal .thumbnail {
-        width: 60px;
-        height: 45px;
-    }
-    
-    #projectModal .modal-info {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    #projectModal .slide-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-    }
-    
-    #projectModal .prev-arrow {
-        left: 10px;
-    }
-    
-    #projectModal .next-arrow {
-        right: 10px;
-    }
-    
-    #projectModal .modal-gallery {
-        min-height: 300px;
-    }
-    
-    #projectModal .image-main-container {
-        height: 200px;
-    }
-    
-    #projectModal .modal-info {
-        padding: 20px;
-    }
-    
-    #projectModal .thumbnail {
-        width: 50px;
-        height: 40px;
-    }
-}
-
-/* Для горизонтальной ориентации */
-@media (max-width: 768px) and (orientation: landscape) {
-    #projectModal .modal-body {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    #projectModal .modal-gallery {
-        min-height: auto;
-        height: 100%;
-    }
-    
-    #projectModal .image-main-container {
-        height: 200px;
-    }
-}
-
-/* Темная тема */
-.dark-theme #projectModal .modal-content {
-    background-color: #2d2d2d;
-}
-
-.dark-theme #projectModal .modal-info {
-    background-color: #2d2d2d;
-}
-
-.dark-theme #projectModal .modal-info h2 {
-    color: #fff;
-}
-
-.dark-theme #projectModal .modal-details {
-    background-color: #3d3d3d;
-}
-
-.dark-theme #projectModal .modal-details p {
-    color: #b0b0b0;
-}
-
-.dark-theme #projectModal .modal-description p {
-    color: #b0b0b0;
-}
-
-.dark-theme #projectModal .modal-features li {
-    color: #b0b0b0;
 }
