@@ -4,45 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.querySelector('.theme-icon');
+    // Удалены: const themeToggle и const themeIcon
     
     // ===========================================
-    // ИНИЦИАЛИЗАЦИЯ ТЕМЫ
+    // ИНИЦИАЛИЗАЦИЯ ТЕМЫ - УДАЛЕНО
     // ===========================================
-    function initTheme() {
-        // Проверяем сохраненную тему в localStorage
-        const currentTheme = localStorage.getItem('theme');
-        
-        // Проверяем предпочтения системы
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        // Устанавливаем тему
-        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
-            body.classList.add('dark-theme');
-            if (themeIcon) themeIcon.textContent = '🌕';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            body.classList.remove('dark-theme');
-            if (themeIcon) themeIcon.textContent = '🌑';
-            localStorage.setItem('theme', 'light');
-        }
-    }
     
     // ===========================================
-    // ПЕРЕКЛЮЧЕНИЕ ТЕМЫ
+    // ПЕРЕКЛЮЧЕНИЕ ТЕМЫ - УДАЛЕНО
     // ===========================================
-    function toggleTheme() {
-        body.classList.toggle('dark-theme');
-        
-        if (body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-            if (themeIcon) themeIcon.textContent = '🌕';
-        } else {
-            localStorage.setItem('theme', 'light');
-            if (themeIcon) themeIcon.textContent = '🌑';
-        }
-    }
     
     // ===========================================
     // СКРОЛЛ НАВИГАЦИИ
@@ -62,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===========================================
-    // МОБИЛЬНОЕ МЕНЮ
+    // МОБИЛЬНОЕ МЕНЮ (исправлено - убраны ссылки на тему)
     // ===========================================
     function initMobileMenu() {
         if (!mobileMenuToggle || !navLinks) return;
@@ -83,10 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             spans[1].style.opacity = '0';
             spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
             
-            // Меняем цвет иконок при открытом меню в темной теме
-            if (body.classList.contains('dark-theme')) {
-                spans.forEach(span => span.style.backgroundColor = '#ffffff');
-            }
+            // Удален код изменения цвета иконок для темной темы
         }
         
         // Функция для закрытия меню
@@ -105,12 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             spans[1].style.opacity = '';
             spans[2].style.transform = '';
             
-            // Возвращаем цвет иконок
-            if (body.classList.contains('dark-theme')) {
-                spans.forEach(span => span.style.backgroundColor = '#ffffff');
-            } else {
-                spans.forEach(span => span.style.backgroundColor = '#2c3e50');
-            }
+            // Удален код возврата цвета иконок
         }
         
         // Переключение меню
@@ -131,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Закрытие меню при клике на ссылку
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
-                // Не закрываем меню при клике на кнопку темы
-                if (!link.closest('.theme-toggle') && window.innerWidth <= 768) {
+                // Удалена проверка на тему
+                if (window.innerWidth <= 768) {
                     closeMenu();
                 }
             });
@@ -233,8 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ИНИЦИАЛИЗАЦИЯ ВСЕХ ФУНКЦИЙ
     // ===========================================
     
-    // Инициализация темы
-    initTheme();
+    // Инициализация темы - УДАЛЕНО
     
     // Инициализация навигации
     initNavbarScroll();
@@ -252,10 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ОБРАБОТЧИКИ СОБЫТИЙ
     // ===========================================
     
-    // Переключение темы
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
+    // Переключение темы - УДАЛЕНО
     
     // ===========================================
     // ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ
@@ -384,3 +342,5 @@ function initFAQ() {
 document.addEventListener('DOMContentLoaded', function() {
     initFAQ();
 });
+
+// FAQ аккордеон для страницы bvdoma - УДАЛЕН (был дубликат)
