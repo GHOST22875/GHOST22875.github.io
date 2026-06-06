@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - EarthDom</title>
+    <title>Контакты - Soft Nature</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contacts.css">
 </head>
 <body>
     <!-- Навигационное меню -->
-     <nav id="navbar">
+    <nav id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">EarthDom</a>
+            <a href="index.html" class="logo">Soft Nature</a>
             <button class="mobile-menu-toggle" aria-label="Меню">
-                  <span></span>
+                <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="/company.html">О нас</a></li>
-                <li><a href="/services.html">Услуги</a></li>
-                <li><a href="/project.html">Проекты</a></li>
-                <li><a href="/terrace.html">Террасные покрытия</a></li>
-                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
-                <li><a href="/work.html">Наши работы</a></li>
-                <li><a href="/contacts.html">Контакты</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle">
-                        <span class="theme-icon">🌓</span>
-                    </button>
-                </li>
+                <li><a href="company.html">О нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="project.html">Проекты</a></li>
+                <li><a href="terrace.html">Террасные покрытия</a></li>
+                <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="work.html">Наши работы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                
             </ul>
         </div>
     </nav>
+
     <!-- Герой-секция -->
     <section class="contacts-hero">
         <div class="container">
@@ -41,78 +37,63 @@
         </div>
     </section>
 
-    <!-- Основная секция контактов -->
+    <!-- Основная секция контактов - объединенный блок -->
     <section class="contacts-main">
         <div class="container">
-            <div class="contacts-grid">
-                <!-- Контактная информация -->
-                <div class="contact-info">
-                    <h2>Контактные данные</h2>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-text">
-                            <h3>Адрес</h3>
-                            <p>г. Москва, ул. Строителей, 15, офис 42</p>
+            <div class="contacts-wrapper">
+                <div class="contacts-grid">
+                    <!-- Контактная информация -->
+                    <div class="contact-info">
+                        <h2>Контактные данные</h2>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h3>Адрес</h3>
+                                <p>г. Москва, ул. Строителей, 15, офис 42</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h3>Телефоны</h3>
+                                <p>+7 (495) 123-45-67</p>
+                                <p>+7 (916) 987-65-43</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>softnature@mail.ru</p>
+                                <p>softnature@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-text">
+                                <h3>Часы работы</h3>
+                                <p>Пн-Пт: 9:00 - 18:00</p>
+                                <p>Сб: 10:00 - 15:00</p>
+                                <p>Вс: выходной</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Telegram">📱</a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+                            <a href="#" class="social-link" aria-label="VK">📘</a>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-text">
-                            <h3>Телефоны</h3>
-                            <p>+7 (495) 123-45-67</p>
-                            <p>+7 (916) 987-65-43</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p>info@earthdom.ru</p>
-                            <p>sales@earthdom.ru</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div class="contact-text">
-                            <h3>Часы работы</h3>
-                            <p>Пн-Пт: 9:00 - 18:00</p>
-                            <p>Сб: 10:00 - 15:00</p>
-                            <p>Вс: выходной</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Telegram">
-                            <img src="images/telegram.svg" alt="Telegram">
-                        </a>
-                        <a href="#" class="social-link" aria-label="WhatsApp">
-                            <img src="images/whatsapp.svg" alt="WhatsApp">
-                        </a>
-                        <a href="#" class="social-link" aria-label="VK">
-                            <img src="images/vk.svg" alt="VK">
-                        </a>
+                    <!-- Карта -->
+                    <div class="map-wrapper">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&amp;source=constructor" 
+                                width="100%" 
+                                height="100%" 
+                                style="min-height: 500px;"
+                                frameborder="0"
+                                aria-label="Карта с расположением офиса"></iframe>
                     </div>
                 </div>
-                
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Карта -->
-    <section class="map-section">
-        <div class="container">
-            <h2>Как нас найти</h2>
-            <div class="map-wrapper">
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&amp;source=constructor" 
-                        width="100%" 
-                        height="400" 
-                        frameborder="0"
-                        aria-label="Карта с расположением офиса"></iframe>
             </div>
         </div>
     </section>
@@ -120,8 +101,7 @@
     <!-- FAQ -->
     <section class="faq-section">
         <div class="container">
-            <h2>Частые вопросы</h2>
-            
+            <h2 class="section-title">Частые вопросы</h2>
             <div class="faq-item">
                 <button class="faq-question">
                     Какой срок строительства каркасного дома?
@@ -131,7 +111,6 @@
                     <p>Срок строительства зависит от площади и сложности проекта. В среднем, дом площадью 100-120 м² строится за 2-3 месяца.</p>
                 </div>
             </div>
-            
             <div class="faq-item">
                 <button class="faq-question">
                     Можно ли внести изменения в готовый проект?
@@ -141,7 +120,6 @@
                     <p>Да, мы готовы адаптировать любой проект под ваши потребности. Изменения возможны на этапе проектирования.</p>
                 </div>
             </div>
-            
             <div class="faq-item">
                 <button class="faq-question">
                     Есть ли у вас рассрочка или кредит?
@@ -151,7 +129,6 @@
                     <p>Мы сотрудничаем с несколькими банками и можем предложить выгодные условия кредитования. Также возможна индивидуальная рассрочка.</p>
                 </div>
             </div>
-            
             <div class="faq-item">
                 <button class="faq-question">
                     Даете ли вы гарантию на строительство?
@@ -176,25 +153,24 @@
                 <ul>
                     <li>г. Москва, ул. Строителей, 15</li>
                     <li>+7 (495) 123-45-67</li>
-                    <li>info@earthdom.ru</li>
+                    <li>softnature@mail.ru</li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Меню</h3>
                 <ul>
                     <li><a href="index.html">Главная</a></li>
-                     <li><a href="/project.html">Проекты</a></li>
-                    <li><a href="/terrace.html">Террасные покрытия</a></li>
-                    <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
-                    <li><a href="/material.html">Материалы</a></li>
-                    <li><a href="/services.html">Услуги</a></li>
-                    <li><a href="/company.html">О компании</a></li>
-                    <li><a href="/contacts.html">Контакты</a></li>
+                    <li><a href="project.html">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+            <p>&copy; 2023 Soft Nature. Все права защищены.</p>
         </div>
     </footer>
 

@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Наши работы - EarthDom</title>
+    <title>Наши работы - Soft Nature</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/work.css">
 </head>
 <body>
     <!-- Навигационное меню -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">EarthDom</a>
+            <a href="index.html" class="logo">Soft Nature</a>
             <button class="mobile-menu-toggle" aria-label="Меню">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="/project.html">Проекты</a></li>
-                <li><a href="/terrace.html">Террасные покрытия</a></li>
-                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
-                <li><a href="/services.html">Услуги</a></li>
-                <li><a href="/work.html" class="active">Наши работы</a></li>
-                <li><a href="/company.html">О компании</a></li>
-                <li><a href="/contacts.html">Контакты</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle">
-                        <span class="theme-icon">🌓</span>
-                    </button>
-                </li>
+                <li><a href="company.html">О нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="project.html">Проекты</a></li>
+                <li><a href="terrace.html">Террасные покрытия</a></li>
+                <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="work.html">Наши работы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                
             </ul>
         </div>
     </nav>
@@ -42,47 +37,45 @@
         </div>
     </section>
 
-   <!-- Секция выбора категории работ -->
-<section class="work-categories-section">
-    <div class="container">
-        <h2 class="section-title">Выберите категорию работ</h2>
-        <p class="section-subtitle">Посмотрите наши реализованные проекты по разным направлениям</p>
-        
-        <!-- Кнопки-фильтры как ссылки на отдельные страницы -->
-        <div class="photo-category-links">
-            <a href="work-houses.html" class="photo-category-link">
-                <div class="photo-wrapper">
-                    <img src="./image/house/photo_2026-02-05_14-47-10.jpg"  alt="Дома" class="category-photo">
-              <div class="photo-overlay">
-                        <h3 class="category-title">Дома</h3>
-                        <p class="category-count">50+ проектов</p>
-                    </div>
-                </div>
-            </a>
+    <!-- Секция выбора категории работ -->
+    <section class="work-categories-section">
+        <div class="container">
+            <h2 class="section-title">Выберите категорию работ</h2>
+            <p class="section-subtitle">Посмотрите наши реализованные проекты по разным направлениям</p>
             
-            <a href="work-facades.html" class="photo-category-link">
-                <div class="photo-wrapper">
-                    <img src="./image/finishing/photo_2026-02-05_14-40-12.jpg" alt="Фасады" class="category-photo">
-                <div class="photo-overlay">
-                        <h3 class="category-title">Фасады</h3>
-                        <p class="category-count">80+ проектов</p>
+            <div class="photo-category-links">
+                <a href="work-houses.html" class="photo-category-link">
+                    <div class="photo-wrapper">
+                        <img src="./image/house/photo_2026-02-05_14-47-10.jpg" alt="Дома" class="category-photo">
+                        <div class="photo-overlay">
+                            <h3 class="category-title">Дома</h3>
+                            <p class="category-count">50+ проектов</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            
-            <a href="work-terraces.html" class="photo-category-link">
-                <div class="photo-wrapper">
-                    <img src="./image/facade3/photo_2025-11-19_10-39-57.jpg" alt="Террасы" class="category-photo">
-                <div class="photo-overlay">
-                        <h3 class="category-title">Террасы</h3>
-                        <p class="category-count">70+ проектов</p>
+                </a>
+                <a href="work-facades.html" class="photo-category-link">
+                    <div class="photo-wrapper">
+                        <img src="./image/finishing/photo_2026-02-05_14-40-12.jpg" alt="Фасады" class="category-photo">
+                        <div class="photo-overlay">
+                            <h3 class="category-title">Фасады</h3>
+                            <p class="category-count">80+ проектов</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+                <a href="work-terraces.html" class="photo-category-link">
+                    <div class="photo-wrapper">
+                        <img src="./image/facade3/photo_2025-11-19_10-39-57.jpg" alt="Террасы" class="category-photo">
+                        <div class="photo-overlay">
+                            <h3 class="category-title">Террасы</h3>
+                            <p class="category-count">70+ проектов</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Статистика -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
@@ -106,7 +99,7 @@
         </div>
     </section>
 
-    <!-- Секция отзывов -->
+    <!-- Отзывы -->
     <section class="reviews-section">
         <div class="container">
             <h2 class="section-title">Отзывы клиентов</h2>
@@ -119,10 +112,9 @@
                         </div>
                         <div class="review-rating">★★★★★</div>
                     </div>
-                    <p class="review-text">"Очень довольны работой компании EarthDom. Дом построили в срок, качество на высшем уровне. Все этапы строительства контролировали лично, всегда были на связи. Рекомендуем!"</p>
+                    <p class="review-text">"Очень довольны работой компании Soft Nature. Дом построили в срок, качество на высшем уровне. Все этапы строительства контролировали лично, всегда были на связи. Рекомендуем!"</p>
                     <div class="review-date">Август 2023</div>
                 </div>
-
                 <div class="review-card">
                     <div class="review-header">
                         <div class="review-author">
@@ -134,7 +126,6 @@
                     <p class="review-text">"Делал отделку фасада своего дома. Ребята работали профессионально, аккуратно, без грязи и мусора. Результат превзошел ожидания. Буду обращаться еще за террасой."</p>
                     <div class="review-date">Июнь 2023</div>
                 </div>
-
                 <div class="review-card">
                     <div class="review-header">
                         <div class="review-author">
@@ -150,7 +141,7 @@
         </div>
     </section>
 
-    <!-- Секция CTA -->
+    <!-- CTA -->
     <section class="work-cta">
         <div class="container">
             <h2>Хотите такую же работу?</h2>
@@ -171,7 +162,7 @@
                 <ul>
                     <li>г. Москва, ул. Строителей, 15</li>
                     <li>+7 (495) 123-45-67</li>
-                    <li>info@earthdom.ru</li>
+                    <li>softnature@mail.ru</li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -188,9 +179,8 @@
                 </ul>
             </div>
         </div>
-        
         <div class="copyright">
-            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+            <p>&copy; 2023 Soft Nature  . Все права защищены.</p>
         </div>
     </footer>
 

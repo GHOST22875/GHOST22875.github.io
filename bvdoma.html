@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Модульные дома под ключ - EarthDom</title>
+    <title>Модульные дома под ключ - Soft Nature</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bvdoma.css">
-    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
     <!-- Навигационное меню -->
-   <nav id="navbar">
+    <nav id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">EarthDom</a>
+            <a href="index.html" class="logo">Soft Nature</a>
             <button class="mobile-menu-toggle" aria-label="Меню">
-                  <span></span>
+                <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="/company.html">О нас</a></li>
-                <li><a href="/services.html">Услуги</a></li>
-                <li><a href="/project.html">Проекты</a></li>
-                <li><a href="/terrace.html">Террасные покрытия</a></li>
-                <li><a href="/bvdoma.html">Быстровозводимые дома</a></li>
-                <li><a href="/work.html">Наши работы</a></li>
-                <li><a href="/contacts.html">Контакты</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle">
-                        <span class="theme-icon">🌓</span>
-                    </button>
-                </li>
+                <li><a href="company.html">О нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="project.html">Проекты</a></li>
+                <li><a href="terrace.html">Террасные покрытия</a></li>
+                <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
+                <li><a href="work.html">Наши работы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                
             </ul>
         </div>
     </nav>
-    
+
     <!-- Герой-секция -->
     <section class="bv-hero">
         <div class="bv-hero-content">
@@ -101,19 +95,14 @@
     <!-- Секция экономии -->
     <section class="savings-section">
         <div class="container">
-            <h2>ДО 1 120 000 Р ЭКОНОМИИ — ПОКАЖЕМ, ЗА СЧЕТ ЧЕГО</h2>
-            <p class="section-subtitle">Экономиете на фундаменте, рабочей силе и отоплении — конструкция легче, точнее и теплее капитального дома</p>
+            <h2>ДО 1 120 000 ₽ ЭКОНОМИИ — ПОКАЖЕМ, ЗА СЧЕТ ЧЕГО</h2>
+            <p class="section-subtitle">Экономите на фундаменте, рабочей силе и отоплении — конструкция легче, точнее и теплее капитального дома</p>
             
             <div class="savings-grid">
                 <div class="saving-item">
                     <h3>Экономия на фундаменте</h3>
                     <p>Легкая конструкция требует менее массивного основания</p>
                     <span class="saving-amount">до 300 000 ₽</span>
-                </div>
-                <div class="saving-item">
-                    <h3>Экономия на отоплении</h3>
-                    <p>Высокое утепление снижает затраты на обогрев</p>
-                    <span class="saving-amount">до 400 000 ₽</span>
                 </div>
                 <div class="saving-item">
                     <h3>Никакой стройки с шумом и грязью</h3>
@@ -191,10 +180,6 @@
                 <div class="warmth-feature">
                     <h4>Конструкция без мостиков холода</h4>
                     <p>Тепло не уходит через стыки и соединения</p>
-                </div>
-                <div class="warmth-feature">
-                    <h4>Потеря тепла – не более 5 °C за 24 часа</h4>
-                    <p>Даже при отключенном отоплении</p>
                 </div>
                 <div class="warmth-feature">
                     <h4>Постоянный воздухообмен</h4>
@@ -284,77 +269,104 @@
         </div>
     </section>
 
-    <!-- Секция проектов -->
-    <section class="projects">
-        <h2 class="section-title terrace-section-title">Наши реализованные проекты</h2>
-        <div class="projects-grid">
-            <a href="project.html" class="project-card-link">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Дом "Северный"</h3>
-                        <p>Площадь: 120 м²</p>
-                        <p>Срок строительства: 3 месяца</p>
+        <!-- Секция проектов -->
+    <section class="bv-projects">
+        <div class="container">
+            <h2 class="section-title">Наши реализованные проекты</h2>
+            <div class="bv-projects-grid">
+                <div class="bv-project-link">
+                    <div class="bv-project-card">
+                        <div class="bv-project-img" style="background-image: url('https://i.pinimg.com/736x/02/2d/14/022d1470d1410718c857f77e86a99049.jpg');"></div>
+                        <div class="bv-project-info">
+                            <div class="bv-project-meta">
+                                <span class="bv-project-category">Дом</span>
+                                <span class="bv-project-year">2023</span>
+                            </div>
+                            <h3>Дом "Северный"</h3>
+                            <p>Современный двухэтажный дом с панорамными окнами</p>
+                            <button class="bv-project-view-btn" onclick="location.href='project.html'">Перейти к проектам</button>
+                        </div>
                     </div>
                 </div>
-            </a>
-            
-            <a href="project.html" class="project-card-link">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/9f/8d/9f/9f8d9fabbacb8e6145caf82c13e89f47.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Дом "Лесной"</h3>
-                        <p>Площадь: 95 м²</p>
-                        <p>Срок строительства: 2.5 месяца</p>
+                
+                <div class="bv-project-link">
+                    <div class="bv-project-card">
+                        <div class="bv-project-img" style="background-image: url('https://i.pinimg.com/1200x/9f/8d/9f/9f8d9fabbacb8e6145caf82c13e89f47.jpg');"></div>
+                        <div class="bv-project-info">
+                            <div class="bv-project-meta">
+                                <span class="bv-project-category">Дом</span>
+                                <span class="bv-project-year">2023</span>
+                            </div>
+                            <h3>Дом "Лесной"</h3>
+                            <p>Уютный дом в лесном массиве с большой террасой</p>
+                            <button class="bv-project-view-btn" onclick="location.href='project.html'">Перейти к проектам</button>
+                        </div>
                     </div>
                 </div>
-            </a>
-            
-            <a href="project.html" class="project-card-link">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Дом "Солнечный"</h3>
-                        <p>Площадь: 150 м²</p>
-                        <p>Срок строительства: 4 месяца</p>
+                
+                <div class="bv-project-link">
+                    <div class="bv-project-card">
+                        <div class="bv-project-img" style="background-image: url('https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg');"></div>
+                        <div class="bv-project-info">
+                            <div class="bv-project-meta">
+                                <span class="bv-project-category">Дом</span>
+                                <span class="bv-project-year">2023</span>
+                            </div>
+                            <h3>Дом "Солнечный"</h3>
+                            <p>Просторный дом с большими окнами и открытой планировкой</p>
+                            <button class="bv-project-view-btn" onclick="location.href='project.html'">Перейти к проектам</button>
+                        </div>
                     </div>
                 </div>
-            </a>
-            
-            <a href="project.html" class="project-card-link">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Дом "Уютный"</h3>
-                        <p>Площадь: 80 м²</p>
-                        <p>Срок строительства: 2 месяца</p>
+                
+                <div class="bv-project-link">
+                    <div class="bv-project-card">
+                        <div class="bv-project-img" style="background-image: url('https://i.pinimg.com/1200x/37/91/c6/3791c6816dc8afc4fa6e6c9e250e2305.jpg');"></div>
+                        <div class="bv-project-info">
+                            <div class="bv-project-meta">
+                                <span class="bv-project-category">Дом</span>
+                                <span class="bv-project-year">2023</span>
+                            </div>
+                            <h3>Дом "Уютный"</h3>
+                            <p>Компактный дом для загородного отдыха</p>
+                           <button class="bv-project-view-btn" onclick="location.href='project.html'">Перейти к проектам</button>
+                        </div>
                     </div>
                 </div>
-            </a>
-            
-            <a href="project.html" class="project-card-link">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://i.pinimg.com/736x/9b/70/39/9b7039f04b1fb1fe86f01627a8c8cb6d.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Дом "Современный"</h3>
-                        <p>Площадь: 180 м²</p>
-                        <p>Срок строительства: 5 месяцев</p>
+                
+                <div class="bv-project-link">
+                    <div class="bv-project-card">
+                        <div class="bv-project-img" style="background-image: url('https://i.pinimg.com/736x/9b/70/39/9b7039f04b1fb1fe86f01627a8c8cb6d.jpg');"></div>
+                        <div class="bv-project-info">
+                            <div class="bv-project-meta">
+                                <span class="bv-project-category">Дом</span>
+                                <span class="bv-project-year">2023</span>
+                            </div>
+                            <h3>Дом "Современный"</h3>
+                            <p>Стильный дом с минималистичным дизайном</p>
+                            <button class="bv-project-view-btn" onclick="location.href='project.html'">Перейти к проектам</button>
+                        </div>
                     </div>
                 </div>
-            </a>
-            
-            <a href="project.html" class="project-card-link">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://i.pinimg.com/1200x/00/8f/20/008f20405aaea27836e9b66e6bdd5809.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Дом "Классика"</h3>
-                        <p>Площадь: 140 м²</p>
-                        <p>Срок строительства: 3.5 месяца</p>
+                
+                <div class="bv-project-link">
+                    <div class="bv-project-card">
+                        <div class="bv-project-img" style="background-image: url('https://i.pinimg.com/1200x/00/8f/20/008f20405aaea27836e9b66e6bdd5809.jpg');"></div>
+                        <div class="bv-project-info">
+                            <div class="bv-project-meta">
+                                <span class="bv-project-category">Дом</span>
+                                <span class="bv-project-year">2023</span>
+                            </div>
+                            <h3>Дом "Классика"</h3>
+                            <p>Классический дом с традиционной архитектурой</p>
+                            <button class="bv-project-view-btn" onclick="location.href='project.html'">Перейти к проектам</button>
+                        </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
     </section>
+
     <!-- Секция доставки -->
     <section class="delivery-section">
         <div class="container">
@@ -367,10 +379,6 @@
                 <div class="delivery-feature">
                     <h4>Доставляем в любой регион</h4>
                     <p>60+ объектов в 12 областях</p>
-                </div>
-                <div class="delivery-feature">
-                    <h4>Доставка дома площадью 140 м² одной еврофурой</h4>
-                    <p>экономия на перевозке</p>
                 </div>
                 <div class="delivery-feature">
                     <h4>Сборка дома за 7 дней</h4>
@@ -404,33 +412,30 @@
         </div>
     </section>
 
-        <!-- Секция преимуществ -->
+    <!-- Секция преимуществ -->
     <section class="advantages-section">
         <div class="container">
             <h2>ДОМА И БАНИ: ПРЕИМУЩЕСТВА НАШИХ МОДУЛЬНЫХ РЕШЕНИЙ</h2>
             
             <div class="advantages-grid">
                 <div class="advantage-card">
-                    <div class="advantage-icon">🚚</div>
                     <h3>Мобильность</h3>
                     <p>Стройке — нет! Мы привозим вам готовый модульный дом или баню и устанавливаем на участке за 1–2 дня.</p>
                 </div>
                 
                 <div class="advantage-card">
-                    <div class="advantage-icon">🏠</div>
                     <h3>Всё включено</h3>
                     <p>В наших модулях сразу есть все необходимое: ремонт, коммуникации. Можем укомплектовать дома вплоть до мебели!</p>
                 </div>
                 
                 <div class="advantage-card">
-                    <div class="advantage-icon">❄️</div>
                     <h3>Для русской зимы</h3>
                     <p>В любом нашем доме применяем экологичную минеральную вату 100 и 150 мм. Будет тепло даже в -40°.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Секция сметы -->
     <section class="estimate-section">
         <div class="container">
@@ -446,44 +451,37 @@
                     <h4>Видите, что входит, а что — опционально</h4>
                 </div>
                 <div class="estimate-feature">
-                    <h4>Бесплатный расчёт за 1 день</h4>
-                </div>
-                <div class="estimate-feature">
                     <h4>Без доплат в процессе</h4>
                     <p>договор фиксирует сумму</p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- Секция FAQ -->
     <section class="faq-section">
         <div class="container">
-            <h2>КЛИЕНТЫ СПРАШИВАЮТ — МЫ ОТВЕЧАЕМ ЧЕСТНО И ПО ДЕЛУ</h2>
+            <h2 class="section-title">КЛИЕНТЫ СПРАШИВАЮТ — МЫ ОТВЕЧАЕМ ЧЕСТНО И ПО ДЕЛУ</h2>
             
-            
-            <div class="faq-content">
-                <div class="faq-questions">
-                    <div class="faq-item">
-                        <h3>Можно ли жить в этих домах зимой?</h3>
-                        <p>Да, конечно! При правильном утеплении толщиной 200 мм и качественной паро-ветро-гидроизоляции такие дома сохраняют тепло даже в самые холодные зимы. Современные материалы и технологии позволяют создать комфортный микроклимат, который защищает от холода и сквозняков. Многие подобные дома успешно используются для круглогодичного проживания, и они быстро прогреваются, что снижает затраты на отопление.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Вдруг я переплачу или возникнут скрытые платежи?</h3>
-                        <p>Мы предоставляем полную прозрачную смету до начала работ. Все цены фиксируются в договоре, и никаких скрытых платежей не возникает. Вы всегда знаете, за что платите.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Можно ли собрать дом самостоятельно?</h3>
-                        <p>Да, это возможно. Все детали пронумерованы и поставляются с подробной инструкцией. Однако мы рекомендуем воспользоваться услугами нашей профессиональной бригады для гарантии качества сборки.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Вы работаете по всей России?</h3>
-                        <p>Да, мы доставляем и собираем дома в любом регионе России. У нас уже более 60 реализованных проектов в 12 регионах страны.</p>
-                    </div>
+            <div class="faq-questions">
+                <div class="faq-item">
+                    <h3>Можно ли жить в этих домах зимой?</h3>
+                    <p>Да, конечно! При правильном утеплении толщиной 200 мм и качественной паро-ветро-гидроизоляции такие дома сохраняют тепло даже в самые холодные зимы. Современные материалы и технологии позволяют создать комфортный микроклимат, который защищает от холода и сквозняков. Многие подобные дома успешно используются для круглогодичного проживания, и они быстро прогреваются, что снижает затраты на отопление.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Вдруг я переплачу или возникнут скрытые платежи?</h3>
+                    <p>Мы предоставляем полную прозрачную смету до начала работ. Все цены фиксируются в договоре, и никаких скрытых платежей не возникает. Вы всегда знаете, за что платите.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Можно ли собрать дом самостоятельно?</h3>
+                    <p>Да, это возможно. Все детали пронумерованы и поставляются с подробной инструкцией. Однако мы рекомендуем воспользоваться услугами нашей профессиональной бригады для гарантии качества сборки.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Вы работаете по всей России?</h3>
+                    <p>Да, мы доставляем и собираем дома в любом регионе России. У нас уже более 60 реализованных проектов в 12 регионах страны.</p>
                 </div>
             </div>
         </div>
@@ -501,17 +499,13 @@
                     <li>Вы оставляете заявку — мы перезваниваем в удобное время.</li>
                     <li>Специалист задаёт 5-7 простых вопросов: про участок, площадь, планировку.</li>
                     <li>Предлагаем 1-2 подходящих проекта или решение под вас.</li>
-                    <li>В течение суток отправим вам на почту или в мессенджер:
-                        <ul>
-                            
-                        </ul>
-                    </li>
+                    <li>В течение суток отправим вам на почту или в мессенджер смету и PDF-инструкцию «7 способов сэкономить до 1 млн ₽ при строительстве дома».</li>
                 </ol>
             </div>
             
-           <div class="center-btn">
-                    <button type="submit" class="btn">Получить консультацию</button>
-           </div>
+            <div class="center-btn">
+                <a href="contacts.html" class="btn">Получить консультацию</a>
+            </div>
         </div>
     </section>
 
@@ -527,28 +521,39 @@
                 <ul>
                     <li>г. Москва, ул. Строителей, 15</li>
                     <li>+7 (999) 999-99-99</li>
-                    <li>info@earthdom.ru</li>
+                    <li>softnature@mail.ru</li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Меню</h3>
                 <ul>
-                    <li><a href="/index.html">Главная</a></li>
-                    <li><a href="/project.html">Проекты</a></li>
-                    <li><a href="/terrace.html">Террасные покрытия</a></li>
-                    <li><a href="/bvdoma.html">Модульные дома</a></li>
-                    <li><a href="/material.html">Материалы</a></li>
-                    <li><a href="/services.html">Услуги</a></li>
-                    <li><a href="/company.html">О компании</a></li>
-                    <li><a href="/contacts.html">Контакты</a></li>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="project.html">Проекты</a></li>
+                    <li><a href="terrace.html">Террасные покрытия</a></li>
+                    <li><a href="bvdoma.html">Модульные дома</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 EarthDom. Все права защищены.</p>
+            <p>&copy; 2023 Soft Nature. Все права защищены.</p>
         </div>
     </footer>
-    
+
     <script src="js/script.js"></script>
+    <script>
+        // FAQ аккордеон для страницы bvdoma
+        document.querySelectorAll('.faq-questions .faq-item').forEach(item => {
+            const question = item.querySelector('h3');
+            if (question) {
+                question.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    item.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
