@@ -3894,3 +3894,188 @@ footer {
 .mb-20 { margin-bottom: 20px; }
 .mb-40 { margin-bottom: 40px; }
 .p-20 { padding: 20px; }
+
+/* ============================================
+   ОБВОДКА ДЛЯ КАРТОЧЕК (ЗЕЛЕНАЯ, КАК У КНОПОК)
+   ============================================ */
+
+/* Для страницы company.html */
+.value-card,
+.team-member {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    transition: var(--transition);
+    background: white;
+}
+
+.value-card:hover,
+.team-member:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Для страницы services.html */
+.service-card {
+    border: 2px solid var(--olive);
+    border-radius: 24px;
+    transition: var(--transition);
+    background: white;
+}
+
+.service-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+}
+
+/* Для страницы terrace.html */
+.terrace-card,
+.material-card {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    transition: var(--transition);
+    background: white;
+}
+
+.terrace-card:hover,
+.material-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Для страницы bvdoma.html */
+.guarantee-item,
+.advantage-card,
+.estimate-feature,
+.delivery-feature,
+.assembly-feature,
+.saving-item {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    transition: var(--transition);
+    background: white;
+}
+
+.guarantee-item:hover,
+.advantage-card:hover,
+.estimate-feature:hover,
+.delivery-feature:hover,
+.assembly-feature:hover,
+.saving-item:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Для страницы work.html */
+.review-card {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    transition: var(--transition);
+    background: var(--warm-white);
+}
+
+.review-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Для страницы contacts.html */
+.faq-item {
+    border: 2px solid var(--olive);
+    border-radius: 12px;
+    transition: var(--transition);
+    background: white;
+}
+
+.faq-item:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Дополнительно для карточек процессов и проектов */
+.process-step {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    padding: 20px;
+    transition: var(--transition);
+    background: white;
+}
+
+.process-step:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.project-card,
+.work-card,
+.bv-project-card {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    transition: var(--transition);
+    background: white;
+}
+
+.project-card:hover,
+.work-card:hover,
+.bv-project-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+}
+
+/* Карточки домов на bvdoma */
+.house-card {
+    border: 2px solid var(--olive);
+    border-radius: 24px;
+    transition: var(--transition);
+    background: white;
+}
+
+.house-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-10px);
+}
+
+/* Карточки статистики - обводка белая (так как фон зеленый) */
+.stat-item {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    border-color: white;
+    transform: translateY(-5px);
+}
+
+/* Карточки ценностей на главной странице */
+.index-project-card {
+    border: 2px solid var(--olive);
+    border-radius: 16px;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.index-project-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Карточки услуг на главной (если есть) */
+.feature-card {
+    border: 2px solid var(--olive);
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    border-color: var(--olive-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
