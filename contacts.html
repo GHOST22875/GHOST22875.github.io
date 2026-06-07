@@ -23,7 +23,6 @@
                 <li><a href="bvdoma.html">Быстровозводимые дома</a></li>
                 <li><a href="work.html">Наши работы</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
-                
             </ul>
         </div>
     </nav>
@@ -93,6 +92,53 @@
                                 aria-label="Карта с расположением офиса"></iframe>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВАЯ СЕКЦИЯ: ФОРМА ОБРАТНОЙ СВЯЗИ -->
+    <section class="feedback-section">
+        <div class="container">
+            <h2 class="section-title">Обратная связь</h2>
+            <p class="section-subtitle">Оставьте заявку, и мы свяжемся с вами в ближайшее время</p>
+            
+            <div class="feedback-wrapper">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="feedbackName">Ваше имя *</label>
+                        <input type="text" id="feedbackName" name="name" required placeholder="Иван Иванов">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackPhone">Телефон *</label>
+                        <input type="tel" id="feedbackPhone" name="phone" required placeholder="+7 (999) 123-45-67">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackEmail">Email</label>
+                        <input type="email" id="feedbackEmail" name="email" placeholder="ivan@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackService">Услуга</label>
+                        <select id="feedbackService" name="service">
+                            <option value="">Выберите услугу</option>
+                            <option value="Каркасный дом">Каркасный дом</option>
+                            <option value="Быстровозводимый дом">Быстровозводимый дом</option>
+                            <option value="Террасное покрытие">Террасное покрытие</option>
+                            <option value="Отделка фасада">Отделка фасада</option>
+                            <option value="Консультация">Консультация</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackMessage">Сообщение</label>
+                        <textarea id="feedbackMessage" name="message" rows="4" placeholder="Опишите ваш вопрос или пожелания..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-large feedback-submit-btn">Отправить заявку</button>
+                    <p class="form-note">Нажимая на кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+                </form>
             </div>
         </div>
     </section>
@@ -172,6 +218,17 @@
         </div>
     </footer>
 
+    <!-- Модальное окно уведомления -->
+    <div id="notificationModal" class="notification-modal">
+        <div class="notification-content">
+            <div class="notification-icon" id="notificationIcon">✅</div>
+            <h3 id="notificationTitle">Заявка отправлена!</h3>
+            <p id="notificationMessage">Спасибо за обращение. Мы свяжемся с вами в ближайшее время.</p>
+            <button class="btn notification-close-btn">Закрыть</button>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/contacts-form.js"></script>
 </body>
 </html>
