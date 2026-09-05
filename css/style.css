@@ -3036,7 +3036,7 @@ footer {
 
 /* Добавьте после строки с .terrace-hero p */
 .terrace-hero-description {
-    max-width: 500px;  /* ← было 750px, увеличили до 900px */
+    max-width: 150px;  /* ← было 750px, увеличили до 900px */
     margin: 20px auto 0;
     font-size: 1.15rem;
     line-height: 1.7;
