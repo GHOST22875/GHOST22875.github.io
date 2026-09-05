@@ -3036,10 +3036,10 @@ footer {
 
 /* Добавьте после строки с .terrace-hero p */
 .terrace-hero-description {
-    max-width: 150px;  /* ← было 750px, увеличили до 900px */
-    margin: 20px auto 0;
-    font-size: 1.15rem;
-    line-height: 1.7;
+    max-width: 680px;        /* ← ограничили ширину */
+    margin: 16px auto 0;     /* ← уменьшили отступ сверху */
+    font-size: 1rem;         /* ← уменьшили размер шрифта (было 1.15rem) */
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.92);
     font-family: 'Cador Sans Serif', system-ui, sans-serif;
     padding: 0 20px;  /* ← добавили отступы по бокам для мобильных */
@@ -3313,6 +3313,14 @@ footer {
     .material-card { padding: 24px; }
     .material-image { height: 180px; }
     .material-content h3 { font-size: 1.3rem; }
+}
+
+@media (max-width: 768px) {
+    .terrace-hero-description {
+        max-width: 100%;
+        font-size: 0.9rem;
+        padding: 0 16px;
+    }
 }
 
 /* ============================================
