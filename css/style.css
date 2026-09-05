@@ -3034,6 +3034,16 @@ footer {
     font-weight: 500;
 }
 
+/* Добавьте после строки с .terrace-hero p */
+.terrace-hero-description {
+    max-width: 750px;
+    margin: 20px auto 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+}
+
 .terrace-section, .materials-section, .gallery-section {
     padding: 80px 24px;
 }
