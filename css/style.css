@@ -3036,12 +3036,13 @@ footer {
 
 /* Добавьте после строки с .terrace-hero p */
 .terrace-hero-description {
-    max-width: 750px;
+    max-width: 900px;  /* ← было 750px, увеличили до 900px */
     margin: 20px auto 0;
     font-size: 1.15rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.92);
     font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    padding: 0 20px;  /* ← добавили отступы по бокам для мобильных */
 }
 
 .terrace-section, .materials-section, .gallery-section {
