@@ -19,6 +19,12 @@
     /* Шрифты */
     --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
     --font-body: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    
+    /* Закругления */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 24px;
+    --radius-pill: 40px;
 }
 
 * {
@@ -106,7 +112,7 @@ h1, h2, h3, h4, .logo, .hero-content-left h1 {
     background: var(--olive);
     color: white;
     text-decoration: none;
-    border-radius: 0;
+    border-radius: var(--radius-pill);
     font-weight: 500;
     transition: var(--transition);
     border: 2px solid var(--olive);
@@ -636,7 +642,7 @@ footer {
 
 .index-project-card {
     position: relative;
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     height: 360px;
     background: white;
@@ -904,7 +910,7 @@ footer {
 
 .service-card {
     background: white;
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     transition: var(--transition);
     box-shadow: var(--shadow);
@@ -1023,6 +1029,7 @@ footer {
     transition: var(--transition);
     background: white;
     counter-increment: step-counter;
+    border-radius: var(--radius-md);
 }
 
 .process-step:hover {
@@ -1275,6 +1282,7 @@ footer {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
+    border-radius: var(--radius-md);
 }
 
 .stat-item:hover {
@@ -1322,6 +1330,7 @@ footer {
     border: 1px solid rgba(184, 115, 51, 0.4);
     transition: var(--transition);
     box-shadow: var(--shadow);
+    border-radius: var(--radius-md);
 }
 
 .value-card:hover {
@@ -1372,6 +1381,7 @@ footer {
     border: 1px solid rgba(184, 115, 51, 0.4);
     transition: var(--transition);
     box-shadow: var(--shadow);
+    border-radius: var(--radius-md);
 }
 
 .team-member:hover {
@@ -1540,6 +1550,7 @@ footer {
 .contacts-wrapper {
     background: white;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
     max-width: 1200px;
@@ -1580,6 +1591,7 @@ footer {
     height: 44px;
     background: var(--warm-white);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1621,6 +1633,7 @@ footer {
     height: 44px;
     background: var(--warm-white);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: 50%;
     text-decoration: none;
     font-size: 1.2rem;
     transition: var(--transition);
@@ -1663,6 +1676,7 @@ footer {
     overflow: hidden;
     box-shadow: var(--shadow);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-sm);
 }
 
 .faq-question {
@@ -1766,6 +1780,7 @@ footer {
     background: white;
     overflow: hidden;
     box-shadow: var(--shadow);
+    border-radius: var(--radius-sm);
 }
 
 .faq-question {
@@ -1871,6 +1886,7 @@ footer {
     transition: var(--transition);
     text-align: center;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .feature:hover {
@@ -1946,10 +1962,8 @@ footer {
     padding: 32px;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    border-left: 4px solid var(--olive);
-    border-top: 1px solid rgba(184, 115, 51, 0.2);
-    border-right: 1px solid rgba(184, 115, 51, 0.2);
-    border-bottom: 1px solid rgba(184, 115, 51, 0.2);
+    border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .assembly-feature:hover, .saving-item:hover,
@@ -1957,7 +1971,7 @@ footer {
 .advantage-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
-    border-left-color: var(--olive-dark);
+    border-color: var(--olive);
 }
 
 .assembly-feature h3, .saving-item h3, .delivery-feature h3,
@@ -1995,6 +2009,7 @@ footer {
     transition: var(--transition);
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
 }
 
 .warmth-feature:hover {
@@ -2050,6 +2065,7 @@ footer {
     font-weight: 300;
     font-size: 0.9rem;
     line-height: 1.7;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 /* Карточки готовых домов */
@@ -2067,6 +2083,7 @@ footer {
     transition: var(--transition);
     box-shadow: var(--shadow);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-lg);
 }
 
 .house-card:hover {
@@ -2145,6 +2162,7 @@ footer {
     position: relative;
     padding-left: 50px;
     border: 1px solid rgba(184, 115, 51, 0.2);
+    border-radius: var(--radius-md);
 }
 
 .detail::before {
@@ -2226,6 +2244,7 @@ footer {
     max-width: 1100px;
     margin: 0 auto;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
 }
 
 .finishing-option h3, .advantages h3 {
@@ -2272,7 +2291,7 @@ footer {
 
 .production-image img {
     width: 100%;
-    border-radius: 0;
+    border-radius: var(--radius-lg);
 }
 
 .precision {
@@ -2280,6 +2299,7 @@ footer {
     padding: 30px;
     background: var(--warm-white);
     margin: 30px 0;
+    border-radius: var(--radius-md);
 }
 
 .precision-value {
@@ -2312,6 +2332,7 @@ footer {
     box-shadow: var(--shadow);
     transition: var(--transition);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .guarantee-item:hover {
@@ -2394,6 +2415,7 @@ footer {
     flex-direction: column;
     height: 100%;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .bv-project-card:hover {
@@ -2438,6 +2460,7 @@ footer {
     font-family: var(--font-body);
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
 }
 
 .bv-project-year {
@@ -2511,6 +2534,7 @@ footer {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.75rem;
+    border-radius: var(--radius-pill);
 }
 
 .bv-project-view-btn:hover {
@@ -2632,6 +2656,7 @@ footer {
     box-shadow: var(--shadow);
     cursor: pointer;
     border: 1px solid rgba(184, 115, 51, 0.2);
+    border-radius: var(--radius-sm);
 }
 
 .faq-questions .faq-item h3 {
@@ -2794,6 +2819,7 @@ footer {
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
 }
 
 .filter-btn:hover,
@@ -2820,6 +2846,7 @@ footer {
     height: 100%;
     min-height: 480px;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .project-card:hover {
@@ -2870,6 +2897,7 @@ footer {
     font-family: var(--font-body);
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
 }
 
 .project-year {
@@ -2948,6 +2976,7 @@ footer {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.75rem;
+    border-radius: var(--radius-pill);
 }
 
 .project-view-btn:hover {
@@ -3051,6 +3080,7 @@ footer {
     transition: var(--transition);
     box-shadow: var(--shadow);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .terrace-card:hover {
@@ -3090,6 +3120,7 @@ footer {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .material-card:hover {
@@ -3103,6 +3134,7 @@ footer {
     background-size: cover;
     background-position: center;
     margin-bottom: 24px;
+    border-radius: var(--radius-sm);
 }
 
 .material-content h3 {
@@ -3227,6 +3259,7 @@ footer {
     height: 260px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: var(--radius-md);
 }
 
 .gallery-item-img {
@@ -3249,6 +3282,7 @@ footer {
     transform: translateY(100%);
     transition: transform 0.3s;
     font-family: var(--font-body);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
 }
 
 .gallery-item:hover .gallery-item-overlay { transform: translateY(0); }
@@ -3377,6 +3411,7 @@ footer {
     text-decoration: none;
     overflow: hidden;
     transition: var(--transition);
+    border-radius: var(--radius-md);
 }
 
 .photo-category-link:hover { 
@@ -3388,6 +3423,7 @@ footer {
     height: 280px;
     overflow: hidden;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .category-photo {
@@ -3409,6 +3445,7 @@ footer {
     background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent);
     padding: 30px;
     color: white;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
 }
 
 .category-title { 
@@ -3451,6 +3488,7 @@ footer {
     flex-direction: column;
     height: 100%;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .work-card:hover {
@@ -3489,6 +3527,7 @@ footer {
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
 }
 
 .work-year {
@@ -3551,6 +3590,7 @@ footer {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.75rem;
+    border-radius: var(--radius-pill);
 }
 
 .work-view-btn:hover { 
@@ -3579,6 +3619,7 @@ footer {
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
 }
 
 .filter-btn:hover, .filter-btn.active {
@@ -3607,6 +3648,7 @@ footer {
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
 }
 
 .back-btn:hover {
@@ -3643,6 +3685,7 @@ footer {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
+    border-radius: var(--radius-md);
 }
 
 .stat-item:hover {
@@ -3689,6 +3732,7 @@ footer {
     padding: 32px;
     transition: var(--transition);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-md);
 }
 
 .review-card:hover { 
@@ -3907,6 +3951,7 @@ footer {
     height: 50px;
     background: transparent;
     border: 1px solid var(--olive);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3945,6 +3990,7 @@ footer {
     height: 55px;
     background: transparent;
     border: 1px solid var(--olive);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3976,6 +4022,7 @@ footer {
     font-family: var(--font-body);
     font-weight: 500;
     letter-spacing: 2px;
+    border-radius: var(--radius-pill);
 }
 
 /* Модальное окно проектов */
@@ -3984,6 +4031,7 @@ footer {
     max-height: 85vh;
     background: white;
     overflow: hidden;
+    border-radius: var(--radius-lg);
 }
 
 #projectModal .modal-body {
@@ -4022,6 +4070,7 @@ footer {
     cursor: pointer;
     opacity: 0.6;
     transition: var(--transition);
+    border-radius: 8px;
 }
 
 #projectModal .thumbnail.active {
@@ -4057,6 +4106,7 @@ footer {
     font-family: var(--font-body);
     font-weight: 400;
     font-size: 0.9rem;
+    border-radius: var(--radius-sm);
 }
 
 #projectModal .modal-btn {
@@ -4072,6 +4122,7 @@ footer {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.75rem;
+    border-radius: var(--radius-pill);
 }
 
 #projectModal .modal-btn:hover {
@@ -4116,6 +4167,7 @@ footer {
     padding: 48px;
     box-shadow: var(--shadow);
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-lg);
 }
 
 .feedback-form {
@@ -4151,6 +4203,7 @@ footer {
     background: white;
     width: 100%;
     color: var(--text-dark);
+    border-radius: var(--radius-sm);
 }
 
 .form-group input:focus,
@@ -4232,6 +4285,7 @@ footer {
     text-align: center;
     animation: modalSlideIn 0.3s ease;
     border: 1px solid rgba(184, 115, 51, 0.3);
+    border-radius: var(--radius-lg);
 }
 
 @keyframes modalSlideIn {
@@ -4280,6 +4334,7 @@ footer {
     text-transform: uppercase;
     font-family: var(--font-body);
     font-weight: 500;
+    border-radius: var(--radius-pill);
 }
 
 .notification-close-btn:hover {
@@ -4306,7 +4361,7 @@ footer {
 }
 
 /* ============================================
-   ОБВОДКА ДЛЯ КАРТОЧЕК
+   ОБВОДКА ДЛЯ КАРТОЧЕК (универсальная)
    ============================================ */
 
 .value-card,
@@ -4367,6 +4422,7 @@ footer {
 .feature-card {
     border: 1px solid rgba(184, 115, 51, 0.4);
     transition: var(--transition);
+    border-radius: var(--radius-md);
 }
 
 .feature-card:hover {
