@@ -11,7 +11,7 @@ function formatTelegramMessage(formData) {
     const date = new Date().toLocaleString('ru-RU');
     
     return `
-🏠 <b>НОВАЯ ЗАЯВКА С САЙТА SOFT NATURE</b>
+🏠 <b>НОВАЯ ЗАЯВКА С САЙТА WOOD&FRAME</b>
 ━━━━━━━━━━━━━━━━━━━━━━━
 👤 <b>Имя:</b> ${escapeHtml(formData.name)}
 📞 <b>Телефон:</b> ${escapeHtml(formData.phone)}
