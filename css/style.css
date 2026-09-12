@@ -2,17 +2,18 @@
    ROOT VARIABLES & RESET
    ============================================ */
 :root {
-    --olive: #6B7B3E;
-    --olive-light: #8A9A5E;
-    --olive-dark: #4A5A2E;
-    --warm-white: #F5F0E8;
-    --warm-white-dark: #E8E0D5;
+    /* Новая палитра WOOD&FRAME — тёмная с медными акцентами */
+    --olive: #B87333;
+    --olive-light: #D4944A;
+    --olive-dark: #8A5522;
+    --warm-white: #F2EAD9;
+    --warm-white-dark: #E8DCC8;
     --wood-light: #D4C4A8;
     --wood-medium: #B8A88C;
-    --text-dark: #3A3A3A;
+    --text-dark: #2A2A2A;
     --text-light: #6A6A6A;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 40px rgba(184, 115, 51, 0.2);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -28,7 +29,7 @@ html {
 }
 
 body {
-    font-family: 'Cador Sans Serif', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     background-color: var(--warm-white);
     color: var(--text-dark);
     line-height: 1.5;
@@ -37,8 +38,8 @@ body {
 }
 
 h1, h2, h3, h4, .logo, .hero-content-left h1 {
-    font-family: 'Cador Sans Serif', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 400;
 }
 
 ::-webkit-scrollbar { display: none; }
@@ -61,7 +62,9 @@ h1, h2, h3, h4, .logo, .hero-content-left h1 {
     color: var(--olive-dark);
     position: relative;
     padding-bottom: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
 }
 
 .section-title::after {
@@ -70,9 +73,9 @@ h1, h2, h3, h4, .logo, .hero-content-left h1 {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--olive);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--olive), transparent);
     border-radius: 3px;
 }
 
@@ -83,6 +86,7 @@ h1, h2, h3, h4, .logo, .hero-content-left h1 {
     margin: 0 auto 48px;
     color: var(--text-light);
     line-height: 1.6;
+    font-family: 'Inter', sans-serif;
 }
 
 /* ============================================
@@ -90,38 +94,40 @@ h1, h2, h3, h4, .logo, .hero-content-left h1 {
    ============================================ */
 .btn {
     display: inline-block;
-    padding: 14px 32px;
+    padding: 14px 36px;
     background: var(--olive);
     color: white;
     text-decoration: none;
-    border-radius: 40px;
+    border-radius: 0;
     font-weight: 500;
     transition: var(--transition);
-    border: none;
+    border: 2px solid var(--olive);
     cursor: pointer;
-    font-size: 0.95rem;
-    letter-spacing: 0.3px;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .btn:hover {
     background: var(--olive-dark);
+    border-color: var(--olive-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(107, 123, 62, 0.3);
+    box-shadow: 0 6px 16px rgba(184, 115, 51, 0.4);
 }
 
 .btn-light {
-    background: white;
-    color: var(--olive-dark);
-    border: 2px solid transparent;
+    background: transparent;
+    color: var(--olive);
+    border: 2px solid var(--olive);
 }
 
 .btn-light:hover {
     background: var(--olive);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(107, 123, 62, 0.3);
+    box-shadow: 0 6px 16px rgba(184, 115, 51, 0.4);
 }
 
 .btn-outline {
@@ -151,8 +157,8 @@ h1, h2, h3, h4, .logo, .hero-content-left h1 {
 }
 
 .btn-large {
-    padding: 16px 40px;
-    font-size: 1.1rem;
+    padding: 16px 44px;
+    font-size: 1rem;
 }
 
 /* Специальные стили для CTA секций */
@@ -186,12 +192,12 @@ nav {
     left: 0;
     width: 100%;
     height: 70px;
-    background: rgba(245, 240, 232, 0.95);
+    background: rgba(26, 26, 26, 0.98);
     backdrop-filter: blur(10px);
     z-index: 1000;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(107, 123, 62, 0.1);
+    border-bottom: 1px solid rgba(184, 115, 51, 0.3);
 }
 
 .nav-container {
@@ -204,12 +210,26 @@ nav {
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--olive-dark);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--warm-white);
     text-decoration: none;
-    letter-spacing: 1px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    letter-spacing: 4px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: var(--olive);
 }
 
 .nav-links {
@@ -226,11 +246,14 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
+    color: var(--warm-white);
+    font-weight: 400;
     transition: var(--transition);
     position: relative;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-links a::after {
@@ -239,7 +262,7 @@ nav {
     bottom: -5px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--olive);
     transition: var(--transition);
 }
@@ -247,6 +270,11 @@ nav {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--olive-light);
 }
 
 .theme-toggle {
@@ -280,7 +308,7 @@ nav {
 .mobile-menu-toggle span {
     width: 25px;
     height: 2px;
-    background: var(--olive-dark);
+    background: var(--warm-white);
     transition: var(--transition);
 }
 
@@ -304,7 +332,7 @@ nav {
         right: -100%;
         width: 100%;
         height: calc(100vh - 60px);
-        background: var(--warm-white);
+        background: #1A1A1A;
         flex-direction: column;
         padding: 40px;
         transition: right 0.3s ease;
@@ -312,16 +340,17 @@ nav {
     }
     .nav-links.active { right: 0; }
     .nav-links li:first-child { margin-left: 0; }
-    .nav-links a { font-size: 1.2rem; }
+    .nav-links a { font-size: 1.1rem; color: var(--warm-white); }
 }
 
 /* ============================================
    FOOTER
    ============================================ */
 footer {
-    background: var(--olive-dark);
+    background: #1A1A1A;
     color: var(--warm-white);
-    padding: 48px 24px 24px;
+    padding: 60px 24px 24px;
+    border-top: 1px solid rgba(184, 115, 51, 0.3);
 }
 
 .footer-content {
@@ -333,10 +362,13 @@ footer {
 }
 
 .footer-column h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
-    font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    color: var(--olive-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .footer-column ul {
@@ -350,21 +382,26 @@ footer {
 .footer-column a {
     color: var(--warm-white);
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.7;
     transition: var(--transition);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 }
 
-.footer-column a:hover { opacity: 1; }
+.footer-column a:hover { 
+    opacity: 1; 
+    color: var(--olive-light);
+}
 
 .copyright {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(245, 240, 232, 0.2);
-    font-size: 0.85rem;
-    opacity: 0.7;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    border-top: 1px solid rgba(184, 115, 51, 0.2);
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
 /* ============================================
@@ -405,14 +442,17 @@ footer {
     margin-bottom: 20px;
     color: white;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .hero-content-left p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .slide-arrow {
@@ -456,7 +496,6 @@ footer {
    INDEX PAGE - УНИКАЛЬНЫЕ СТИЛИ ДЛЯ ГЛАВНОЙ
    ============================================ */
 
-/* Герой-секция с слайдером */
 .index-hero {
     height: calc(100vh - 70px);
     position: relative;
@@ -526,20 +565,24 @@ footer {
 .index-hero-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     color: white;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .index-hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    color: white;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.95);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.8;
 }
 
-/* Секция проектов на главной */
 .index-projects {
     padding: 80px 24px;
     background: var(--warm-white);
@@ -600,7 +643,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent);
     padding: 24px;
     color: white;
 }
@@ -608,17 +651,17 @@ footer {
 .index-project-info h3 {
     font-size: 1.3rem;
     margin-bottom: 8px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .index-project-info p {
     font-size: 0.9rem;
     opacity: 0.9;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Секция индивидуального проектирования */
 .index-custom-project {
     padding: 80px 24px;
     background: linear-gradient(135deg, var(--olive-dark), var(--olive));
@@ -634,7 +677,9 @@ footer {
 .index-custom-project-text h2 {
     font-size: 2.2rem;
     margin-bottom: 24px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .index-features-list {
@@ -642,7 +687,7 @@ footer {
     text-align: left;
     max-width: 500px;
     margin: 32px auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .index-features-list li {
@@ -658,7 +703,6 @@ footer {
     color: var(--wood-light);
 }
 
-/* Адаптивность для главной страницы */
 @media (max-width: 992px) {
     .index-hero-content h1 {
         font-size: 2.5rem;
@@ -772,7 +816,9 @@ footer {
 .custom-project-text h2 {
     font-size: 2.2rem;
     margin-bottom: 24px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .features-list {
@@ -780,7 +826,7 @@ footer {
     text-align: left;
     max-width: 500px;
     margin: 32px auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .features-list li {
@@ -807,7 +853,7 @@ footer {
 
 .services-hero {
     height: 50vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)), 
                 url('https://i.pinimg.com/1200x/52/b9/be/52b9bed2e46f3ab66b64d54590a2b1b4.jpg');
     background-size: cover;
     background-position: center;
@@ -822,12 +868,16 @@ footer {
 .services-hero h1 { 
     font-size: 3rem; 
     margin-bottom: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .services-hero p { 
-    font-size: 1.2rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
 .services-section {
@@ -873,11 +923,12 @@ footer {
 }
 
 .service-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .service-content > p {
@@ -885,7 +936,8 @@ footer {
     color: var(--text-light);
     line-height: 1.5;
     flex-shrink: 0;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
 }
 
 .service-features {
@@ -902,7 +954,7 @@ footer {
     color: var(--text-light);
     font-size: 0.95rem;
     line-height: 1.4;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .service-features li::before {
@@ -921,7 +973,7 @@ footer {
     padding-top: 16px;
     border-top: 1px solid #eee;
     text-align: center;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .service-cta {
@@ -933,10 +985,9 @@ footer {
     width: 100%;
     text-align: center;
     padding: 12px 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-/* Секция процесса работы */
 .process-section {
     padding: 80px 24px;
     background: white;
@@ -955,7 +1006,6 @@ footer {
     padding: 20px;
 }
 
-/* Стили для круга с цифрой */
 .process-steps {
     counter-reset: step-counter;
 }
@@ -974,40 +1024,40 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0 auto 24px;
     position: relative;
     transition: var(--transition);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 .step-number::before {
     content: counter(step-counter);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 .process-step:hover .step-number {
     transform: scale(1.05);
     background: var(--olive-dark);
-    box-shadow: 0 8px 20px rgba(107, 123, 62, 0.3);
+    box-shadow: 0 8px 20px rgba(184, 115, 51, 0.3);
 }
 
 .step-content h3 {
     font-size: 1.3rem;
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .step-content p {
     color: var(--text-light);
     line-height: 1.6;
     font-size: 0.95rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* CTA секция для услуг (как на terrace) */
 .services-cta {
     padding: 80px 24px;
     background: var(--olive);
@@ -1023,7 +1073,9 @@ footer {
 .services-cta h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .services-cta p {
@@ -1034,7 +1086,7 @@ footer {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .services-cta .btn {
@@ -1054,7 +1106,6 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Адаптивность для CTA секции услуг */
 @media (max-width: 768px) {
     .services-cta {
         padding: 60px 20px;
@@ -1084,7 +1135,6 @@ footer {
     }
 }
 
-/* Адаптивность для услуг */
 @media (max-width: 768px) {
     .services-hero { 
         height: 40vh; 
@@ -1136,7 +1186,7 @@ footer {
    ============================================ */
 .about-hero {
     height: 50vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
                 url('https://i.pinimg.com/1200x/9e/47/cb/9e47cb699e37288fa745f2868f40a0e8.jpg');
     background-size: cover;
     background-position: center;
@@ -1151,15 +1201,18 @@ footer {
 .about-hero h1 { 
     font-size: 3rem; 
     margin-bottom: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .about-hero p { 
-    font-size: 1.2rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
-/* Секция "Наша история" */
 .about-section {
     padding: 80px 24px;
     background: var(--warm-white);
@@ -1176,7 +1229,9 @@ footer {
     margin-bottom: 24px;
     color: var(--olive-dark);
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .about-text p {
@@ -1184,10 +1239,9 @@ footer {
     color: var(--text-light);
     line-height: 1.8;
     text-align: justify;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Секция статистики (как на странице work) */
 .about-stats-section {
     padding: 80px 24px;
     background: var(--olive);
@@ -1224,21 +1278,22 @@ footer {
 
 .stat-number {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 400;
     color: white;
     margin-bottom: 12px;
     line-height: 1.2;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 .stat-text {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* Секция ценностей */
 .values-section {
     padding: 80px 24px;
     background: white;
@@ -1274,18 +1329,19 @@ footer {
 .value-card h3 {
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-size: 1.3rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .value-card p {
     color: var(--text-light);
     line-height: 1.6;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
 }
 
-/* Секция команды */
 .team-section {
     padding: 80px 24px;
     background: var(--warm-white);
@@ -1316,25 +1372,29 @@ footer {
 .team-member h3 {
     margin-bottom: 8px;
     color: var(--olive-dark);
-    font-size: 1.3rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .position {
     color: var(--olive);
     font-weight: 500;
     margin-bottom: 12px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .bio {
     color: var(--text-light);
     line-height: 1.5;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 }
 
-/* CTA секция для about */
 .about-cta {
     padding: 80px 24px;
     background: var(--olive);
@@ -1350,7 +1410,9 @@ footer {
 .about-cta h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .about-cta p {
@@ -1361,7 +1423,7 @@ footer {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .about-cta .btn {
@@ -1381,7 +1443,6 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .about-hero { 
         margin-top: 60px; 
@@ -1465,7 +1526,7 @@ footer {
 
 /* Герой-секция - центрирование */
 .contacts-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
                 url('https://i.pinimg.com/736x/91/05/b6/9105b6e19ab9eaa20020040818361d9a.jpg');
     background-size: cover;
     background-position: center;
@@ -1487,13 +1548,17 @@ footer {
     font-size: 3rem; 
     margin-bottom: 16px;
     color: white;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .contacts-hero p { 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
 /* Основная секция */
@@ -1529,7 +1594,9 @@ footer {
     font-size: 1.8rem;
     margin-bottom: 32px;
     color: var(--olive-dark);
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
 }
 
 .contact-item {
@@ -1551,18 +1618,19 @@ footer {
 }
 
 .contact-text h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 8px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
 }
 
 .contact-text p {
     color: var(--text-light);
     line-height: 1.5;
     margin-bottom: 4px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 }
 
 /* Социальные ссылки */
@@ -1631,15 +1699,15 @@ footer {
     background: white;
     border: none;
     text-align: left;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 500;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     color: var(--olive-dark);
     transition: var(--transition);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .faq-question:hover {
@@ -1649,6 +1717,7 @@ footer {
 .faq-toggle {
     font-size: 1.5rem;
     transition: transform 0.3s;
+    color: var(--olive);
 }
 
 .faq-item.active .faq-toggle {
@@ -1671,7 +1740,7 @@ footer {
     color: var(--text-light);
     line-height: 1.7;
     text-align: justify;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Адаптивность для контактов */
@@ -1782,7 +1851,7 @@ footer {
     justify-content: space-between;
     cursor: pointer;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .faq-answer {
@@ -1809,7 +1878,7 @@ footer {
    ============================================ */
 .bv-hero {
     min-height: 85vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)),
                 url('https://i.pinimg.com/1200x/e4/e2/3a/e4e23ad9bca135a2b337349d6d41f617.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -1828,24 +1897,29 @@ footer {
 }
 
 .bv-hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--wood-light);
     margin-bottom: 20px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 700px;
     margin: 0 auto 40px;
-    line-height: 1.6;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* 4 блока в одну линию */
@@ -1875,14 +1949,15 @@ footer {
     color: var(--wood-light);
     margin-bottom: 8px;
     white-space: nowrap;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .feature p {
     font-size: 0.9rem;
     opacity: 0.9;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Секции модульных домов */
@@ -1902,7 +1977,6 @@ footer {
     background: white;
 }
 
-/* Центрирование заголовков секций */
 .assembly-section h2,
 .savings-section h2,
 .technology-section h2,
@@ -1913,7 +1987,9 @@ footer {
 .advantages-section h2,
 .estimate-section h2 {
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 /* Сетки карточек */
@@ -1950,7 +2026,7 @@ footer {
     font-weight: 700;
     color: var(--olive);
     margin-top: 16px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Карточки тепла */
@@ -1971,20 +2047,19 @@ footer {
     font-size: 1.2rem;
     color: var(--wood-light);
     margin-bottom: 12px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
 }
 
 .warmth-feature p {
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     font-size: 0.95rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Секция тепла */
 .warmth-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)),
                 url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90');
     background-size: cover;
     background-attachment: fixed;
@@ -1997,15 +2072,15 @@ footer {
     margin: 0 auto 60px;
 }
 
-.warmth-content h2 { color: white; font-weight: 500; }
+.warmth-content h2 { color: white; font-weight: 400; font-family: 'Georgia', serif; letter-spacing: 2px; }
 
 .warmth-note {
-    background: rgba(107, 123, 62, 0.2);
+    background: rgba(184, 115, 51, 0.2);
     padding: 20px;
     border-radius: 12px;
     border-left: 4px solid var(--wood-light);
     margin-top: 20px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Карточки готовых домов */
@@ -2052,8 +2127,9 @@ footer {
     font-size: 1.4rem;
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .price {
@@ -2061,13 +2137,13 @@ footer {
     font-weight: 700;
     color: var(--olive);
     margin-bottom: 8px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .area { 
     color: var(--text-light); 
     margin-bottom: 20px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .price-note {
@@ -2075,7 +2151,7 @@ footer {
     margin-top: 40px;
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Детали сборки */
@@ -2110,12 +2186,12 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
 }
 
 .detail p {
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--text-light);
 }
 
@@ -2125,7 +2201,6 @@ footer {
     margin-top: 50px;
 }
 
-/* Отступ для кнопки после карточек экономии */
 .savings-section .center-btn {
     margin-top: 60px;
 }
@@ -2149,7 +2224,7 @@ footer {
     padding: 16px 0 16px 40px;
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .tech-specs li::before {
@@ -2174,8 +2249,9 @@ footer {
 .finishing-option h3, .advantages h3 {
     margin-bottom: 20px;
     color: var(--wood-light);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .finishing-types {
@@ -2190,7 +2266,7 @@ footer {
 .advantages li {
     padding: 10px 0 10px 30px;
     position: relative;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .advantages li::before {
@@ -2227,7 +2303,7 @@ footer {
     font-size: 3rem;
     font-weight: 700;
     color: var(--olive);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .production-details {
@@ -2236,7 +2312,6 @@ footer {
     gap: 24px;
 }
 
-/* Секция гарантии - центрирование */
 .guarantee-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2267,24 +2342,25 @@ footer {
     font-size: 1.3rem;
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
 }
 
 .guarantee-item p {
     color: var(--text-light);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Преимущества - отступ сверху */
 .advantages-grid {
     margin-top: 60px;
 }
 
-/* Секция сметы */
 .estimate-section h2 {
     text-align: center;
     font-size: 1.8rem;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 /* ============================================
@@ -2365,25 +2441,27 @@ footer {
 .bv-project-category {
     background: var(--olive);
     color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    padding: 4px 14px;
+    font-size: 0.75rem;
     font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .bv-project-year {
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .bv-project-info h3 {
     font-size: 1.3rem;
     margin-bottom: 8px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .bv-project-info > p {
@@ -2391,7 +2469,7 @@ footer {
     font-size: 0.9rem;
     line-height: 1.4;
     margin-bottom: 16px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .bv-project-details {
@@ -2409,7 +2487,7 @@ footer {
     gap: 6px;
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .bv-project-area::before {
@@ -2425,21 +2503,23 @@ footer {
     font-weight: 700;
     color: var(--olive);
     margin: 16px 0;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .bv-project-view-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: var(--olive);
     color: white;
     border: none;
-    border-radius: 40px;
     cursor: pointer;
     transition: var(--transition);
     margin-top: auto;
     font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
 .bv-project-view-btn:hover {
@@ -2463,9 +2543,11 @@ footer {
 .consultation-section h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 400;
     color: white;
     text-align: center;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .consultation-section .section-subtitle {
@@ -2486,9 +2568,10 @@ footer {
     text-align: center;
     margin-bottom: 30px;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--wood-light);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .consultation-process ol {
@@ -2503,7 +2586,7 @@ footer {
     position: relative;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.95);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .consultation-process li::before {
@@ -2521,7 +2604,7 @@ footer {
     justify-content: center;
     font-weight: bold;
     font-size: 1rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 .consultation-section .center-btn .btn {
@@ -2558,14 +2641,14 @@ footer {
     padding: 20px 24px;
     background: white;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--olive-dark);
     margin: 0;
     position: relative;
     padding-right: 50px;
     transition: var(--transition);
     cursor: pointer;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .faq-questions .faq-item h3::after {
@@ -2592,7 +2675,7 @@ footer {
     color: var(--text-light);
     line-height: 1.6;
     text-indent: 20px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .faq-questions .faq-item.active p {
@@ -2604,13 +2687,11 @@ footer {
     background: var(--warm-white);
 }
 
-/* Кнопки в hero и сборке по центру */
 .bv-hero-content .hero-btn,
 .assembly-section .center-btn .btn {
     display: inline-block;
 }
 
-/* Медиа-запросы для адаптивности */
 @media (max-width: 992px) {
     .hero-features { grid-template-columns: repeat(2, 1fr); }
     .production-content { grid-template-columns: 1fr; }
@@ -2656,10 +2737,9 @@ footer {
    PROJECTS PAGE - НОВЫЕ СТИЛИ
    ============================================ */
 
-/* Герой-секция - центрирование */
 .projects-hero {
     height: 50vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)), 
                 url('https://i.pinimg.com/1200x/e8/64/93/e864930d8e572f041870293ba9e052c6.jpg');
     background-size: cover;
     background-position: center;
@@ -2674,22 +2754,24 @@ footer {
 .projects-hero-content h1 {
     font-size: 3rem;
     margin-bottom: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .projects-hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
-/* Основная секция проектов */
 .projects-section {
     padding: 80px 24px;
     background: var(--warm-white);
 }
 
-/* Отступ для фильтров */
 .projects-filter {
     display: flex;
     justify-content: center;
@@ -2702,12 +2784,14 @@ footer {
     padding: 12px 24px;
     background: transparent;
     border: 2px solid var(--olive);
-    border-radius: 40px;
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .filter-btn:hover,
@@ -2716,7 +2800,6 @@ footer {
     color: white;
 }
 
-/* Сетка проектов */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -2725,7 +2808,6 @@ footer {
     margin: 0 auto 60px;
 }
 
-/* Карточка проекта - с фиксированной высотой */
 .project-card {
     background: white;
     border-radius: 20px;
@@ -2763,7 +2845,6 @@ footer {
     justify-content: space-between;
 }
 
-/* Контейнер для верхней части карточки */
 .project-info-top {
     flex: 1;
 }
@@ -2780,25 +2861,27 @@ footer {
 .project-category {
     background: var(--olive);
     color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    padding: 4px 14px;
+    font-size: 0.75rem;
     font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .project-year {
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .project-info h2 {
     font-size: 1.3rem;
     margin-bottom: 8px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .project-info > p {
@@ -2810,7 +2893,7 @@ footer {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .project-details {
@@ -2828,7 +2911,7 @@ footer {
     gap: 6px;
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .project-area::before {
@@ -2839,28 +2922,29 @@ footer {
     content: "⏱️";
 }
 
-/* Блок с ценой и кнопкой - всегда внизу */
 .project-price {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--olive);
     margin: 16px 0 12px 0;
     text-align: left;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .project-view-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: var(--olive);
     color: white;
     border: none;
-    border-radius: 40px;
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
     margin-top: 0;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
 .project-view-btn:hover {
@@ -2868,53 +2952,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* CTA секция - отступ сверху */
-.about-cta {
-    padding: 80px 24px;
-    background: var(--olive);
-    text-align: center;
-    color: white;
-    margin-top: 0;
-}
-
-.about-cta .container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-cta h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.about-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
-    line-height: 1.6;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-}
-
-.about-cta .btn {
-    background: white;
-    color: var(--olive-dark);
-    border: 2px solid white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.about-cta .btn:hover {
-    background: transparent;
-    color: white;
-    border-color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Адаптивность для projects page */
 @media (max-width: 768px) {
     .projects-hero {
         height: 40vh;
@@ -2972,32 +3009,11 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
-    
-    .about-cta {
-        padding: 60px 20px;
-    }
-    
-    .about-cta h2 {
-        font-size: 1.8rem;
-    }
-    
-    .about-cta p {
-        font-size: 1rem;
-        margin-bottom: 32px;
-    }
 }
 
 @media (max-width: 576px) {
     .projects-hero-content h1 {
         font-size: 1.8rem;
-    }
-    
-    .about-cta h2 {
-        font-size: 1.5rem;
-    }
-    
-    .about-cta p {
-        font-size: 0.95rem;
     }
     
     .project-price {
@@ -3013,10 +3029,9 @@ footer {
    TERRACE PAGE
    ============================================ */
 
-
 .terrace-hero {
     height: 50vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
                 url('https://i.pinimg.com/1200x/9e/47/cb/9e47cb699e37288fa745f2868f40a0e8.jpg');
     background-size: cover;
     background-position: center;
@@ -3031,18 +3046,20 @@ footer {
 .terrace-hero h1 { 
     font-size: 3rem; 
     margin-bottom: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-/* Добавьте после строки с .terrace-hero p */
 .terrace-hero-description {
-    width: 75%;         /* ← ограничили ширину */
-    margin: 16px auto 0;     /* ← уменьшили отступ сверху */
-    font-size: 1rem;         /* ← уменьшили размер шрифта (было 1.15rem) */
+    width: 75%;
+    margin: 16px auto 0;
+    font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.92);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    padding: 0 20px;  /* ← добавили отступы по бокам для мобильных */
+    font-family: 'Inter', sans-serif;
+    padding: 0 20px;
 }
 
 .terrace-section, .materials-section, .gallery-section {
@@ -3076,13 +3093,15 @@ footer {
 .terrace-card h3 { 
     margin-bottom: 16px; 
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 .terrace-card p { 
     color: var(--text-light); 
     line-height: 1.6;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
 }
 
 /* Карточки материалов */
@@ -3110,12 +3129,13 @@ footer {
 }
 
 .material-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 20px;
     color: var(--olive-dark);
     text-align: center;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .material-properties {
@@ -3132,24 +3152,26 @@ footer {
 .property-name {
     font-weight: 500;
     color: var(--text-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 }
 
 .property-value {
     color: var(--olive);
     font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 }
 
 .material-description {
     color: var(--text-light);
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-top: 16px;
     margin-bottom: 0;
     text-align: left;
     width: 100%;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* CTA секция */
@@ -3168,7 +3190,9 @@ footer {
 .terrace-cta h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .terrace-cta p {
@@ -3179,7 +3203,7 @@ footer {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .terrace-cta .btn {
@@ -3239,12 +3263,12 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent);
     padding: 20px;
     color: white;
     transform: translateY(100%);
     transition: transform 0.3s;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .gallery-item:hover .gallery-item-overlay { transform: translateY(0); }
@@ -3257,7 +3281,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(26, 26, 26, 0.98);
     z-index: 2000;
     align-items: center;
     justify-content: center;
@@ -3312,7 +3336,7 @@ footer {
     .gallery-item { height: 200px; }
     .material-card { padding: 24px; }
     .material-image { height: 180px; }
-    .material-content h3 { font-size: 1.3rem; }
+    .material-content h3 { font-size: 1.2rem; }
 }
 
 @media (max-width: 768px) {
@@ -3327,10 +3351,9 @@ footer {
    WORK PAGES
    ============================================ */
 
-/* Герой-секция */
 .work-hero {
     height: 45vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
                 url('https://i.pinimg.com/1200x/7e/65/74/7e6574ed238db345e64f18b987d468dc.jpg');
     background-size: cover;
     background-position: center;
@@ -3345,15 +3368,18 @@ footer {
 .work-hero h1 { 
     font-size: 3rem; 
     margin-bottom: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .work-hero p { 
-    font-size: 1.2rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
-/* Секция выбора категорий */
 .work-categories-section {
     padding: 80px 24px;
     background: var(--warm-white);
@@ -3399,7 +3425,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent);
     padding: 24px;
     color: white;
 }
@@ -3407,17 +3433,19 @@ footer {
 .category-title { 
     font-size: 1.4rem; 
     margin-bottom: 6px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .category-count {
     font-size: 0.9rem;
     opacity: 0.9;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    color: var(--wood-light);
 }
 
-/* Секция со списком работ */
 .work-section {
     padding: 80px 24px;
     background: var(--warm-white);
@@ -3471,24 +3499,26 @@ footer {
 .work-category {
     background: var(--olive);
     color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    padding: 4px 14px;
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .work-year {
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .work-info h2 {
     font-size: 1.3rem;
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .work-info > p {
@@ -3496,7 +3526,8 @@ footer {
     line-height: 1.5;
     margin-bottom: 16px;
     flex: 1;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
 }
 
 .work-details {
@@ -3514,21 +3545,23 @@ footer {
     gap: 6px;
     color: var(--text-light);
     font-size: 0.9rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .work-view-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: var(--olive);
     color: white;
     border: none;
-    border-radius: 40px;
     cursor: pointer;
     transition: var(--transition);
     margin-top: 16px;
     font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
 .work-view-btn:hover { 
@@ -3549,12 +3582,14 @@ footer {
     padding: 10px 24px;
     background: transparent;
     border: 2px solid var(--olive);
-    border-radius: 40px;
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .filter-btn:hover, .filter-btn.active {
@@ -3575,12 +3610,14 @@ footer {
     padding: 10px 20px;
     background: transparent;
     border: 2px solid var(--olive);
-    border-radius: 40px;
     text-decoration: none;
     color: var(--olive);
     transition: var(--transition);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .back-btn:hover {
@@ -3626,18 +3663,20 @@ footer {
 
 .stat-number {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 400;
     color: white;
     margin-bottom: 12px;
     line-height: 1.2;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 .stat-text {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Отзывы */
@@ -3672,17 +3711,17 @@ footer {
 }
 
 .review-author h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 4px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
 }
 
 .review-author p {
     color: var(--text-light);
     font-size: 0.85rem;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .review-rating { 
@@ -3695,7 +3734,8 @@ footer {
     line-height: 1.6;
     margin-bottom: 20px;
     font-style: italic;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
 }
 
 .review-date {
@@ -3703,10 +3743,9 @@ footer {
     font-size: 0.85rem;
     text-align: right;
     opacity: 0.7;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* CTA секция для work (как на about) */
 .work-cta {
     padding: 80px 24px;
     background: var(--olive);
@@ -3722,7 +3761,9 @@ footer {
 .work-cta h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
 }
 
 .work-cta p {
@@ -3733,7 +3774,7 @@ footer {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .work-cta .btn {
@@ -3753,7 +3794,6 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Адаптивность для work */
 @media (max-width: 768px) {
     .work-hero { 
         margin-top: 60px; 
@@ -3783,7 +3823,7 @@ footer {
     }
     .filter-btn { 
         padding: 8px 18px; 
-        font-size: 0.9rem; 
+        font-size: 0.8rem; 
     }
     
     .reviews-grid { 
@@ -3875,7 +3915,7 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(26, 26, 26, 0.98);
     align-items: center;
     justify-content: center;
 }
@@ -3904,7 +3944,10 @@ footer {
     transition: var(--transition);
 }
 
-.modal-close:hover { background: rgba(255, 255, 255, 0.4); transform: rotate(90deg); }
+.modal-close:hover { 
+    background: rgba(255, 255, 255, 0.4); 
+    transform: rotate(90deg); 
+}
 
 .modal-body {
     width: 100%;
@@ -3953,7 +3996,7 @@ footer {
     color: white;
     font-size: 14px;
     z-index: 2001;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Модальное окно проектов */
@@ -4025,8 +4068,9 @@ footer {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 #projectModal .modal-details {
@@ -4034,7 +4078,7 @@ footer {
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 24px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 #projectModal .modal-btn {
@@ -4044,9 +4088,11 @@ footer {
     background: var(--olive);
     color: white;
     text-decoration: none;
-    border-radius: 40px;
     transition: var(--transition);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
 #projectModal .modal-btn:hover {
@@ -4076,10 +4122,9 @@ footer {
 .p-20 { padding: 20px; }
 
 /* ============================================
-   ОБВОДКА ДЛЯ КАРТОЧЕК (ЗЕЛЕНАЯ, КАК У КНОПОК)
+   ОБВОДКА ДЛЯ КАРТОЧЕК (МЕДНАЯ, КАК У КНОПОК)
    ============================================ */
 
-/* Для страницы company.html */
 .value-card,
 .team-member {
     border: 2px solid var(--olive);
@@ -4095,7 +4140,6 @@ footer {
     transform: translateY(-5px);
 }
 
-/* Для страницы services.html */
 .service-card {
     border: 2px solid var(--olive);
     border-radius: 24px;
@@ -4109,7 +4153,6 @@ footer {
     transform: translateY(-8px);
 }
 
-/* Для страницы terrace.html */
 .terrace-card,
 .material-card {
     border: 2px solid var(--olive);
@@ -4125,7 +4168,6 @@ footer {
     transform: translateY(-5px);
 }
 
-/* Для страницы bvdoma.html */
 .guarantee-item,
 .advantage-card,
 .estimate-feature,
@@ -4149,7 +4191,6 @@ footer {
     transform: translateY(-5px);
 }
 
-/* Для страницы work.html */
 .review-card {
     border: 2px solid var(--olive);
     border-radius: 20px;
@@ -4163,7 +4204,6 @@ footer {
     transform: translateY(-5px);
 }
 
-/* Для страницы contacts.html */
 .faq-item {
     border: 2px solid var(--olive);
     border-radius: 12px;
@@ -4176,7 +4216,6 @@ footer {
     box-shadow: var(--shadow-hover);
 }
 
-/* Дополнительно для карточек процессов и проектов */
 .process-step {
     border: 2px solid var(--olive);
     border-radius: 20px;
@@ -4208,7 +4247,6 @@ footer {
     transform: translateY(-8px);
 }
 
-/* Карточки домов на bvdoma */
 .house-card {
     border: 2px solid var(--olive);
     border-radius: 24px;
@@ -4222,7 +4260,6 @@ footer {
     transform: translateY(-10px);
 }
 
-/* Карточки статистики - обводка белая (так как фон зеленый) */
 .stat-item {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
@@ -4234,7 +4271,6 @@ footer {
     transform: translateY(-5px);
 }
 
-/* Карточки ценностей на главной странице */
 .index-project-card {
     border: 2px solid var(--olive);
     border-radius: 16px;
@@ -4247,7 +4283,6 @@ footer {
     box-shadow: var(--shadow-hover);
 }
 
-/* Карточки услуг на главной (если есть) */
 .feature-card {
     border: 2px solid var(--olive);
     border-radius: 20px;
@@ -4294,8 +4329,9 @@ footer {
 .form-group label {
     font-weight: 500;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 .form-group input,
@@ -4304,7 +4340,7 @@ footer {
     padding: 14px 18px;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     transition: var(--transition);
     background: white;
@@ -4316,7 +4352,7 @@ footer {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--olive);
-    box-shadow: 0 0 0 3px rgba(107, 123, 62, 0.1);
+    box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.1);
 }
 
 .form-group input.error,
@@ -4331,7 +4367,7 @@ footer {
     color: var(--text-light);
     text-align: center;
     margin-top: 8px;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .feedback-submit-btn {
@@ -4369,7 +4405,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(26, 26, 26, 0.9);
     z-index: 3000;
     align-items: center;
     justify-content: center;
@@ -4411,15 +4447,16 @@ footer {
     font-size: 1.6rem;
     margin-bottom: 12px;
     color: var(--olive-dark);
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .notification-content p {
     color: var(--text-light);
     margin-bottom: 28px;
     line-height: 1.5;
-    font-family: 'Cador Sans Serif', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .notification-close-btn {
@@ -4427,10 +4464,11 @@ footer {
     color: white;
     padding: 12px 28px;
     border: none;
-    border-radius: 40px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: var(--transition);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 .notification-close-btn:hover {
@@ -4438,7 +4476,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Адаптивность формы */
 @media (max-width: 768px) {
     .feedback-section {
         padding: 60px 20px;
