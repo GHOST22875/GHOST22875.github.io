@@ -697,7 +697,7 @@ footer {
 .index-custom-project {
     padding: 100px 24px;
     background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1426,7 +1426,7 @@ footer {
 .about-cta {
     padding: 100px 24px;
     background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2215,7 +2215,7 @@ footer {
 /* Секция технологии */
 .technology-section {
     background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2559,7 +2559,7 @@ footer {
 /* Консультационная секция */
 .consultation-section {
     background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -3208,7 +3208,7 @@ footer {
 .terrace-cta {
     padding: 100px 24px;
     background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -3686,7 +3686,7 @@ footer {
 .stats-section {
     padding: 100px 24px;
     background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -3817,7 +3817,7 @@ footer {
 .work-cta {
     padding: 100px 24px;
     background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
-                url('./image/fon/photo_2026-09-12_22-43-55.jpg');
+                url('../image/fon/photo_2026-09-12_22-43-55.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
